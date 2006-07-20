@@ -14,7 +14,7 @@ Subtitle := "Library of normalized unit groups of modular group algebras",
 Version := "1.0",
 Date := "20/07/2006",
 ArchiveURL := "http://homepages.vub.ac.be/~okonoval/unitlib/unitlib-1.0",
-ArchiveFormats := ".zoo .tar.gz .tar.bz2 -win.zip",
+ArchiveFormats := ".tar.gz .tar.bz2 -win.zip",
 
 #TextFiles := ["init.g", ......],
 #BinaryFiles := ["doc/manual.dvi", ......],
