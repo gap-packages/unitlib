@@ -13,7 +13,7 @@ PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
 Version := "1.0",
 Date := "20/07/2006",
-ArchiveURL := "http://ukrgap.exponenta.ru/unitlib/unitlib-1.0",
+ArchiveURL := "http://homepages.vub.ac.be/~okonoval/unitlib/unitlib-1.0",
 ArchiveFormats := ".zoo .tar.gz .tar.bz2 -win.zip",
 
 #TextFiles := ["init.g", ......],
@@ -53,10 +53,10 @@ Status := "dev",
 CommunicatedBy := "",
 AcceptDate := "",
 
-README_URL := "http://ukrgap.exponenta.ru/unitlib/README.unitlib",
-PackageInfoURL := "http://ukrgap.exponenta.ru/unitlib/PackageInfo.g",
+README_URL := "http://homepages.vub.ac.be/~okonoval/unitlib/README.unitlib",
+PackageInfoURL := "http://homepages.vub.ac.be/~okonoval/unitlib/PackageInfo.g",
 AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span>package and contains the library of normalized unit groups of modular group algebras of all finite p-groups of order not greater than 128 over the field of p elements.",
-PackageWWWHome := "http://ukrgap.exponenta.ru/unitlib.htm",
+PackageWWWHome := "http://homepages.vub.ac.be/~okonoval/unitlib.htm",
                   
 PackageDoc := rec(
   BookName := "UnitLib",
