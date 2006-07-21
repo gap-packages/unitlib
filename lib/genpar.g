@@ -7,6 +7,26 @@
 ##
 #############################################################################
 
+# Example of usage:
+#
+# gap> Read("~/gap4r4/pkg/unitlib/lib/genpar.g"); 
+# gap> ParCreatePcNormalizedUnitGroupsLibrary(8,1,NrSmallGroups(8));
+# Generating library for 5 groups of order 8 ... 
+# Generating library for 5 groups of order 8 ... 
+# Generating library for 5 groups of order 8 ... 
+# master -> 1:  1
+# master -> 2:  2
+# 2 -> master: true
+# master -> 2:  3
+# 1 -> master: true
+# master -> 1:  4
+# 2 -> master: true
+# master -> 2:  5
+# 1 -> master: true
+# 2 -> master: true
+# [ true, true, true, true, true ]
+
+
 #############################################################################
 #
 # ParCreatePcNormalizedUnitGroupsLibrary( unitlibsize, n1, n2 )
