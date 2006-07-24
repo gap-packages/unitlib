@@ -29,31 +29,31 @@
 
 #############################################################################
 #
-# ParCreatePcNormalizedUnitGroupsLibrary( unitlibsize, n1, n2 )
+# ParCreatePcNormalizedUnitGroupsLibrary( unitlibsize, listofnumbers )
 #
 ParInstallTOPCGlobalFunction( "ParCreatePcNormalizedUnitGroupsLibrary",
-function( unitlibsize, n1, n2 )
+function( unitlibsize, listofnumbers )
 local result;
 
 if not IsPrimePowerInt( unitlibsize ) then
   Error("The first argument is not a power of a prime !!!");
 fi;
 
-if n1 > NrSmallGroups(unitlibsize) or n2 > NrSmallGroups(unitlibsize) then
+if not IsSubset( [ 1 .. NrSmallGroups( unitlibsize ) ], listofnumbers ) then
   Error("There are only ", NrSmallGroups(unitlibsize), 
        " groups of order ", unitlibsize, " !!! \n");
 fi;
 
-Print( "Generating library for ", n2-n1+1, " groups of order ", 
+Print( "Generating library for ", Length(listofnumbers), " groups of order ", 
                                   unitlibsize, " ... \n" );
 
    result := [];
-   MasterSlave( TaskInputIterator( [ n1 .. n2 ]),
+   MasterSlave( TaskInputIterator( listofnumbers ),
 		
                 n -> SavePcNormalizedUnitGroup( SmallGroup( unitlibsize, n ) ),
                 
 		function( input, output )
-		  result[input] := output;
+		  AddSet( result, output );
                   return NO_ACTION; 
 		end,
                 
