@@ -49,12 +49,12 @@ GAP homepage or from http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc/.
 
 UnitLib is distributed  in standard formats  (zoo, tar.gz, tar.bz2, -win.zip)
 and   can   be   obtained   the   GAP   homepage   or   from   its   homepage 
-http://ukrgap.exponenta.ru/unitlib.htm. To unpack the archive unitlib-1.0.zoo 
-you  need  the program unzoo,  which can be  obtained  from the  GAP homepage 
-http://www.gap-system.org/  (see section `Distribution'). To install UnitLib,
-copy this archive into the pkg subdirectory of your GAP4.4 installation. Then
-the subdirectory  unitlib  containing the package will be created in the  pkg 
-directory after the following command:
+http://homepages.vub.ac.be/~okonoval/unitlib.htm. To   unpack   the   archive 
+unitlib-1.0.zoo  you need  the program unzoo,  which can be obtained from the 
+GAP homepage  http://www.gap-system.org/  (see  section  `Distribution').  To
+install UnitLib, copy this archive into the 'pkg' subdirectory of your GAP4.4
+installation. Then the subdirectory 'unitlib' containing  the package will be 
+created in the 'pkg' directory after the following command:
 
 unzoo -x unitlib-1.0.zoo
 
