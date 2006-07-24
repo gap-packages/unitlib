@@ -15,13 +15,16 @@
 ##  (requires a UNIX environment)
 ##
 UNITLIBTestLibrary := function()
-local datapath, size, n, libfile;
+local datapath, testresult, size, missing, n, libfile;
   datapath := Concatenation(
                 GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath, 
 	        "/data/" );
-  for size in Filtered( [ 2 .. 128 ], IsPrimePowerInt) do
+  testresult := true;		
+  for size in Filtered( [ 2 .. 243 ], IsPrimePowerInt) do
+    missing := [];
     Print( NrSmallGroups(size), " group(s) of order ", size, "\n" );
     for n in [ 1 .. NrSmallGroups( size ) ] do
+      Print( n, "\r");
       libfile := Concatenation( 
                    datapath, 
 		   String(size), 
@@ -34,12 +37,19 @@ local datapath, size, n, libfile;
         libfile := Concatenation( libfile, ".gz");
       fi;
       if not IsExistingFile(libfile) then
-        Error("The file ", libfile, " does not exist !!! \n");
+        Add( missing, n );
+	testresult := false;
       fi;
-      Print( n, " ", IsExistingFile( libfile ), "\r");
     od;
+    if Length(missing) > 0 then
+      Print( "Missing groups for order ", size, " : ", missing, "\n");
+    fi;
   od;
-  Print("Test passed successfully \n");
+  if testresult then
+    Print("Test finished successfully !!! \n");
+  else
+    Print("Test finished with problems !!! \n");
+  fi;
 end;
 
 
