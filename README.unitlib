@@ -58,7 +58,7 @@ created in the 'pkg' directory after the following command:
 
 unzoo -x unitlib-1.0.zoo
 
-Now you cal start GAP and load the UnitLib package using the command:
+Now you can start GAP and load the UnitLib package using the command:
 
 gap> LoadPackage("unitlib");
 
