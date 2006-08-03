@@ -49,9 +49,9 @@ Persons := [
      )
 ],
 
-Status := "dev",
-CommunicatedBy := "",
-AcceptDate := "",
+Status := "deposited",
+# CommunicatedBy := "",
+# AcceptDate := "",
 
 README_URL := "http://homepages.vub.ac.be/~okonoval/unitlib/README.unitlib",
 PackageInfoURL := "http://homepages.vub.ac.be/~okonoval/unitlib/PackageInfo.g",
