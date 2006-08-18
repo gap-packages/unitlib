@@ -4,19 +4,25 @@
 
 <!DOCTYPE Book SYSTEM "gapdoc.dtd"
 [<!ENTITY LAGUNA "<Package>LAGUNA</Package>">]
-[<!ENTITY UnitLib "<Package>UnitLib</Package>">] >
+[<!ENTITY UnitLib "<Package>UnitLib</Package>">]
+[<!ENTITY QaoS "<Package>Qaos</Package>">]
+[<!ENTITY ParGAP "<Package>ParGAP</Package>">] >
 
 <Book Name="UnitLib">
 
 <TitlePage>
   <Title>&UnitLib;</Title>
   <Subtitle>The library of normalized unit groups of modular group algebras</Subtitle>
-  <Version>Version 1.0</Version>
+  <Version>Version 2.0</Version>
 
   <Author>Alexander Konovalov
           <Email>konovalov@member.ams.org</Email>
 	  <Homepage>http://homepages.vub.ac.be/~okonoval/</Homepage>
           <Address>
+	        Department of Mathematics<Br/>
+    	    Zaporozhye National University<Br/>
+            Zaporozhye, 69063 Ukraine<Br/>
+	        Current address:<Br/>
             Department of Mathematics<Br/>
     	    Vrije Universiteit Brussel<Br/>
             Pleinlaan 2, Brussels<Br/>
@@ -34,15 +40,15 @@
        </Address> 
   </Author>
 
-  <Date>July 2006</Date>
+  <Date>August 2006</Date>
 
 <Abstract>
 
 <Index Key="UnitLib package">&UnitLib; package</Index> 
 
-The &UnitLib; package extends the &LAGUNA; package and contains the 
+The &UnitLib; package extends the &LAGUNA; package and provides the 
 library of normalized unit groups of modular group algebras of all 
-finite <M>p</M>-groups of order not greater than 128 over the field 
+finite <M>p</M>-groups of order not greater than 243 over the field 
 of <M>p</M> elements.
 
 </Abstract>
@@ -63,8 +69,9 @@ of <M>p</M> elements.
   &UnitLib;, please cite it in the following form:<P/>
 
   A. Konovalov and E. Yakimenko. 
-  <E>UnitLib --- The library of normalized unit groups of modular group algebras, 
-  Version 1.0;</E> 2006 (<URL>http://ukrgap.exponenta.ru/unitlib.htm</URL>).
+  <E>UnitLib --- The library of normalized unit groups of modular group 
+     algebras, Version 2.0;</E> 2006 
+     (<URL>http://homepages.vub.ac.be/~okonoval/unitlib.htm</URL>).
 </Copyright>
   
 <Acknowledgements>

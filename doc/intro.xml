@@ -24,8 +24,13 @@ created with &UnitLib; will have the same properties and attributes as
 the one computed with &LAGUNA;.
 <P/>
 
-The current version of &UnitLib; contains normalized unit groups 
-<M>V(KG)</M> for all <M>p</M>-groups of order not greater than 128.
+The current version of &UnitLib; provides the library of 
+normalized unit groups <M>V(KG)</M> for all <M>p</M>-groups 
+of order not greater than 243. 
+
+If you need to work with groups of bigger orders, please write to 
+the authors, because we may already have them computed or 
+can compute them for you.
 <P/>
 
 </Section>
@@ -34,17 +39,35 @@ The current version of &UnitLib; contains normalized unit groups
 <Section Label="Install">
 <Heading>Installation and system requirements</Heading>
 
-Libraries of normalized unit groups of groups of orders less than 128
-will be available in any operating system. The library for groups of order
-128 was compressed using <File>gzip</File> program and, therefore, will be 
-available only in UNIX-type systems (including UNIX-installation in Mac OS X
-and Cygwin installation in Windows). 
-<P/>
- 
 &UnitLib; is designed for &GAP;4.4 and no compatibility with previous 
 releases of &GAP;4 is guaranteed. 
 <P/>
 
+Libraries of normalized unit groups of groups of orders less than 243, 
+except for the order 128, will be available in any operating system.      
+<P/>
+
+The library for groups of order
+128 was compressed using <File>gzip</File> program and, therefore, will be 
+available only in UNIX-type systems (including UNIX-installation in Mac OS X
+and Cygwin installation in Windows).
+<P/> 
+
+To work with the library for groups of
+order 243 you will also need the <File>Curl</File> program 
+(<URL>http://curl.haxx.se</URL>) to retrieve the data from the 
+UnitLib homepage, and the &GAP; package &QaoS; 
+(<URL>http://www.gap-system.org/Packages/qaos.html</URL>) 
+which provides the &GAP; function <C>Curl</C> to work with 
+<File>cURL</File>.  
+<P/>
+
+If you need to work with groups of order 128 or 243 in Windows
+environment or you can not use <File>Curl</File>, please write
+to the authors. We will be able to give you a version of
+&UnitLib; with locally stored non-compressed data. 
+<P/>
+ 
 Because the &UnitLib; is an extension of the &LAGUNA; package, you must
 have the &LAGUNA; package installed. You can obtain it from the &GAP; 
 homepage or from its homepage 
@@ -60,15 +83,15 @@ To use the &UnitLib; online help it is necessary to install the &GAP;4 package
 &UnitLib; is distributed in standard formats
 (<File>zoo</File>, <File>tar.gz</File>, <File>tar.bz2</File>, 
 <File>-win.zip</File>) and can be obtained the &GAP; homepage or from 
-<URL>http://ukrgap.exponenta.ru/unitlib.htm</URL>.
-To unpack the archive <File>unitlib-1.0.zoo</File> you need the program 
+<URL>http://homepages.vub.ac.be/~okonoval/unitlib.htm</URL>.
+To unpack the archive <File>unitlib-2.0.zoo</File> you need the program 
 <File>unzoo</File>, which can be obtained from the &GAP; homepage 
 <URL>http://www.gap-system.org/</URL> (see section `Distribution').
 To install &UnitLib;, copy this archive into the <File>pkg</File> 
 subdirectory of your &GAP;4.4 installation. Then the subdirectory 
 <File>unitlib</File> containing the package will be created in 
 the <File>pkg</File> directory after the command
-<C>unzoo -x unitlib-1.0.zoo</C>
+<C>unzoo -x unitlib-2.0.zoo</C>
 
 </Section>
 

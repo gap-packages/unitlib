@@ -15,7 +15,7 @@ ReadPackage("unitlib/lib/unitlib.g");
 ReadPackage("unitlib/lib/buildman.g");
 
 if not ARCH_IS_UNIX() then
-  Print("UnitLib package : the library of normalized unit groups \n", 
-        "of modular group algebras of groups of order 128 \n",
+  Print("UnitLib package : libraries of normalized unit groups \n", 
+        "of modular group algebras of groups of order 128 and 243 \n",
 	"is not available because of non-UNIX operating system !!! \n");
 fi;
