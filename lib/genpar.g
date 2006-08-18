@@ -7,10 +7,16 @@
 ##
 #############################################################################
 
-# Example of usage:
+
+#############################################################################
+#
+# ParCreatePcNormalizedUnitGroupsLibrary( unitlibsize, listofnumbers )
+#
+# The function generates library files in parallel mode. To use it,
+# you must start ParGAP and then read the present file as in the example:
 #
 # gap> Read("~/gap4r4/pkg/unitlib/lib/genpar.g"); 
-# gap> ParCreatePcNormalizedUnitGroupsLibrary(8,1,NrSmallGroups(8));
+# gap> ParCreatePcNormalizedUnitGroupsLibrary(8, [ 1 .. NrSmallGroups(8) ] );
 # Generating library for 5 groups of order 8 ... 
 # Generating library for 5 groups of order 8 ... 
 # Generating library for 5 groups of order 8 ... 
@@ -25,11 +31,9 @@
 # 1 -> master: true
 # 2 -> master: true
 # [ true, true, true, true, true ]
-
-
-#############################################################################
-#
-# ParCreatePcNormalizedUnitGroupsLibrary( unitlibsize, listofnumbers )
+# 
+# Library files will be stored in the 'unitlib/userdata' directories on 
+# appropriate computers, and you need to collect them afterwards.
 #
 ParInstallTOPCGlobalFunction( "ParCreatePcNormalizedUnitGroupsLibrary",
 function( unitlibsize, listofnumbers )

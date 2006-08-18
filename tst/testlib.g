@@ -15,34 +15,58 @@
 ##  (requires a UNIX environment)
 ##
 UNITLIBTestLibrary := function()
-local datapath, testresult, size, missing, n, libfile;
+local datapath, testresult, size, missing, n, libfile, s;
+
   datapath := Concatenation(
                 GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath, 
 	        "/data/" );
   testresult := true;		
+
   for size in Filtered( [ 2 .. 243 ], IsPrimePowerInt) do
+
     missing := [];
     Print( NrSmallGroups(size), " group(s) of order ", size, "\n" );
+
     for n in [ 1 .. NrSmallGroups( size ) ] do
+
       Print( n, "\r");
-      libfile := Concatenation( 
-                   datapath, 
-		   String(size), 
-		   "/u", 
-		   String(size), 
-		   "_", 
-		   String(n), 
-		   ".g" );
-      if size=128 then
-        libfile := Concatenation( libfile, ".gz");
+      
+      if IsPrimeInt( size ) then
+        libfile := Concatenation( datapath, "primeord/", 
+		   "/u", String(size), "_", String(n) );
+      else      
+        libfile := Concatenation( datapath, String(size), 
+		   "/u", String(size), "_", String(n) );
       fi;
+
+      if size=128 then
+        libfile := Concatenation( libfile, ".g.gz" );
+      elif size=243 then
+        libfile := Concatenation( libfile, ".gg" );
+      else
+        libfile := Concatenation( libfile, ".g" );
+      fi;      
+
       if not IsExistingFile(libfile) then
         Add( missing, n );
 	testresult := false;
       fi;
+      
+      if size=243 then
+        s:=Curl( Concatenation( "http://homepages.vub.ac.be/~okonoval/",
+                                "unitlib/data/243/u243_", String(n), ".txt" ) );
+	# if we are non online, Curl will return empty string
+	if s <> "" then		
+	  # if the file is missing on the server, 
+	  # we can not perform the next command 
+          s:=IntHexString(s);
+	fi;
+      fi;
+
     od;
+
     if Length(missing) > 0 then
-      Print( "Missing groups for order ", size, " : ", missing, "\n");
+      Print( Length(missing), " missing groups for order ", size, " : ", missing, "\n");
     fi;
   od;
   if testresult then

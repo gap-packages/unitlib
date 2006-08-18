@@ -11,9 +11,9 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "1.0",
-Date := "20/07/2006",
-ArchiveURL := "http://homepages.vub.ac.be/~okonoval/unitlib/unitlib-1.0",
+Version := "2.0",
+Date := "18/08/2006",
+ArchiveURL := "http://homepages.vub.ac.be/~okonoval/unitlib/unitlib-2.0",
 ArchiveFormats := ".tar.gz .tar.bz2 -win.zip",
 
 #TextFiles := ["init.g", ......],
@@ -55,7 +55,7 @@ Status := "deposited",
 
 README_URL := "http://homepages.vub.ac.be/~okonoval/unitlib/README.unitlib",
 PackageInfoURL := "http://homepages.vub.ac.be/~okonoval/unitlib/PackageInfo.g",
-AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span> package and contains the library of normalized unit groups of modular group algebras of all finite p-groups of order not greater than 128 over the field of p elements.",
+AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order not greater than 243 over the field of p elements.",
 PackageWWWHome := "http://homepages.vub.ac.be/~okonoval/unitlib.htm",
                   
 PackageDoc := rec(
@@ -70,9 +70,9 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">=4.4",
-  NeededOtherPackages := [ ["GAPDoc", ">= 0.999"], ["LAGUNA", ">=3.3.3"] ],
-  SuggestedOtherPackages := [],
-  ExternalConditions := []
+  NeededOtherPackages := [ ["GAPDoc", ">= 0.999"], ["LAGUNA", ">= 3.3.3"] ],
+  SuggestedOtherPackages := [ ["qaos", ">= main-1.0.19"] ],
+  ExternalConditions := [ "partially needs cURL (http://curl.haxx.se)" ]
 ),
 
 AvailabilityTest := ReturnTrue,

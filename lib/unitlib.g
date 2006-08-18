@@ -18,7 +18,7 @@ local G, p, K, KG, filename, libfile, gzfile, code, V, i, fam;
 if not IsPrimePowerInt( n ) then
   Error( "Underlying group is not a p-group !!! \n" );
 fi;
-if n > 128 then
+if n > 243 then
   Print( "WARNING : the library of V(KG) for groups of order ", n, 
          " is not available yet !!! \n", 
 	 "You can use only groups from the unitlib/userdata directory \n",
@@ -30,12 +30,17 @@ p := PrimePGroup( G );
 fam := FamilyObj( One( G ) );
 K := GF( p );
 KG:= GroupRing( K, G );
-filename:=Concatenation( "u", String(n), "_", String(nLibNumber), ".g");
-if n<128 then
+# Attention - file name without extension 
+filename:=Concatenation( "u", String(n), "_", String(nLibNumber) );
+
+if IsPrimeInt(n) then
+
   libfile := Concatenation( 
                GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,
-               "/data/", String(n), "/", filename );
+               "/data/primeord/", filename, ".g" );
+
 elif n=128 then
+
   if not ARCH_IS_UNIX() then
     Error("UnitLib package : the library of normalized unit groups \n", 
           "of modular group algebras of groups of order 128 \n",
@@ -43,26 +48,56 @@ elif n=128 then
   fi;
   gzfile := Concatenation( 
                GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,
-               "/data/", String(n), "/", filename, ".gz" );
+               "/data/128/", filename, ".g.gz" );
   libfile := Filename( DirectoryTemporary(), "filename");
   Exec( Concatenation( "gunzip -c ", gzfile, " > ", libfile ) );
-else
+
+elif n=243 then
+
+  if not ARCH_IS_UNIX() then
+    Error("UnitLib package : the library of normalized unit groups \n", 
+          "of modular group algebras of groups of order 243 \n",
+  	  "is not available because of non-UNIX operating system !!! \n");
+  fi;
   libfile := Concatenation(                                                         
                GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,                
-	       "/userdata/", filename );
+	       "/data/243/", filename, ".gg" );
+
+else
+
+  libfile := Concatenation(                                                         
+               GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,                
+	       "/data/", String(n), "/", filename, ".g" );
+
 fi;
+
+
 code := ReadAsFunction(libfile)();
+
+
 if n=128 then
+
   Exec( Concatenation("rm ", libfile ) );
+
+elif n=243 then
+  
+  Info( LAGInfo, 1, "Calling Curl from the QaoS package ..." );
+  code[1] := Curl( Concatenation("http://homepages.vub.ac.be/~okonoval/",
+                                 "unitlib/data/243/u243_", 
+				  String(nLibNumber), ".txt" ) );
+  Info( LAGInfo, 1, "Data retrieved successfully, starting generation of V(KG) ..." );
+
+elif n>243 then
+
+  Info( LAGInfo, 1, "Description of V(KG) for G=SmallGroup(",n,",",nLibNumber,
+                    ") accepted, started its generation...");
+
 fi;
-if n>128 then
-  Print("\n", "Description of V(KG) for G=SmallGroup(",n,",",nLibNumber,
-        ") accepted, started its generation \n");
-fi;
-SetDimensionBasis(G, rec(
-                       dimensionBasis := List( code[2][1], 
-                                           i -> ObjByExtRep( fam, i ) ), 
-                       weights := code[2][2] ) );
+
+
+SetDimensionBasis(G, rec( dimensionBasis := List( code[2][1], 
+                                              i -> ObjByExtRep( fam, i ) ), 
+                          weights := code[2][2] ) );
 V := PcGroupCode( IntHexString(code[1]), p^(n-1) );
 SetIsGroupOfUnitsOfMagmaRing( V, false );
 SetIsNormalizedUnitGroupOfGroupRing( V, true );
@@ -83,7 +118,7 @@ local p, K, KG, V, codestring, libfile, output, d, x;
 if not IsPGroup( G ) then
   Error( "<G> is not a p-group !!! \n" );
 fi;
-if Size(G) <= 128 then
+if Size(G) <= 243 then
   Print( "WARNING : the normalized unit group V(KG) of the modular group algebra \n",
          " of the given group <G> is already included in the library and \n", 
 	 "You can access it using the function PcNormalizedUnitGroupSmallGroup.\n",

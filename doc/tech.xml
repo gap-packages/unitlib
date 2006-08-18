@@ -65,6 +65,27 @@ basis of <M>G</M> in the &UnitLib;.
 
 All further procedures are implemented inside the &LAGUNA; package, 
 and their result is uniquely determined and predictable.
+<P/>
+
+For most groups all information is stored in a single file. However,
+this is not the case for groups of order 243, where we have about 
+30 MB of data for 67 groups. For these groups we provide a solution
+on the base of Web-services. The information about the dimension
+basis is stored locally, while the codes for polycyclic generating
+sequences are available from the &UnitLib; homepage, and the package 
+will access them using the <C>Curl</C> function from the &QaoS; 
+package <Cite Key="QaoS" />.
+<P/>
+
+For the reader interested in more details, we included in package 
+archive the file <File>unitlib/lib/genlib.g</File> with the 
+function <C>CreatePcNormalizedUnitGroupsLibrary</C>, that creates
+library files for groups of a given prime power order, and the file
+<File>unitlib/lib/genpar.g</File> with the function
+<C>ParCreatePcNormalizedUnitGroupsLibrary</C>, which is the
+parallel version of the previous function and must be used with
+the &ParGAP; package <Cite Key="ParGAP" />.
+
 </Section>
 
 
@@ -77,7 +98,7 @@ underlying group <M>G</M> in the &GAP; Small Groups Library.
 <P/>
 
 We use the same numbering as in the &GAP; Small Group Library, 
-so &UnitLib; finds the appropriate library file and reads from 
+so &UnitLib; finds the appropriate library file(s) and reads from 
 it the code for the polycyclic generating sequence of <M>V(KG)</M> 
 and the information about the dimension basis of <M>G</M> used 
 for the computation of this code.
@@ -100,7 +121,7 @@ It remains now to make only several technical steps, such as
 constructing the group algebra <M>KG</M> over the appropriate
 field <M>K</M>, and storing <M>KG</M> in the attribute 
 <C>UnderlyingGroupRing</C> of <M>V(KG)</M> and <M>V(KG)</M> 
-in the attribute <C>PcNormalizedUnitGroup</C> of <M>KG</M>.
+in the attribute <C>PcNormalizedUnitGroup</C> of <M>KG</M>. 
 
 </Section>
 
