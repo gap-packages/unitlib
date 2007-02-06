@@ -192,7 +192,7 @@ Description of V(KG) for G=SmallGroup(256,
 <ManSection>
    <Func Name="UNITLIBBuildManual" 
          Arg=""
-	 Comm="requires GAPDoc, UNIX or Linux and &TeX;" />
+	 Comm="requires GAPDoc, UNIX or Linux and TeX" />
    <Description>
       This function is used to build the manual in the following formats:
       DVI, PDF, PS, HTML and text for online help.
