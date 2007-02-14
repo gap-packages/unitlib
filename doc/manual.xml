@@ -17,16 +17,12 @@
 
   <Author>Alexander Konovalov
           <Email>konovalov@member.ams.org</Email>
-	  <Homepage>http://homepages.vub.ac.be/~okonoval/</Homepage>
+	      <Homepage>http://www.cs.st-andrews.ac.uk/&tilde;alexk/</Homepage>
           <Address>
-	        Department of Mathematics<Br/>
-    	    Zaporozhye National University<Br/>
-            Zaporozhye, 69063 Ukraine<Br/>
-	        Current address:<Br/>
-            Department of Mathematics<Br/>
-    	    Vrije Universiteit Brussel<Br/>
-            Pleinlaan 2, Brussels<Br/>
-            B-1050 Belgium
+            School of Computer Science<Br/>
+            University of St Andrews<Br/>
+            Jack Cole Building, North Haugh,<Br/>
+            St Andrews, Fife, KY16 9SX, Scotland
           </Address> 
   </Author>
 
@@ -36,11 +32,11 @@
             Department of Mathematics<Br/>
             Zaporozhye National University<Br/>
             Ul.Zhukovskogo, 66, Zaporozhye<Br/>
-	    69600 Ukraine
-       </Address> 
+	        69600 Ukraine
+          </Address> 
   </Author>
 
-  <Date>August 2006</Date>
+  <Date>February 2007</Date>
 
 <Abstract>
 
@@ -54,7 +50,7 @@ of <M>p</M> elements.
 </Abstract>
 
 <Copyright>
-  &copyright; 2006 by Alexander Konovalov and Elena Yakimenko<P/>
+  &copyright; 2006-2007 by Alexander Konovalov and Elena Yakimenko<P/>
 
   &UnitLib; is free software; you can redistribute it and/or modify it 
   under the terms of the GNU General Public License as published by 
@@ -70,8 +66,8 @@ of <M>p</M> elements.
 
   A. Konovalov and E. Yakimenko. 
   <E>UnitLib --- The library of normalized unit groups of modular group 
-     algebras, Version 2.0;</E> 2006 
-     (<URL>http://homepages.vub.ac.be/~okonoval/unitlib.htm</URL>).
+     algebras, Version 2.0;</E> 2007 
+     (<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/unitlib.htm</URL>).
 </Copyright>
   
 <Acknowledgements>
