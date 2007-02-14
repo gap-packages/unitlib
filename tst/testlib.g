@@ -53,7 +53,7 @@ local datapath, testresult, size, missing, n, libfile, s;
       fi;
       
       if size=243 then
-        s:=Curl( Concatenation( "http://homepages.vub.ac.be/~okonoval/",
+        s:=Curl( Concatenation( "http://www.cs.st-andrews.ac.uk/~alexk/",
                                 "unitlib/data/243/u243_", String(n), ".txt" ) );
 	# if we are non online, Curl will return empty string
 	if s <> "" then		

@@ -13,7 +13,7 @@ PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
 Version := "2.0",
 Date := "18/08/2006",
-ArchiveURL := "http://homepages.vub.ac.be/~okonoval/unitlib/unitlib-2.0",
+ArchiveURL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/unitlib-2.0",
 ArchiveFormats := ".tar.gz .tar.bz2 -win.zip",
 
 #TextFiles := ["init.g", ......],
@@ -26,13 +26,14 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "konovalov@member.ams.org",
-    WWWHome       := "http://homepages.vub.ac.be/~okonoval/",
+    WWWHome       := "http://www.cs.st-andrews.ac.uk/~alexk/",
     PostalAddress := Concatenation( [
-                     "Department of Mathematics\n",
-                     "Vrije Universiteit Brussel\n", 
-                     "Pleinlaan 2, Brussels, B-1050 Belgium" ] ),
-    Place         := "Brussels",
-    Institution   := "Vrije Universiteit Brussel"
+                     "School of Computer Science\n",
+                     "University of St Andrews\n",
+                     "Jack Cole Building, North Haugh,\n",
+                     "St Andrews, Fife, KY16 9SX, Scotland" ] ),
+    Place         := "St Andrews",
+    Institution   := "University of St Andrews"
      ),
   rec(
     LastName      := "Yakimenko",
@@ -53,10 +54,10 @@ Status := "deposited",
 # CommunicatedBy := "",
 # AcceptDate := "",
 
-README_URL := "http://homepages.vub.ac.be/~okonoval/unitlib/README.unitlib",
-PackageInfoURL := "http://homepages.vub.ac.be/~okonoval/unitlib/PackageInfo.g",
+README_URL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/README.unitlib",
+PackageInfoURL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/PackageInfo.g",
 AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order not greater than 243 over the field of p elements.",
-PackageWWWHome := "http://homepages.vub.ac.be/~okonoval/unitlib.htm",
+PackageWWWHome := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib.htm",
                   
 PackageDoc := rec(
   BookName := "UnitLib",
@@ -70,7 +71,7 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">=4.4",
-  NeededOtherPackages := [ ["GAPDoc", ">= 0.999"], ["LAGUNA", ">= 3.3.3"] ],
+  NeededOtherPackages := [ ["GAPDoc", ">= 0.99999"], ["LAGUNA", ">= 3.4"] ],
   SuggestedOtherPackages := [ ["qaos", ">= main-1.0.19"] ],
   ExternalConditions := [ "partially needs cURL (http://curl.haxx.se)" ]
 ),

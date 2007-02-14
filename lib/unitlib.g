@@ -82,7 +82,7 @@ if n=128 then
 elif n=243 then
   
   Info( LAGInfo, 1, "Calling Curl from the QaoS package ..." );
-  code[1] := Curl( Concatenation("http://homepages.vub.ac.be/~okonoval/",
+  code[1] := Curl( Concatenation("http://www.cs.st-andrews.ac.uk/~alexk/",
                                  "unitlib/data/243/u243_", 
 				  String(nLibNumber), ".txt" ) );
   Info( LAGInfo, 1, "Data retrieved successfully, starting generation of V(KG) ..." );
