@@ -32,7 +32,7 @@ local datapath, testresult, size, missing, n, libfile, s;
       Print( n, "\r");
       
       if IsPrimeInt( size ) then
-        libfile := Concatenation( datapath, "primeord/", 
+        libfile := Concatenation( datapath, "primeord", 
 		   "/u", String(size), "_", String(n) );
       else      
         libfile := Concatenation( datapath, String(size), 
