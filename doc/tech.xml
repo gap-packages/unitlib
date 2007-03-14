@@ -12,7 +12,8 @@ the group <M>V(KG)</M> from the stored information.
 To compute the pc-presentation of the normalized unit group of 
 the modular group algebra of a finite <M>p</M>-group we used the 
 function <C>PcNormalizedUnitGroup</C> from the &LAGUNA; package.
-It uses the algorithm descibed in <Cite Key="Bovdi" />.
+It uses the algorithm descibed in <Cite Key="Bovdi" />. See the
+&LAGUNA; manual <Cite Key="Laguna" /> for more details.
 <P/>
 
 When this group is computed, the main idea is to use &GAP; 
@@ -50,8 +51,8 @@ its image in the pc-presentation of the normalized unit group
 The group <M>G</M> is extracted from the &GAP; Small Groups
 Library, so it is always the same, unless its description in
 the library will be changed (and it will be an important task
-of &UnitLib; maintaner to update the package!), and here
-we are safe from inconsistencies. 
+of &UnitLib; maintaner to update the package in this case!), 
+and here we are safe from inconsistencies. 
 <P/>
 
 But the next stage is the computation of generators of the normalized
@@ -77,8 +78,8 @@ will access them using the <C>Curl</C> function from the &QaoS;
 package <Cite Key="QaoS" />.
 <P/>
 
-For the reader interested in more details, we included in package 
-archive the file <File>unitlib/lib/genlib.g</File> with the 
+For the reader interested in more details, the package contains
+the file <File>unitlib/lib/genlib.g</File> with the 
 function <C>CreatePcNormalizedUnitGroupsLibrary</C>, that creates
 library files for groups of a given prime power order, and the file
 <File>unitlib/lib/genpar.g</File> with the function

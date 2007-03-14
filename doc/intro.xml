@@ -11,12 +11,13 @@ be the normalized unit group of <M>KG</M>.
 
 The pc-presentation of the group <M>V(KG)</M> 
 can be computed using the &GAP; package &LAGUNA;
-(<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/laguna.htm</URL>), but for 
-groups of orders 64 and bigger this computation will already take a lot of time. 
+(<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/laguna.htm</URL>), 
+but for groups of orders 64 and more such computation will already 
+take a lot of time. 
 <P/>
 
 The &UnitLib; package is an extension of the &LAGUNA; package that is 
-aimed on this problem. It contains the library of normalized unit groups
+focused on this problem. It contains the library of normalized unit groups
 of modular group algebras of finite <M>p</M>-groups over the field
 of <M>p</M> elements. This allows the user to retrieve the pre-computed
 group from the library instead of the long-time computation. The group
@@ -41,8 +42,8 @@ can compute them for you.
 Since the &UnitLib; package is an extension of the &LAGUNA; package 
 <Cite Key="Laguna"/>, we refer to the 
 <Ref Label="LAGUNA package" BookName="LAGUNA"/> manual for the theoretical 
-backround. In particular, in the Chapter 3 
-(The basic theory behind &LAGUNA;) of that manual you will find definitions
+backround. In particular, Chapter 3 
+(The basic theory behind &LAGUNA;) of that manual contains definitions
 of the modular group algebra and its normalized unit group, the 
 power-commutator presentation of the group, and also more details about the 
 algorithm for the computation of the pc-presentation of the normalized unit 
@@ -63,9 +64,9 @@ except for the order 128, will be available in any operating system.
 <P/>
 
 The library for groups of order
-128 was compressed using <File>gzip</File> program and, therefore, will be 
-available only in UNIX-type systems (including UNIX-installation in Mac OS X
-and Cygwin installation in Windows).
+128 was compressed using the <File>gzip</File> program and, therefore, 
+will be available only in UNIX-type systems (including UNIX-installation 
+in Mac OS X and Cygwin installation in Windows).
 <P/> 
 
 To work with the library for groups of
@@ -97,7 +98,7 @@ To use the &UnitLib; online help it is necessary to install the &GAP;4 package
 
 &UnitLib; is distributed in standard formats
 (<File>zoo</File>, <File>tar.gz</File>, <File>tar.bz2</File>, 
-<File>-win.zip</File>) and can be obtained the &GAP; homepage or from 
+<File>-win.zip</File>) and can be obtained from the &GAP; homepage or from 
 <URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/unitlib.htm</URL>.
 To unpack the archive <File>unitlib-2.1.zoo</File> you need the program 
 <File>unzoo</File>, which can be obtained from the &GAP; homepage 

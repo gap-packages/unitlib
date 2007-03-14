@@ -71,17 +71,19 @@ of <M>p</M> elements.
 </Copyright>
   
 <Acknowledgements>
-The first version of the package as well as the subsequent version 2.1 
-were released in 2006, when the first author was the postdoctoral 
+The first version of the package (as well as the subsequent version 2.1)
+was released in 2006, when the first author was a postdoctoral 
 research collaborator at the Vrije Universiteit Brussels, Belgium. 
 It is a pleasure of the first author to express his gratitude to 
 Prof. Dr. Eric Jespers for his warm hospitality and to acknowledge 
-the support of the Francqui Stichting grant ADSI107.
+the support provided by the Francqui Stichting grant ADSI107.
 <P/>
 
 Both authors are very grateful to the members of the &GAP; team: 
-Thomas Breuer, Stefan Kohl and Frank L&#252;beck for useful suggestions.
-Also we acknowledge very much the Centre for Interdisciplinary Research in 
+Thomas Breuer, Stefan Kohl and Frank L&#252;beck for helpful suggestions. 
+We would like to acknowledge Bettina Eick for communicating the package,
+and the referee for testing &UnitLib; and useful commnets. 
+Finally, we wish to thank the Centre for Interdisciplinary Research in 
 Computational Algebra of the University of St Andrews and the 
 Computational Cluster of the Kiev National Taras Shevchenko University
 for offering their computer facilities for computations.
