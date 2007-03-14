@@ -30,7 +30,7 @@ gap>
 </Example>
 
 In case of non-UNIX system, a warning will be displayed about the non-availability
-of the library of normalized unit groups for groups of order 128. 
+of the library of normalized unit groups for groups of orders 128 and 243. 
    
 <Section Label="MainFunctions">
 <Heading>MainFunctions</Heading>
@@ -103,13 +103,38 @@ gap> G:=UnderlyingGroup(KG);
 ]]>
 </Example>
 
-If the order <A>s</A> is not a power of prime, an error message will appear.
-If <A>s</A> is bigger than 128, you will get a warning telling that
+Moreover, the original group can be embedded into the output of the
+<C>PcNormalizedUnitGroupSmallGroup</C>, as it is shown in the continuation
+of the previous example:
+
+<Example>
+<![CDATA[
+gap> f:=Embedding(G,V1); 
+[ f1, f2, f3 ] -> [ f2, f1, f3 ]
+gap> g:=List(GeneratorsOfGroup(G), x -> x^f ); 
+[ f2, f1, f3 ]
+gap> G1:=Subgroup(V1,g);
+Group([ f2, f1, f3 ])
+gap> IdGroup(G1);
+[ 8, 3 ]
+]]>
+</Example>
+
+If the first argument <A>s</A> (the order of a group) is not a power of 
+prime, an error message will appear.
+If <A>s</A> is bigger than 243, you will get a warning telling that
 the library does not contain <M>V(KG)</M> for <M>G</M> of such order, 
 and you can use only data stored by yourself in your 
 <File>unitlib/userdata</File> directory with the help of the function
 <Ref Func="SavePcNormalizedUnitGroup" />.
+<P/>
 
+It is worth to mention that for some groups of order 243, the construction 
+of the normalized unit group using <C>PcNormalizedUnitGroupSmallGroup</C> 
+may already require some noticeable amount of time. For example, it took 
+about 166 seconds of CPU time to compute 
+<C>PcNormalizedUnitGroupSmallGroup(243,30)</C> 
+on Intel Xeon 3.4 GHz with 2048 KB cache.
 
 <ManSection>
    <Prop Name="SavePcNormalizedUnitGroup" 
@@ -130,7 +155,7 @@ and you can use only data stored by yourself in your
 	 group <M>V(KG)</M> of the group algebra of the group 
 	 <A>G</A> over the field of <M>p</M> elements. 
 	 <P/>
-	 If the order of <A>G</A> is greater than 128, after this 
+	 If the order of <A>G</A> is greater than 243, after this 
 	 you can construct the group <M>V(KG)</M> using  
          <Ref Func="PcNormalizedUnitGroupSmallGroup" /> similarly
 	 to the previous section.
@@ -141,7 +166,7 @@ and you can use only data stored by yourself in your
 	 If there will be no such file there, you will get an error
 	 message, otherwise the computation will begin.
 	 <P/>
-	 If the order of <A>G</A> is less or equal to 128, then
+	 If the order of <A>G</A> is less or equal to 243, then
 	 the file will be created in the <File>unitlib/userdata</File>
 	 directory, but &UnitLib; will continue to use the file
 	 with the same name from the appropriate directory in 

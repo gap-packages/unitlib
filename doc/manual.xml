@@ -13,7 +13,7 @@
 <TitlePage>
   <Title>&UnitLib;</Title>
   <Subtitle>The library of normalized unit groups of modular group algebras</Subtitle>
-  <Version>Version 2.0</Version>
+  <Version>Version 2.1</Version>
 
   <Author>Alexander Konovalov
           <Email>konovalov@member.ams.org</Email>
@@ -36,7 +36,7 @@
           </Address> 
   </Author>
 
-  <Date>February 2007</Date>
+  <Date>March 2007</Date>
 
 <Abstract>
 
@@ -66,24 +66,25 @@ of <M>p</M> elements.
 
   A. Konovalov and E. Yakimenko. 
   <E>UnitLib --- The library of normalized unit groups of modular group 
-     algebras, Version 2.0;</E> 2007 
+     algebras, Version 2.1;</E> 2007 
      (<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/unitlib.htm</URL>).
 </Copyright>
   
 <Acknowledgements>
-We are very grateful to the members of the &GAP; team: Thomas Breuer,
-Stefan Kohl, Frank L&#252;beck for useful suggestions.
+The first version of the package as well as the subsequent version 2.1 
+were released in 2006, when the first author was the postdoctoral 
+research collaborator at the Vrije Universiteit Brussels, Belgium. 
+It is a pleasure of the first author to express his gratitude to 
+Prof. Dr. Eric Jespers for his warm hospitality and to acknowledge 
+the support of the Francqui Stichting grant ADSI107.
 <P/>
 
-We acknowledge very much the Centre for Interdisciplinary Research in 
-Computational Algebra of the University of St Andrews for possibility
-to use its computer facilities.
-<P/>
-
-The main amount of computations was performed 
-on the Computational Cluster of Kiev National Taras
-Shevchenko University, created with the support of
-Intel corporation (<URL>http://www.cluster.kiev.ua</URL>).
+Both authors are very grateful to the members of the &GAP; team: 
+Thomas Breuer, Stefan Kohl and Frank L&#252;beck for useful suggestions.
+Also we acknowledge very much the Centre for Interdisciplinary Research in 
+Computational Algebra of the University of St Andrews and the 
+Computational Cluster of the Kiev National Taras Shevchenko University
+for offering their computer facilities for computations.
 </Acknowledgements>
 
 </TitlePage>

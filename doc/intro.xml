@@ -35,6 +35,21 @@ can compute them for you.
 
 </Section>
 
+<Section Label="TheoryUnitlib">
+<Heading>Theoretical background</Heading>
+
+Since the &UnitLib; package is an extension of the &LAGUNA; package 
+<Cite Key="Laguna"/>, we refer to the 
+<Ref Label="LAGUNA package" BookName="LAGUNA"/> manual for the theoretical 
+backround. In particular, in the Chapter 3 
+(The basic theory behind &LAGUNA;) of that manual you will find definitions
+of the modular group algebra and its normalized unit group, the 
+power-commutator presentation of the group, and also more details about the 
+algorithm for the computation of the pc-presentation of the normalized unit 
+group of a modular group algebra of a finite <M>p</M>-group.
+
+</Section>
+
 
 <Section Label="Install">
 <Heading>Installation and system requirements</Heading>
@@ -84,14 +99,15 @@ To use the &UnitLib; online help it is necessary to install the &GAP;4 package
 (<File>zoo</File>, <File>tar.gz</File>, <File>tar.bz2</File>, 
 <File>-win.zip</File>) and can be obtained the &GAP; homepage or from 
 <URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/unitlib.htm</URL>.
-To unpack the archive <File>unitlib-2.0.zoo</File> you need the program 
+To unpack the archive <File>unitlib-2.1.zoo</File> you need the program 
 <File>unzoo</File>, which can be obtained from the &GAP; homepage 
 <URL>http://www.gap-system.org/</URL> (see section `Distribution').
 To install &UnitLib;, copy this archive into the <File>pkg</File> 
 subdirectory of your &GAP;4.4 installation. Then the subdirectory 
 <File>unitlib</File> containing the package will be created in 
-the <File>pkg</File> directory after the command
-<C>unzoo -x unitlib-2.0.zoo</C>
+the <File>pkg</File> directory after the command<P/>
+
+<C>unzoo -x unitlib-2.1.zoo</C>
 
 </Section>
 
