@@ -57,15 +57,17 @@ and can be computed immediately whenever <M>V(KG)</M> is known.
 <P/>
 
 In the program below we enumerate all groups of size 64 and check
-the conjecture (we do not exclude from consideration other cases
-when the conjecture is known to be true for <M> p=2 </M>, because  
-this is beyond the task of this manual).
+the conjecture (we do not exclude from consideration some particular
+cases when the conjecture is known to be true for <M>p=2</M>, 
+because this is beyond the task of this manual).
 
 <Example>
 <![CDATA[
 gap> for n in [ 1 .. NrSmallGroups( 64 ) ] do
 > if not IsAbelian( SmallGroup( 64, n ) ) then
+>   Print( n, "\r" );
 >   V := PcNormalizedUnitGroupSmallGroup( 64, n );
+>   KG := UnderlyingGroupRing( V );
 >   if LieLowerNilpotencyIndex( KG ) <>
 >      LieUpperNilpotencyIndex( KG ) then
 >     Print( n," - counterexample !!! \n" );
@@ -89,6 +91,7 @@ of modular group algebras of nonabelian groups of order 128:
 gap> cl := [];
 gap> for n in [ 1 .. NrSmallGroups( 128 ) ] do
 > if not IsAbelian( SmallGroup( 128, n ) ) then
+>   Print( n, "\r" );
 >   V := PcNormalizedUnitGroupSmallGroup( 128, n );  
 >   AddSet( cl, NilpotencyClassOfGroup( V ) );
 > fi;

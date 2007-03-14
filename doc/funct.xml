@@ -3,9 +3,9 @@
 <Heading>&UnitLib; functions</Heading>
 
 Since the main purpose of &UnitLib; is the storage of large amount
-of data, it has only two main user functions: to read the description
-of <M>V(KG)</M> for the given catalogue number of <M>G</M> in the 
-Small Groups Libary of the &GAP; system, and to save the description 
+of data, it has only two main user functions, which allow to read the 
+description of <M>V(KG)</M> for the given catalogue number of <M>G</M> 
+in the Small Groups Libary of the &GAP; system, and to save the description 
 of <M>V(KG)</M> if the user would like to store it for further usage 
 for the group that is not contained in the library.
 <P/>
@@ -20,7 +20,7 @@ To use the &UnitLib; package first you need to load it as follows:
 <![CDATA[
 gap> LoadPackage("unitlib");
 ----------------------------------------------------------------------------
-Loading  UnitLib 1.0 (Library of normalized unit groups of modular group algebras)
+Loading  UnitLib 2.1 (Library of normalized unit groups of modular group algebras)
 by Alexander Konovalov (http://www.cs.st-andrews.ac.uk/~alexk/) and
    Elena Yakimenko (k-algebra@zsu.zp.ua).
 ----------------------------------------------------------------------------
@@ -29,7 +29,7 @@ gap>
 ]]>
 </Example>
 
-In case of non-UNIX system, a warning will be displayed about the non-availability
+In case of a non-UNIX system, a warning will be displayed about non-availability
 of the library of normalized unit groups for groups of orders 128 and 243. 
    
 <Section Label="MainFunctions">
@@ -44,7 +44,7 @@ of the library of normalized unit groups for groups of orders 128 and 243.
    <Description>
          Let <A>s</A> be a power of prime <M>p</M> and
 	 <A>n</A> is an integer from <C>[ 1 .. NrSmallGroups(s) ]</C>.
-	 <C>PcNormalizedUnitGroupSmallGroup(<A>s</A>,<A>n</A>)</C> 
+	 Then <C>PcNormalizedUnitGroupSmallGroup(<A>s</A>,<A>n</A>)</C> 
 	 returns the normalized unit group <M>V(KG)</M> 
 	 of the modular group algebra <M>KG</M>, where
 	 <M>G</M> is <C>SmallGroup(<A>s</A>,<A>n</A>)</C>
@@ -75,7 +75,7 @@ gap> PcNormalizedUnitGroup( KG );
 Nevertheless, <C>PcNormalizedUnitGroupSmallGroup</C>
 is not just a shortcut for such computation. It reads the description
 of the normalized unit group from the &UnitLib; library and then 
-reconstructs all its other necessary attributes and properties.
+reconstructs all its necessary attributes and properties.
 Thus, if you would like to obtain the group algebra <M>KG</M> or the
 field <M>K</M> and the group <M>G</M>, you should extract them from
 <M>V(KG)</M>, which should be constructed first.
@@ -103,7 +103,7 @@ gap> G:=UnderlyingGroup(KG);
 ]]>
 </Example>
 
-Moreover, the original group can be embedded into the output of the
+Moreover, the original group <M>G</M> can be embedded into the output of the
 <C>PcNormalizedUnitGroupSmallGroup</C>, as it is shown in the continuation
 of the previous example:
 
@@ -124,7 +124,7 @@ If the first argument <A>s</A> (the order of a group) is not a power of
 prime, an error message will appear.
 If <A>s</A> is bigger than 243, you will get a warning telling that
 the library does not contain <M>V(KG)</M> for <M>G</M> of such order, 
-and you can use only data stored by yourself in your 
+and you can use only data that you already stored in your 
 <File>unitlib/userdata</File> directory with the help of the function
 <Ref Func="SavePcNormalizedUnitGroup" />.
 <P/>
@@ -161,7 +161,7 @@ on Intel Xeon 3.4 GHz with 2048 KB cache.
 	 to the previous section.
 	 The preliminary warning will be displayed, telling that
 	 for such orders you can use only those groups that were
-	 already computed and saved by you to the 
+	 already computed by the user and saved to the 
 	 <File>unitlib/userdata</File> directory. 
 	 If there will be no such file there, you will get an error
 	 message, otherwise the computation will begin.
