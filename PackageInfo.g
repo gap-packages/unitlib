@@ -11,9 +11,9 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "2.0",
-Date := "18/08/2006",
-ArchiveURL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/unitlib-2.0",
+Version := "2.1",
+Date := "14/03/2007",
+ArchiveURL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/unitlib-2.1",
 ArchiveFormats := ".tar.gz .tar.bz2 -win.zip",
 
 #TextFiles := ["init.g", ......],
