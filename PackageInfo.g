@@ -12,7 +12,7 @@ SetPackageInfo( rec(
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
 Version := "2.1",
-Date := "14/03/2007",
+Date := "23/03/2007",
 ArchiveURL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/unitlib-2.1",
 ArchiveFormats := ".tar.gz .tar.bz2 -win.zip",
 
@@ -50,9 +50,9 @@ Persons := [
      )
 ],
 
-Status := "deposited",
-# CommunicatedBy := "",
-# AcceptDate := "",
+Status := "accepted",
+CommunicatedBy := "Bettina Eick (Braunschweig)",
+AcceptDate := "03/2007",
 
 README_URL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/README.unitlib",
 PackageInfoURL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/PackageInfo.g",
@@ -71,8 +71,10 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">=4.4",
-  NeededOtherPackages := [ ["GAPDoc", ">= 0.99999"], ["LAGUNA", ">= 3.4"] ],
-  SuggestedOtherPackages := [ ["qaos", ">= main-1.0.19"] ],
+  NeededOtherPackages := [ ["GAPDoc", ">= 0.99999"], 
+                           ["LAGUNA", ">= 3.4"], 
+                           ["qaos", ">= main-1.0.19"] ],
+  SuggestedOtherPackages := [ ],
   ExternalConditions := [ "partially needs cURL (http://curl.haxx.se)" ]
 ),
 
