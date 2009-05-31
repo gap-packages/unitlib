@@ -6,6 +6,7 @@
 [<!ENTITY LAGUNA "<Package>LAGUNA</Package>">]
 [<!ENTITY UnitLib "<Package>UnitLib</Package>">]
 [<!ENTITY QaoS "<Package>Qaos</Package>">]
+[<!ENTITY SCSCP "<Package>SCSCP</Package>">]
 [<!ENTITY ParGAP "<Package>ParGAP</Package>">] >
 
 <Book Name="UnitLib">
@@ -46,11 +47,15 @@ The &UnitLib; package extends the &LAGUNA; package and provides the
 library of normalized unit groups of modular group algebras of all 
 finite <M>p</M>-groups of order not greater than 243 over the field 
 of <M>p</M> elements.
-
+<P/>
+It also contains a parallel implementation of the computation of the 
+normalized unit group of a modular group algebra of a finite 
+<M>p</M>-group (which should be retrieved from the &GAP; Small Groups 
+Library) over the field of <M>p</M> elements.
 </Abstract>
 
 <Copyright>
-  &copyright; 2006-2007 by Alexander Konovalov and Elena Yakimenko<P/>
+  &copyright; 2006-2009 by Alexander Konovalov and Elena Yakimenko<P/>
 
   &UnitLib; is free software; you can redistribute it and/or modify it 
   under the terms of the GNU General Public License as published by 
@@ -82,7 +87,7 @@ the support provided by the Francqui Stichting grant ADSI107.
 Both authors are very grateful to the members of the &GAP; team: 
 Thomas Breuer, Stefan Kohl and Frank L&#252;beck for helpful suggestions. 
 We would like to acknowledge Bettina Eick for communicating the package,
-and the referee for testing &UnitLib; and useful commnets. 
+and the referee for testing &UnitLib; and useful comments. 
 Finally, we wish to thank the Centre for Interdisciplinary Research in 
 Computational Algebra of the University of St Andrews and the 
 Computational Cluster of the Kiev National Taras Shevchenko University

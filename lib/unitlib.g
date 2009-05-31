@@ -23,7 +23,7 @@ if n > 243 then
          " is not available yet !!! \n", 
 	 "You can use only groups from the unitlib/userdata directory \n",
 	 "in case if you already computed their descriptions \n",
-	 "(See the manual for SavePcNormalizedUnitGroup) \n" );
+	 "(See the manual for SavePcNormalizedUnitGroup).\n" );
 fi;
 G := SmallGroup( n, nLibNumber );
 p := PrimePGroup( G );
