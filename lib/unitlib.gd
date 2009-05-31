@@ -17,9 +17,20 @@ DeclareGlobalFunction( "PcNormalizedUnitGroupSmallGroup" );
 
 #############################################################################
 #
+# ParPcNormalizedUnitGroup( KG ) and related functions
+#
+DeclareGlobalFunction( "ParPcNormalizedUnitGroup" );
+DeclareGlobalFunction( "NormalizedUnitCFpower" );
+DeclareGlobalFunction( "NormalizedUnitCFcommutator" );
+
+
+#############################################################################
+#
 # SavePcNormalizedUnitGroup( G )
+# ParSavePcNormalizedUnitGroup( G )
 #
 DeclareGlobalFunction( "SavePcNormalizedUnitGroup" );
+DeclareGlobalFunction( "ParSavePcNormalizedUnitGroup" );
 
 
 #############################################################################
