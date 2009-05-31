@@ -42,7 +42,7 @@ of the computation of <M>V(KG)</M> from scratch.
 <P/>
 
 There is one more thing that needs to be stored together with
-this code to make it sure that we will correctly indentify the
+this code to make it sure that we will correctly identify the
 underlying group <M>G</M> of the group algebra <M>KG</M> with 
 its image in the pc-presentation of the normalized unit group
 <M>V(KG)</M>. 
@@ -112,7 +112,7 @@ We also create <M>G</M> using the &GAP; Small Groups Library.
 
 Now to "glue" <M>V(KG)</M> with the underlying group <M>G</M>
 properly, the value of the attribute <C>DimensionBasis</C> of 
-<M>G</M> is setted in accordance with the data retrieved from 
+<M>G</M> is set in accordance with the data retrieved from 
 the library. This will guarantee the correct construction of
 <C>NaturalBijectionToPcNormalizedUnitGroup</C> and
 <C>NaturalBijectionToNormalizedUnitGroup</C> by the &LAGUNA; package.

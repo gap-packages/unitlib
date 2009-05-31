@@ -5,9 +5,9 @@
 Since the main purpose of &UnitLib; is the storage of large amount
 of data, it has only two main user functions, which allow to read the 
 description of <M>V(KG)</M> for the given catalogue number of <M>G</M> 
-in the Small Groups Libary of the &GAP; system, and to save the description 
-of <M>V(KG)</M> if the user would like to store it for further usage 
-for the group that is not contained in the library.
+in the Small Groups Library of the &GAP; system, and to save the 
+description of <M>V(KG)</M> if the user would like to store it for 
+the further usage for the group that is not contained in the library.
 <P/>
 
 Examples below contain some functions from the &LAGUNA; package
@@ -25,7 +25,6 @@ by Alexander Konovalov (http://www.cs.st-andrews.ac.uk/~alexk/) and
    Elena Yakimenko (k-algebra@zsu.zp.ua).
 ----------------------------------------------------------------------------
 true
-gap>
 ]]>
 </Example>
 
@@ -94,7 +93,7 @@ gap> IsomorphismGroups(V,V1);
 [ f1, f2, f3, f4, f5, f6, f7 ] -> [ f1, f2, f3, f4, f5, f6, f7 ]
 gap> KG:=UnderlyingGroupRing(V1);  # now the correct way
 <algebra-with-one over GF(2), with 3 generators>
-gap> V1=PcNormalizedUnitGroup(KG); # V1 is an attribite of KG
+gap> V1=PcNormalizedUnitGroup(KG); # V1 is an attribute of KG
 true
 gap> K:=UnderlyingField(KG);
 GF(2)
@@ -104,8 +103,7 @@ gap> G:=UnderlyingGroup(KG);
 </Example>
 
 Moreover, the original group <M>G</M> can be embedded into the output of the
-<C>PcNormalizedUnitGroupSmallGroup</C>, as it is shown in the continuation
-of the previous example:
+<C>PcNormalizedUnitGroupSmallGroup</C>, as it is shown in the next example:
 
 <Example>
 <![CDATA[
@@ -137,7 +135,9 @@ about 166 seconds of CPU time to compute
 on Intel Xeon 3.4 GHz with 2048 KB cache.
 
 <ManSection>
-   <Prop Name="SavePcNormalizedUnitGroup" 
+   <Func Name="SavePcNormalizedUnitGroup" 
+         Arg="G" />
+   <Func Name="ParSavePcNormalizedUnitGroup" 
          Arg="G" />
    <Returns>
          true
@@ -173,16 +173,18 @@ on Intel Xeon 3.4 GHz with 2048 KB cache.
 	 <File>unitlib/data</File>. You can compare these two files 
 	 to make it sure that they are the same.
 	 <P/>
-	 <B>WARNINGS:</B> 
+	 <B>NOTE THAT:</B> 
 	 <P/>
-	 1. It is important to apply this function to the
-	 underlying group <M>G</M> and not to the normalized unit group
-	 <M>V(KG)</M>.
+	 1. The argument should be the underlying group <M>G</M> 
+	 and not the normalized unit group <M>V(KG)</M>.
 	 <P/>
-	 2. The user should use as an argument only 
-	 groups from the Small Groups Library of the &GAP; system, 
+	 2. The argument should be a group from the &GAP; Small Groups Library
 	 constructed with the help of <C>SmallGroup(s,n)</C>, otherwise
-	 the consistency of data may be lost.
+	 the date consistency may be lost.
+	 <P/>
+	 <Ref Func="ParSavePcNormalizedUnitGroup" /> works in the same
+	 way, but uses the function <C>ParPcNormalizedUnitGroup</C> to
+	 parallelise the computation using the &GAP; package &SCSCP;.
    </Description>
 </ManSection>
 
@@ -195,10 +197,8 @@ WARNING : the library of V(KG) for groups of order
 256 is not available yet !!!
 You can use only groups from the unitlib/userdata directory
 in case if you already computed their descriptions
-(See the manual for SavePcNormalizedUnitGroup)
-
-Description of V(KG) for G=SmallGroup(256,
-56092) accepted, started its generation
+(See the manual for SavePcNormalizedUnitGroup).
+Description of V(KG) for G=SmallGroup(256, 56092) accepted, started its generation
 <pc group of size
 57896044618658097711785492504343953926634992332820282019728792003956564819968
   with 255 generators>
