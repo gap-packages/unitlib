@@ -11,9 +11,10 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "2.1",
-Date := "23/03/2007",
-ArchiveURL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/unitlib-2.1",
+Version := "3.0.0",
+Date := "31/05/2009",
+ArchiveURL := Concatenation( 
+	[ "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/unitlib-", ~.Version ] ),
 ArchiveFormats := ".tar.gz .tar.bz2 -win.zip",
 
 #TextFiles := ["init.g", ......],
@@ -74,7 +75,7 @@ Dependencies := rec(
   NeededOtherPackages := [ ["GAPDoc", ">= 0.99999"], 
                            ["LAGUNA", ">= 3.4"], 
                            ["qaos", ">= main-1.0.19"] ],
-  SuggestedOtherPackages := [ ],
+  SuggestedOtherPackages := [ ["SCSCP", ">=1.1.4"] ],
   ExternalConditions := [ "partially needs cURL (http://curl.haxx.se)" ]
 ),
 

@@ -1,6 +1,15 @@
-LoadPackage("scscp");
+#############################################################################
+##  
+#W  parunits.g             The UnitLib package            Alexander Konovalov
+#W                                                            Elena Yakimenko
+##
+#H  $Id$
+##
+#############################################################################
 
-WS_NormalizedUnitCFpower := function( arg )
+
+InstallGlobalFunction( NormalizedUnitCFpower, 
+function( arg )
 local id, p, i, KG, e, wb, coef, f, fgens, w, j;
 id:=arg[1][1];
 p:=arg[1][2];
@@ -27,10 +36,11 @@ else
 	w := String(w);
 fi;	
 return [ i, w ];
-end;
+end);
 
 
-WS_NormalizedUnitCFcommutator := function( arg )
+InstallGlobalFunction( NormalizedUnitCFcommutator,
+function( arg )
 local id, p, i, j, KG, e, wb, coef, f, fgens, w, k;
 id:=arg[1][1];
 p:=arg[1][2];
@@ -58,10 +68,11 @@ else
 	w := String(w^-1);
 fi;	
 return [ j, i, w ];
-end;
+end);
 
 
-ParPcNormalizedUnitGroup := function( KG ) 
+InstallGlobalFunction( ParPcNormalizedUnitGroup,
+function( KG ) 
     local id, i, j, e, wb, lwb, f, rels, rels1, rels2, fgens, w, 
           listargs, coeffs, res, coef, k, U, z, p, t, coll, r;
 
@@ -91,7 +102,7 @@ ParPcNormalizedUnitGroup := function( KG )
                        " elements of weighted basis");     
                        
       listargs := List( [1..lwb], i -> [ id, p, i ] );                     
-      rels1 := ParListWithSCSCP( listargs, "WS_NormalizedUnitCFpower" );
+      rels1 := ParListWithSCSCP( listargs, "NormalizedUnitCFpower" );
 
       for i in [ 1 .. Length(rels1) ] do
           if rels1[i][2] = "" then
@@ -120,7 +131,7 @@ ParPcNormalizedUnitGroup := function( KG )
                                          List( [ i+1 .. lwb ], j -> 
                                                [ id, p, i, j ] ) ) );  
                                                
-        rels2 := ParListWithSCSCP( listargs, "WS_NormalizedUnitCFcommutator" );     
+        rels2 := ParListWithSCSCP( listargs, "NormalizedUnitCFcommutator" );     
 
         for i in [ 1 .. Length(rels2) ] do
         	if rels2[i][3] = "" then
@@ -142,4 +153,44 @@ ParPcNormalizedUnitGroup := function( KG )
       SetUnderlyingGroupRing(U,KG);     
       return U;
     fi;
-    end;
+end);
+
+
+#############################################################################
+#
+# ParSavePcNormalizedUnitGroup( G )
+#
+InstallGlobalFunction( ParSavePcNormalizedUnitGroup,
+function( G )
+local p, K, KG, V, codestring, libfile, output, d, x;
+if not IsPGroup( G ) then
+  Error( "<G> is not a p-group !!! \n" );
+fi;
+if Size(G) <= 243 then
+  Print( "WARNING : the normalized unit group V(KG) of the modular group algebra \n",
+         " of the given group <G> is already included in the library and \n", 
+	 "You can access it using the function PcNormalizedUnitGroupSmallGroup.\n",
+	 "The description you are going to generate will be stored in the directory \n",
+	 "unitlib/userdata, but will be not used by PcNormalizedUnitGroupSmallGroup. \n" );
+fi;
+p := PrimePGroup( G );
+K := GF( p );
+KG:= GroupRing( K, G );
+V := ParPcNormalizedUnitGroup( KG );
+codestring := HexStringInt( CodePcGroup( V ) );
+libfile := Concatenation( 
+             GAPInfo.PackagesInfo.( "unitlib" )[1].InstallationPath,
+             "/userdata/u",
+             String( IdGroup( G )[1] ), "_",
+             String( IdGroup( G )[2] ), ".g");
+output := OutputTextFile( libfile, false );
+SetPrintFormattingStatus( output, false );
+PrintTo(  output, "return [ " );
+AppendTo( output, "\042", codestring, "\042" );
+AppendTo( output, ", ");
+AppendTo( output, [ List( DimensionBasis( G ).dimensionBasis, ExtRepOfObj), 
+                    DimensionBasis( G ).weights ] );
+AppendTo( output, " ];" );
+CloseStream( output );
+return true; 
+end );
