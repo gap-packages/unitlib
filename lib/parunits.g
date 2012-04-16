@@ -3,8 +3,6 @@
 #W  parunits.g             The UnitLib package            Alexander Konovalov
 #W                                                            Elena Yakimenko
 ##
-#H  $Id$
-##
 #############################################################################
 
 

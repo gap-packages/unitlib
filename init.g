@@ -3,8 +3,6 @@
 #W  init.g                 The UnitLib package            Alexander Konovalov
 #W                                                            Elena Yakimenko
 ##
-#H  $Id$
-##
 #############################################################################
 
 # read function declarations
