@@ -3,8 +3,6 @@
 #W  unitlib.gi             The UnitLib package            Alexander Konovalov
 #W                                                            Elena Yakimenko
 ##
-#H  $Id$
-##
 #############################################################################
 
 
