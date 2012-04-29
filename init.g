@@ -12,10 +12,8 @@ ReadPackage("unitlib/lib/unitlib.gd");
 ReadPackage("unitlib/lib/unitlib.g");
 ReadPackage("unitlib/lib/buildman.g");
 
-if LoadPackage( "scscp" ) = true then
-  if CompareVersionNumbers( GAPInfo.PackagesInfo.("scscp")[1].Version, "1.1.4" ) then
-  	ReadPackage("unitlib/lib/parunits.g");
-  fi;	
+if IsPackageMarkedForLoading( "scscp", "2,0" ) then
+  ReadPackage("unitlib/lib/parunits.g");
 fi;
 
 if not ARCH_IS_UNIX() then
