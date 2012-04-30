@@ -9,14 +9,17 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "3.0.0",
-Date := "31/05/2009",
-ArchiveURL := Concatenation( 
-	[ "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/unitlib-", ~.Version ] ),
-ArchiveFormats := ".tar.gz .tar.bz2 -win.zip",
+Version := "3.1.0",
+Date := "30/04/2012",
+##  <#GAPDoc Label="PKGVERSIONDATA">
+##  <!ENTITY VERSION "3.1.0">
+##  <!ENTITY RELEASEDATE "30 April 2012">
+##  <#/GAPDoc>
 
-#TextFiles := ["init.g", ......],
-#BinaryFiles := ["doc/manual.dvi", ......],
+PackageWWWHome := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/",
+
+ArchiveURL := Concatenation( ~.PackageWWWHome, "unitlib-", ~.Version ),
+ArchiveFormats := ".tar.gz",
 
 Persons := [
   rec(
@@ -24,7 +27,7 @@ Persons := [
     FirstNames    := "Alexander",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "konovalov@member.ams.org",
+    Email         := "alexk@mcs.st-andrews.ac.uk",
     WWWHome       := "http://www.cs.st-andrews.ac.uk/~alexk/",
     PostalAddress := Concatenation( [
                      "School of Computer Science\n",
@@ -38,12 +41,7 @@ Persons := [
     LastName      := "Yakimenko",
     FirstNames    := "Elena",
     IsAuthor      := true,
-    IsMaintainer  := true,
-    Email         := "k-algebra@zsu.zp.ua",
-    PostalAddress := Concatenation( [
-                     "Department of Mathematics\n",
-                     "Zaporozhye National University\n", 
-                     "Zaporozhye, 69600 Ukraine" ] ),
+    IsMaintainer  := false,
     Place         := "Zaporozhye",
     Institution   := "Zaporozhye National University"
      )
@@ -53,10 +51,12 @@ Status := "accepted",
 CommunicatedBy := "Bettina Eick (Braunschweig)",
 AcceptDate := "03/2007",
 
-README_URL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/README.unitlib",
-PackageInfoURL := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/PackageInfo.g",
+README_URL := 
+  Concatenation( ~.PackageWWWHome, "README" ),
+PackageInfoURL := 
+  Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+  
 AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order not greater than 243 over the field of p elements.",
-PackageWWWHome := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib.htm",
                   
 PackageDoc := rec(
   BookName := "UnitLib",
@@ -69,17 +69,17 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.4",
-  NeededOtherPackages := [ ["GAPDoc", ">= 0.99999"], 
-                           ["LAGUNA", ">= 3.4"], 
-                           ["qaos", ">= main-1.0.19"] ],
-  SuggestedOtherPackages := [ ["SCSCP", ">=1.1.4"] ],
-  ExternalConditions := [ "partially needs cURL (http://curl.haxx.se)" ]
+  GAP := ">=4.5",
+  NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"], 
+                           ["IO", "3.0"],
+                           ["LAGUNA", ">= 3.6"] ],
+  SuggestedOtherPackages := [ ["SCSCP", ">=2.0"] ],
+  ExternalConditions := [ "gzip (only for p=128)" ]
 ),
 
 AvailabilityTest := ReturnTrue,
 Autoload := false,
-#TestFile := "tst/testall.g",
+TestFile := "tst/testall.g",
 
 Keywords := ["group ring", "modular group algebra", "normalized unit group"]
 
