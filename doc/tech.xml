@@ -1,5 +1,5 @@
 <Chapter Label="Theory">
-<Heading>Details of implementation</Heading>    
+<Heading>Implementation Details</Heading>    
 
 In this chapter we describe the approach used to store the normalized
 unit group of the group algebra in the library, and to reconstruct
@@ -73,8 +73,8 @@ this is not the case for groups of order 243, where we have about
 on the base of Web-services. The information about the dimension
 basis is stored locally, while the codes for polycyclic generating
 sequences are available from the &UnitLib; homepage, and the package 
-will access them using the <C>Curl</C> function from the &QaoS; 
-package <Cite Key="QaoS" />.
+will access them using the function <Ref Func="SingleHTTPRequest" BookName="IO"/>
+from the <Package>IO</Package> package.
 <P/>
 
 For the reader interested in more details, the package contains
@@ -105,23 +105,25 @@ for the computation of this code.
 <P/>
 
 Then <M>V(KG)</M> is created from the code 
-using the &GAP; function <C>PcGroupCode</C>. 
+using the &GAP; function <Ref Func="PcGroupCode" BookName="ref"/>. 
 We also create <M>G</M> using the &GAP; Small Groups Library.
 <P/>
 
-Now to "glue" <M>V(KG)</M> with the underlying group <M>G</M>
-properly, the value of the attribute <C>DimensionBasis</C> of 
+Now to <Q>glue</Q> the group <M>V(KG)</M> with the underlying group <M>G</M>
+properly, the value of the attribute <Ref Attr="DimensionBasis" BookName="LAGUNA"/> of 
 <M>G</M> is set in accordance with the data retrieved from 
 the library. This will guarantee the correct construction of
-<C>NaturalBijectionToPcNormalizedUnitGroup</C> and
-<C>NaturalBijectionToNormalizedUnitGroup</C> by the &LAGUNA; package.
+<Ref Attr="NaturalBijectionToPcNormalizedUnitGroup" BookName="LAGUNA"/>
+and <Ref Attr="NaturalBijectionToNormalizedUnitGroup" BookName="LAGUNA"/>
+by the &LAGUNA; package.
 <P/>
 
 It remains now to make only several technical steps, such as
 constructing the group algebra <M>KG</M> over the appropriate
 field <M>K</M>, and storing <M>KG</M> in the attribute 
-<C>UnderlyingGroupRing</C> of <M>V(KG)</M> and <M>V(KG)</M> 
-in the attribute <C>PcNormalizedUnitGroup</C> of <M>KG</M>. 
+<Ref Attr="UnderlyingGroupRing" BookName="LAGUNA"/> of <M>V(KG)</M> 
+and <M>V(KG)</M> in the attribute 
+<Ref Attr="PcNormalizedUnitGroup" BookName="LAGUNA"/> of <M>KG</M>. 
 
 </Section>
 
