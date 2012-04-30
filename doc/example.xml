@@ -16,8 +16,7 @@ generators in terms of group algebra elements:
 gap> IdGroup(DihedralGroup(128));
 [ 128, 161 ]
 gap> V := PcNormalizedUnitGroupSmallGroup( 128, 161 );
-<pc group of size 170141183460469231731687303715884105728 
-  with 127 generators>
+<pc group of size 170141183460469231731687303715884105728 with 127 generators>
 gap> C := Center( V );           
 <pc group with 34 generators>  
 gap> gens := MinimalGeneratingSet( C );;
@@ -25,14 +24,12 @@ gap> KG := UnderlyingGroupRing( V );
 <algebra-with-one over GF(2), with 7 generators>
 gap> f := NaturalBijectionToNormalizedUnitGroup( KG );;
 gap> gens[8]^f;
-(Z(2)^0)*f3+(Z(2)^0)*f4+(Z(2)^0)*f7+(Z(2)^0)*f3*f4+(Z(2)^
-0)*f3*f5+(Z(2)^0)*f3*f6+(Z(2)^0)*f3*f7+(Z(2)^0)*f4*f5+(Z(2)^
-0)*f4*f6+(Z(2)^0)*f4*f7+(Z(2)^0)*f3*f4*f5+(Z(2)^0)*f3*f4*f6+(
-Z(2)^0)*f3*f4*f7+(Z(2)^0)*f3*f5*f6+(Z(2)^0)*f3*f5*f7+(Z(2)^
-0)*f3*f6*f7+(Z(2)^0)*f4*f5*f6+(Z(2)^0)*f4*f5*f7+(Z(2)^
-0)*f4*f6*f7+(Z(2)^0)*f3*f4*f5*f6+(Z(2)^0)*f3*f4*f5*f7+(Z(2)^
-0)*f3*f4*f6*f7+(Z(2)^0)*f3*f5*f6*f7+(Z(2)^0)*f4*f5*f6*f7+(Z(2)^
-0)*f3*f4*f5*f6*f7
+(Z(2)^0)*f3+(Z(2)^0)*f4+(Z(2)^0)*f7+(Z(2)^0)*f3*f4+(Z(2)^0)*f3*f5+(Z(2)^
+0)*f3*f6+(Z(2)^0)*f3*f7+(Z(2)^0)*f4*f5+(Z(2)^0)*f4*f6+(Z(2)^0)*f4*f7+(Z(2)^
+0)*f3*f4*f5+(Z(2)^0)*f3*f4*f6+(Z(2)^0)*f3*f4*f7+(Z(2)^0)*f3*f5*f6+(Z(2)^
+0)*f3*f5*f7+(Z(2)^0)*f3*f6*f7+(Z(2)^0)*f4*f5*f6+(Z(2)^0)*f4*f5*f7+(Z(2)^
+0)*f4*f6*f7+(Z(2)^0)*f3*f4*f5*f6+(Z(2)^0)*f3*f4*f5*f7+(Z(2)^0)*f3*f4*f6*f7+(
+Z(2)^0)*f3*f5*f6*f7+(Z(2)^0)*f4*f5*f6*f7+(Z(2)^0)*f3*f4*f5*f6*f7
 ]]>
 </Example>
 
@@ -64,7 +61,6 @@ because this is beyond the task of this manual).
 <![CDATA[
 gap> for n in [ 1 .. NrSmallGroups( 64 ) ] do
 > if not IsAbelian( SmallGroup( 64, n ) ) then
->   Print( n, "\r" );
 >   V := PcNormalizedUnitGroupSmallGroup( 64, n );
 >   KG := UnderlyingGroupRing( V );
 >   if LieLowerNilpotencyIndex( KG ) <>
@@ -74,7 +70,6 @@ gap> for n in [ 1 .. NrSmallGroups( 64 ) ] do
 >   fi;
 > fi;
 > od;
-gap>
 ]]>
 </Example>
 
@@ -83,20 +78,19 @@ Thus, the test was finished without finding a counterexample.
 
 In the next example we will answer the question about 
 possible nilpotency classes of normalized unit groups 
-of modular group algebras of nonabelian groups of order 128:
+of modular group algebras of nonabelian groups of order 64:
 
 <Example>
 <![CDATA[
-gap> cl := [];
-gap> for n in [ 1 .. NrSmallGroups( 128 ) ] do
-> if not IsAbelian( SmallGroup( 128, n ) ) then
->   Print( n, "\r" );
->   V := PcNormalizedUnitGroupSmallGroup( 128, n );  
+gap> cl := [];;
+gap> for n in [ 1 .. NrSmallGroups( 64 ) ] do
+> if not IsAbelian( SmallGroup( 64, n ) ) then
+>   V := PcNormalizedUnitGroupSmallGroup( 64, n );  
 >   AddSet( cl, NilpotencyClassOfGroup( V ) );
 > fi;
 > od;
 gap> cl;
-[ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 16, 32 ]
+[ 2, 3, 4, 5, 6, 7, 8, 16 ]
 ]]>
 </Example>
 
