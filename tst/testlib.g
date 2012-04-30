@@ -23,11 +23,12 @@ local datapath, testresult, size, missing, n, libfile, s;
   for size in Filtered( [ 2 .. 243 ], IsPrimePowerInt) do
 
     missing := [];
-    Print( NrSmallGroups(size), " group(s) of order ", size, "\n" );
+    
+    # Print( NrSmallGroups(size), " group(s) of order ", size, "\n" );
 
     for n in [ 1 .. NrSmallGroups( size ) ] do
 
-      Print( n, "\r");
+      # Print( n, "\r");
       
       if IsPrimeInt( size ) then
         libfile := Concatenation( datapath, "primeord", 
@@ -51,9 +52,11 @@ local datapath, testresult, size, missing, n, libfile, s;
       fi;
       
       if size=243 then
-        s:=Curl( Concatenation( "http://www.cs.st-andrews.ac.uk/~alexk/",
-                                "unitlib/data/243/u243_", String(n), ".txt" ) );
-	# if we are non online, Curl will return empty string
+        s:= SingleHTTPRequest( "www.cs.st-andrews.ac.uk", 80, "GET", 
+              Concatenation( "/~alexk/unitlib/data/243/u243_",  String(n), ".txt"), 
+              rec( ), false, false ).body;
+       
+	# if we are not online, we will get the wrong string
 	if s <> "" then		
 	  # if the file is missing on the server, 
 	  # we can not perform the next command 
@@ -68,9 +71,9 @@ local datapath, testresult, size, missing, n, libfile, s;
     fi;
   od;
   if testresult then
-    Print("Test finished successfully !!! \n");
+    Print("UnitLib library is complete - no missing files!!!\n");
   else
-    Print("Test finished with problems !!! \n");
+    Print("UnitLib library is incomplete - some files are not available!!!\n");
   fi;
 end;
 
