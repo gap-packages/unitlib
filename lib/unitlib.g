@@ -41,8 +41,9 @@ elif n=128 then
 
   if not ARCH_IS_UNIX() then
     Error("UnitLib package : the library of normalized unit groups \n", 
-          "of modular group algebras of groups of order 128 \n",
-  	  "is not available because of non-UNIX operating system !!! \n");
+          "of modular group algebras of groups of order 128 is compressed\n",
+  	      "with gzip. To read it under Windows you need to unpack it manually\n",
+  	      "and adjust the package code to read .g file instead of .gz\n");
   fi;
   gzfile := Concatenation( 
                GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,
@@ -52,14 +53,18 @@ elif n=128 then
 
 elif n=243 then
 
-  if not ARCH_IS_UNIX() then
-    Error("UnitLib package : the library of normalized unit groups \n", 
-          "of modular group algebras of groups of order 243 \n",
-  	  "is not available because of non-UNIX operating system !!! \n");
-  fi;
   libfile := Concatenation(                                                         
                GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,                
 	       "/data/243/", filename, ".gg" );
+
+elif not n in [2..243] then
+
+  # Probably the group was computed and saved by the user. 
+  # If not, the error will occur later
+
+  libfile := Concatenation(                                                         
+               GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,                
+	       "/userdata/", filename, ".g" );
 
 else
 
@@ -79,10 +84,10 @@ if n=128 then
 
 elif n=243 then
   
-  Info( LAGInfo, 1, "Calling Curl from the QaoS package ..." );
-  code[1] := Curl( Concatenation("http://www.cs.st-andrews.ac.uk/~alexk/",
-                                 "unitlib/data/243/u243_", 
-				  String(nLibNumber), ".txt" ) );
+  code[1] := SingleHTTPRequest( "www.cs.st-andrews.ac.uk", 80, "GET", 
+       Concatenation( "/~alexk/unitlib/data/243/u243_",  String(nLibNumber), ".txt"), 
+       rec( ), false, false ).body;
+				  
   Info( LAGInfo, 1, "Data retrieved successfully, starting generation of V(KG) ..." );
 
 elif n>243 then
