@@ -1,34 +1,37 @@
 <Chapter Label="Funct">
 <Heading>&UnitLib; functions</Heading>
 
-Since the main purpose of &UnitLib; is the storage of large amount
-of data, it has only two main user functions, which allow to read the 
+Since the main purpose of &UnitLib; is the date storage,
+it has only two main user functions to read the 
 description of <M>V(KG)</M> for the given catalogue number of <M>G</M> 
 in the Small Groups Library of the &GAP; system, and to save the 
 description of <M>V(KG)</M> if the user would like to store it for 
-the further usage for the group that is not contained in the library.
-<P/>
-
-Examples below contain some functions from the &LAGUNA; package
-<Cite Key="Laguna"/>, see their description in the &LAGUNA; manual.
+the further usage for the group which is not contained in the library.
 <P/>
 
 To use the &UnitLib; package first you need to load it as follows:
 
-<Example>
+<Log>
 <![CDATA[
 gap> LoadPackage("unitlib");
 ----------------------------------------------------------------------------
-Loading  UnitLib 3.0.0 (Library of normalized unit groups of modular group algebras)
+Loading  UnitLib 3.1.0 (The library of normalized unit groups of modular group algebras)
 by Alexander Konovalov (http://www.cs.st-andrews.ac.uk/~alexk/) and
-   Elena Yakimenko (k-algebra@zsu.zp.ua).
+   Elena Yakimenko.
+Homepage: http://www.cs.st-andrews.ac.uk/~alexk/unitlib/
 ----------------------------------------------------------------------------
 true
 ]]>
-</Example>
+</Log>
 
-In case of a non-UNIX system, a warning will be displayed about non-availability
-of the library of normalized unit groups for groups of orders 128 and 243. 
+Under Windows, a warning will be displayed about non-availability
+of the library of normalized unit groups for groups of orders 128.
+<P/>
+
+Examples below contain some functions from the &LAGUNA; package
+<Cite Key="Laguna"/>, see their description in the &LAGUNA; manual
+(<Ref Label="LAGUNA package" BookName="LAGUNA"/>).
+<P/>
    
 <Section Label="MainFunctions">
 <Heading>MainFunctions</Heading>
@@ -46,9 +49,12 @@ of the library of normalized unit groups for groups of orders 128 and 243.
 	 returns the normalized unit group <M>V(KG)</M> 
 	 of the modular group algebra <M>KG</M>, where
 	 <M>G</M> is <C>SmallGroup(<A>s</A>,<A>n</A>)</C>
+	 (see <Ref Func="SmallGroup" BookName="ref"/>)
 	 and <M>K</M> is a field of <M>p</M> elements.
    </Description>
 </ManSection>
+
+<Alt Only="LaTeX">\newpage</Alt>
 
 <Example>
 <![CDATA[
@@ -58,7 +64,7 @@ gap> PcNormalizedUnitGroupSmallGroup(128,161);
 </Example>
 
 The result returned by <C>PcNormalizedUnitGroupSmallGroup</C>
-will be equivalent to the following sequence of commands:
+is equivalent to the following:
  
 <Log>                                                                         
 <![CDATA[                                                                         
@@ -104,6 +110,8 @@ gap> G:=UnderlyingGroup(KG);
 Moreover, the original group <M>G</M> can be embedded into the output of the
 <C>PcNormalizedUnitGroupSmallGroup</C>, as it is shown in the next example:
 
+<Alt Only="LaTeX">\newpage</Alt>
+
 <Example>
 <![CDATA[
 gap> f:=Embedding(G,V1); 
@@ -144,7 +152,8 @@ on Intel Xeon 3.4 GHz with 2048 KB cache.
    <Description>
          Let <A>G</A> be a finite <M>p</M>-group of order <M>s</M>
 	 from the Small Groups Library of the &GAP; system, 
-	 constructed with the help of <C>SmallGroup(s,n)</C>. Then
+	 constructed with the help of <C>SmallGroup(s,n)</C>
+	 (see <Ref Func="SmallGroup" BookName="ref"/>). Then
 	 <C>SavePcNormalizedUnitGroup(<A>G</A>)</C> 
          creates the file with the name of the form 
 	 <File>us&uscore;n.g</File> in the directory 
@@ -187,62 +196,25 @@ on Intel Xeon 3.4 GHz with 2048 KB cache.
    </Description>
 </ManSection>
 
+<Alt Only="LaTeX">\newpage</Alt>
+
 <Example>
 <![CDATA[
 gap> SavePcNormalizedUnitGroup( SmallGroup( 256, 56092 ) );
 true
 gap> PcNormalizedUnitGroupSmallGroup( 256, 56092 );
-WARNING : the library of V(KG) for groups of order
-256 is not available yet !!!
-You can use only groups from the unitlib/userdata directory
-in case if you already computed their descriptions
+WARNING : the library of V(KG) for groups of order 
+256 is not available yet !!! 
+You can use only groups from the unitlib/userdata directory 
+in case if you already computed their descriptions 
 (See the manual for SavePcNormalizedUnitGroup).
-Description of V(KG) for G=SmallGroup(256, 56092) accepted, started its generation
-<pc group of size
+#I  Description of V(KG) for G=SmallGroup(256,
+56092) accepted, started its generation...
+<pc group of size 
 57896044618658097711785492504343953926634992332820282019728792003956564819968
   with 255 generators>
 ]]>
 </Example>
-
-</Section>
-
-
-<Alt Only="LaTeX">\newpage</Alt>
-
-
-<Section Label="Service">
-<Heading>Service tools</Heading>
-
-<ManSection>
-   <Func Name="UNITLIBBuildManual" 
-         Arg=""
-	 Comm="requires GAPDoc, UNIX or Linux and TeX" />
-   <Description>
-      This function is used to build the manual in the following formats:
-      DVI, PDF, PS, HTML and text for online help.
-      We recommend that the user should have a recent and fairly
-      complete &TeX; distribution.
-      Since &UnitLib; is distributed together with its manual,
-      it is not necessary for the user to use this function. Normally
-      it is intended to be used by the developers only. This is the only 
-      function of &UnitLib; which requires UNIX/Linux environment.
-   </Description>
-</ManSection>
-
-
-<ManSection>
-   <Func Name="UNITLIBBuildManualHTML" 
-         Arg=""
-	 Comm="requires only GAPDoc" />
-   <Description>
-      This fuction is used to build the manual only in HTML format.
-      This does not depend on the availability of the &TeX; installation
-      and works under Windows and MacOS as well.
-      Since &UnitLib; is distributed together with its manual,
-      it is not necessary for the user to use this function. Normally
-      it is intended to be used by the developers only.
-   </Description>
-</ManSection>
 
 </Section>
 
