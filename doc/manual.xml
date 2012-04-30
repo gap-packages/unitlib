@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE Book SYSTEM "gapdoc.dtd"
-[<!ENTITY LAGUNA "<Package>LAGUNA</Package>">]
-[<!ENTITY UnitLib "<Package>UnitLib</Package>">]
-[<!ENTITY QaoS "<Package>Qaos</Package>">]
-[<!ENTITY SCSCP "<Package>SCSCP</Package>">]
-[<!ENTITY ParGAP "<Package>ParGAP</Package>">] >
+    [<!ENTITY LAGUNA "<Package>LAGUNA</Package>">]
+    [<!ENTITY UnitLib "<Package>UnitLib</Package>">]
+    [<!ENTITY SCSCP "<Package>SCSCP</Package>">]
+    [<!ENTITY ParGAP "<Package>ParGAP</Package>">]
+    <#Include Label="PKGVERSIONDATA">      
+    ] >
 
 <Book Name="UnitLib">
 
 <TitlePage>
   <Title>&UnitLib;</Title>
   <Subtitle>The library of normalized unit groups of modular group algebras</Subtitle>
-  <Version>Version 3.0.0</Version>
+  <Version>Version &VERSION;</Version>
 
   <Author>Alexander Konovalov
-          <Email>konovalov@member.ams.org</Email>
+          <Email>alexk@mcs.st-andrews.ac.uk</Email>
 	      <Homepage>http://www.cs.st-andrews.ac.uk/&tilde;alexk/</Homepage>
           <Address>
             School of Computer Science<Br/>
@@ -26,16 +27,14 @@
   </Author>
 
   <Author>Elena Yakimenko
-          <Email>k-algebra@zsu.zp.ua</Email>
           <Address>
             Department of Mathematics<Br/>
             Zaporozhye National University<Br/>
-            Ul.Zhukovskogo, 66, Zaporozhye<Br/>
-	        69600 Ukraine
+            Zaporozhye, Ukraine
           </Address> 
   </Author>
 
-  <Date>31 May 2009</Date>
+  <Date>&RELEASEDATE;</Date>
 
 <Abstract>
 
@@ -53,7 +52,7 @@ Library) over the field of <M>p</M> elements.
 </Abstract>
 
 <Copyright>
-  &copyright; 2006-2009 by Alexander Konovalov and Elena Yakimenko<P/>
+  &copyright; 2006-2012 by Alexander Konovalov and Elena Yakimenko<P/>
 
   &UnitLib; is free software; you can redistribute it and/or modify it 
   under the terms of the GNU General Public License as published by 
@@ -69,8 +68,8 @@ Library) over the field of <M>p</M> elements.
 
   A. Konovalov and E. Yakimenko. 
   <E>UnitLib --- The library of normalized unit groups of modular group 
-     algebras, Version 3.0.0;</E> 2009 
-     (<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/unitlib.htm</URL>).
+     algebras, Version &VERSION;</E>, 2012 
+     (<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/unitlib/</URL>).
 </Copyright>
   
 <Acknowledgements>
