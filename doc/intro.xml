@@ -10,7 +10,7 @@ be the normalized unit group of <M>KG</M>.
 
 The pc-presentation of the group <M>V(KG)</M> 
 can be computed using the &GAP; package &LAGUNA;
-(<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/laguna.htm</URL>), 
+(<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/laguna/</URL>), 
 but for groups of orders 64 and more such computation will already 
 take a lot of time. 
 <P/>
@@ -19,11 +19,11 @@ The &UnitLib; package is an extension of the &LAGUNA; package that is
 focused on this problem. It contains the library of normalized unit groups
 of modular group algebras of finite <M>p</M>-groups over the field
 of <M>p</M> elements. This allows the user to retrieve the pre-computed
-group from the library instead of the long-time computation. The group
+group from the library instead of the time-consuming computation. The group
 created with &UnitLib; will have the same properties and attributes as
 the one computed with &LAGUNA;.
 <P/>
-The version &UnitLib; 3.0.0 released in May 2009 also contains a parallel 
+The version &UnitLib; 3.0.0 released in May 2009 also contained a parallel 
 implementation of the computation of the normalized unit group of a modular
 group algebra of a finite <M>p</M>-group over the field of <M>p</M> elements,
 which works for groups from the &GAP; small groups library. It is developed
@@ -32,13 +32,14 @@ any <M>p</M>-group with no limitations) from the &LAGUNA; package.
 Parallelisation is implemented using the &SCSCP; package that is capable of
 connecting several local or remote &GAP; instances using the &SCSCP; protocol.
 <P/>
-
+In April 2012, &UnitLib; 3.1.0 was updated to comply with &GAP; 4.5. 
+<P/>
 The current version of &UnitLib; provides the library of 
 normalized unit groups <M>V(KG)</M> for all <M>p</M>-groups 
 of order not greater than 243. 
 <P/>
 If you need to work with groups of bigger orders, please write to 
-the authors, because we may already have them computed or 
+the maintainers, because they may be already computed or we 
 can compute them for you.
 <P/>
 
@@ -63,8 +64,8 @@ group of a modular group algebra of a finite <M>p</M>-group.
 <Section Label="Install">
 <Heading>Installation and system requirements</Heading>
 
-&UnitLib; is designed for &GAP;4.4 and no compatibility with previous 
-releases of &GAP;4 is guaranteed. 
+&UnitLib; &VERSION; is designed for &GAP; 4.5 and no compatibility with 
+previous releases of &GAP; 4 is guaranteed. 
 <P/>
 
 Libraries of normalized unit groups of groups of orders less than 243, 
@@ -74,22 +75,15 @@ except for the order 128, will be available in any operating system.
 The library for groups of order
 128 was compressed using the <File>gzip</File> program and, therefore, 
 will be available only in UNIX-type systems (including UNIX-installation 
-in Mac OS X and Cygwin installation in Windows).
+in Mac OS X and Cygwin installation in Windows). If you need to work with 
+groups of order 128 in Windows, please write to the maintainer to request 
+a version of &UnitLib; with locally stored non-compressed data. 
 <P/> 
 
-To work with the library for groups of
-order 243 you will also need the <File>Curl</File> program 
-(<URL>http://curl.haxx.se</URL>) to retrieve the data from the 
-UnitLib homepage, and the &GAP; package &QaoS; 
-(<URL>http://www.gap-system.org/Packages/qaos.html</URL>) 
-which provides the &GAP; function <C>Curl</C> to work with 
-<File>cURL</File>.  
-<P/>
-
-If you need to work with groups of order 128 or 243 in Windows
-environment or you can not use <File>Curl</File>, please write
-to the authors. We will be able to give you a version of
-&UnitLib; with locally stored non-compressed data. 
+To work with the library for groups of order 243 you will also need the
+<Package>IO</Package> package by Max Neunhöffer 
+(<URL>http://www-groups.mcs.st-and.ac.uk/~neunhoef/Computer/Software/Gap/io.html</URL>)
+to retrieve the data from the &UnitLib; homepage.
 <P/>
  
 Because the &UnitLib; is an extension of the &LAGUNA; package, you must
@@ -99,24 +93,23 @@ homepage or from its homepage
 <P/>
 
 To use the &UnitLib; online help it is necessary to install the &GAP;4 package 
-&GAPDoc; by Frank L\"ubeck and Max Neunh\"offer, which is available from the 
+&GAPDoc; by Frank Lübeck and Max Neunhöffer, which is available from the 
 &GAP; homepage or from 
 <URL>http://www.math.rwth-aachen.de/&tilde;Frank.Luebeck/GAPDoc/</URL>.
 <P/> 
 
 &UnitLib; is distributed in standard formats
-(<File>zoo</File>, <File>tar.gz</File>, <File>tar.bz2</File>, 
+(<File>tar.gz</File>, <File>tar.bz2</File>, <File>.zip</File>,
 <File>-win.zip</File>) and can be obtained from the &GAP; homepage or from 
-<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/unitlib.htm</URL>.
-To unpack the archive <File>unitlib-X.X.X.zoo</File> you need the program 
-<File>unzoo</File>, which can be obtained from the &GAP; homepage 
-<URL>http://www.gap-system.org/</URL> (see section `Distribution').
-To install &UnitLib;, copy this archive into the <File>pkg</File> 
-subdirectory of your &GAP;4.4 installation. Then the subdirectory 
-<File>unitlib</File> containing the package will be created in 
-the <File>pkg</File> directory after the command<P/>
-
-<C>unzoo -x unitlib-X.X.X.zoo</C>
+<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/unitlib/</URL>.
+To install &UnitLib;, unpack its archive into the <File>pkg</File> 
+subdirectory of your &GAP;4.5 installation. When you don't have access 
+to the directory of your main &GAP; installation, you can also install 
+the package <E>outside the &GAP; main directory</E>
+by unpacking it inside a directory <File>MYGAPDIR/pkg</File>. 
+Then to be able to load &UnitLib; you need to call &GAP; with the 
+<C>-l ";MYGAPDIR"</C> option.
+<P/>
 
 </Section>
 
