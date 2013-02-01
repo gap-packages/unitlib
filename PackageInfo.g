@@ -9,10 +9,10 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "3.1.2",
+Version := "3.1.3",
 Date := "01/02/2013",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "3.1.2">
+##  <!ENTITY VERSION "3.1.3">
 ##  <!ENTITY RELEASEDATE "01 February 2013">
 ##  <#/GAPDoc>
 
