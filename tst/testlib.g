@@ -72,8 +72,10 @@ local datapath, testresult, size, missing, n, libfile, s;
   od;
   if testresult then
     Print("UnitLib library is complete - no missing files!!!\n");
+    return true;
   else
     Print("UnitLib library is incomplete - some files are not available!!!\n");
+    return false;
   fi;
 end;
 
