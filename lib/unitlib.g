@@ -107,6 +107,7 @@ V := PcGroupCode( IntHexString(code[1]), p^(n-1) );
 SetIsGroupOfUnitsOfMagmaRing( V, false );
 SetIsNormalizedUnitGroupOfGroupRing( V, true );
 SetIsPGroup( V, true );
+SetPrimePGroup( V, p );
 SetPcNormalizedUnitGroup( KG, V );
 SetUnderlyingGroupRing( V, KG );
 return V;

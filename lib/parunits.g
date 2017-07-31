@@ -148,6 +148,7 @@ function( KG )
       SetIsGroupOfUnitsOfMagmaRing(U,false);
       SetIsNormalizedUnitGroupOfGroupRing(U,true);
       SetIsPGroup(U, true);
+      SetPrimePGroup(U, p);
       SetUnderlyingGroupRing(U,KG);     
       return U;
     fi;
