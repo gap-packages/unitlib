@@ -39,7 +39,7 @@
   [33X[0;0YLet [3Xs[103X be a power of prime [22Xp[122X and [3Xn[103X is an integer from [10X[ 1 .. NrSmallGroups(s)
   ][110X.  Then  [10XPcNormalizedUnitGroupSmallGroup([3Xs[103X[10X,[3Xn[103X[10X)[110X  returns  the normalized unit
   group [22XV(KG)[122X of the modular group algebra [22XKG[122X, where [22XG[122X is [10XSmallGroup([3Xs[103X[10X,[3Xn[103X[10X)[110X (see
-  [2XSmallGroup[102X  ([14XReference:  SmallGroup (for group order and index)[114X)) and [22XK[122X is a
+  [2XSmallGroup[102X  ([14XReference:  SmallGroup  for  group order and index[114X)) and [22XK[122X is a
   field of [22Xp[122X elements.[133X
   
   [4X[32X  Example  [32X[104X
@@ -128,7 +128,7 @@
   
   [33X[0;0YLet  [3XG[103X  be  a finite [22Xp[122X-group of order [22Xs[122X from the Small Groups Library of the
   [5XGAP[105X  system,  constructed  with  the help of [10XSmallGroup(s,n)[110X (see [2XSmallGroup[102X
-  ([14XReference:    SmallGroup    (for    group    order   and   index)[114X)).   Then
+  ([14XReference:    SmallGroup    for    group    order    and    index[114X)).   Then
   [10XSavePcNormalizedUnitGroup([3XG[103X[10X)[110X  creates  the  file  with  the name of the form
   [11Xus_n.g[111X  in the directory [11Xunitlib/userdata[111X, and returns [9Xtrue[109X if this file was
   successfully generated. This file contains the description of the normalized
