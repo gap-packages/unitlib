@@ -16,8 +16,8 @@
   <Version>Version &VERSION;</Version>
 
   <Author>Alexander Konovalov
-          <Email>alexk@mcs.st-andrews.ac.uk</Email>
-	      <Homepage>http://www.cs.st-andrews.ac.uk/&tilde;alexk/</Homepage>
+          <Email>alexander.konovalov@st-andrews.ac.uk</Email>
+	      <Homepage>https://alexk.host.cs.st-andrews.ac.uk</Homepage>
           <Address>
             School of Computer Science<Br/>
             University of St Andrews<Br/>
@@ -52,7 +52,7 @@ Library) over the field of <M>p</M> elements.
 </Abstract>
 
 <Copyright>
-  &copyright; 2006-2012 by Alexander Konovalov and Elena Yakimenko<P/>
+  &copyright; 2006-&RELEASEYEAR; by Alexander Konovalov and Elena Yakimenko<P/>
 
   &UnitLib; is free software; you can redistribute it and/or modify it 
   under the terms of the GNU General Public License as published by 
@@ -68,8 +68,8 @@ Library) over the field of <M>p</M> elements.
 
   A. Konovalov and E. Yakimenko. 
   <E>UnitLib --- The library of normalized unit groups of modular group 
-     algebras, Version &VERSION;</E>, 2012 
-     (<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/unitlib/</URL>).
+     algebras, Version &VERSION;</E>, &RELEASEYEAR; 
+     (<URL>http://gap-packages.github.io/unitlib/</URL>).
 </Copyright>
   
 <Acknowledgements>

@@ -9,16 +9,26 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "3.2.0",
-Date := "11/11/2014",
+Version := "3.3.0",
+Date := "24/09/2017",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "3.2.0">
-##  <!ENTITY RELEASEDATE "11 November 2014">
+##  <!ENTITY VERSION "3.3.0">
+##  <!ENTITY RELEASEDATE "24 September 2017">
+##  <!ENTITY RELEASEYEAR "2017">
 ##  <#/GAPDoc>
 
-PackageWWWHome := "http://www.cs.st-andrews.ac.uk/~alexk/unitlib/",
+SourceRepository := rec(
+    Type := "git",
+    URL := Concatenation( "https://github.com/gap-packages/", LowercaseString(~.PackageName) ),
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+PackageWWWHome  := Concatenation( "https://gap-packages.github.io/", LowercaseString(~.PackageName) ),
+README_URL      := Concatenation( ~.PackageWWWHome, "/README.md" ),
+PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
+ArchiveURL      := Concatenation( ~.SourceRepository.URL,
+                                 "/releases/download/v", ~.Version,
+                                 "/", LowercaseString(~.PackageName), "-", ~.Version ),
 
-ArchiveURL := Concatenation( ~.PackageWWWHome, "unitlib-", ~.Version ),
 ArchiveFormats := ".tar.gz",
 
 Persons := [
@@ -27,8 +37,8 @@ Persons := [
     FirstNames    := "Alexander",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "alexk@mcs.st-andrews.ac.uk",
-    WWWHome       := "http://www.cs.st-andrews.ac.uk/~alexk/",
+    Email         := "alexander.konovalov@st-andrews.ac.uk",
+    WWWHome       := "https://alexk.host.cs.st-andrews.ac.uk",
     PostalAddress := Concatenation( [
                      "School of Computer Science\n",
                      "University of St Andrews\n",
@@ -51,15 +61,6 @@ Status := "accepted",
 CommunicatedBy := "Bettina Eick (Braunschweig)",
 AcceptDate := "03/2007",
 
-README_URL := 
-  Concatenation( ~.PackageWWWHome, "README" ),
-PackageInfoURL := 
-  Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-SourceRepository := rec( 
-  Type := "hg", 
-  URL := "https://bitbucket.org/gap-system/unitlib"
-),
-IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),  
 AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order not greater than 243 over the field of p elements.",
                   
 PackageDoc := rec(
@@ -73,7 +74,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.5",
+  GAP := ">=4.8",
   NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"], 
                            ["IO", "3.0"],
                            ["LAGUNA", ">= 3.6"] ],
@@ -82,7 +83,6 @@ Dependencies := rec(
 ),
 
 AvailabilityTest := ReturnTrue,
-Autoload := false,
 TestFile := "tst/testall.g",
 
 Keywords := ["group ring", "modular group algebra", "normalized unit group"]
