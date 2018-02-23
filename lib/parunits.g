@@ -16,7 +16,7 @@ name := Concatenation( "GroupRingOfSmallGroup", String(id[1]), "_", String(id[2]
 if not IsBoundGlobal( name ) then
 	BindGlobal( name, GroupRing( GF(p), SmallGroup(id) ) );
 fi;
-KG := EvalString( name );
+KG := ValueGlobal( name );
 e := One( KG );
 wb := WeightedBasis( KG );
 f := FreeGroup( Length(wb.weightedBasis) );
@@ -48,7 +48,7 @@ name := Concatenation( "GroupRingOfSmallGroup", String(id[1]), "_", String(id[2]
 if not IsBoundGlobal( name ) then
 	BindGlobal( name, GroupRing( GF(p), SmallGroup(id) ) );
 fi;
-KG := EvalString( name );
+KG := ValueGlobal( name );
 e := One( KG );
 wb := WeightedBasis( KG );
 f := FreeGroup( Length(wb.weightedBasis) );
