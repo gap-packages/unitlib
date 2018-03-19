@@ -1,6 +1,6 @@
 name: UnitLib
 version: 3.3.0
-date: 24/09/2017
+date: 2017-09-24
 description: |
     Library of normalized unit groups of modular group algebras
 
@@ -24,7 +24,7 @@ needed-pkgs:
       url: "https://gap-packages.github.io/io"
     - name: "LAGUNA"
       version: ">= 3.6"
-      url: "http://www.cs.st-andrews.ac.uk/~alexk/laguna/"
+      url: "https://gap-packages.github.io/laguna"
 
 suggested-pkgs:
     - name: "SCSCP"
