@@ -30,11 +30,11 @@ gap> G:=UnderlyingGroup(KG);
 # unitlib/doc/funct.xml:115-126
 
 gap> f:=Embedding(G,V1); 
-[ f1, f2, f3 ] -> [ f2, f1, f3 ]
+[ f1, f2, f3 ] -> [ f1, f2, f4 ]
 gap> g:=List(GeneratorsOfGroup(G), x -> x^f ); 
-[ f2, f1, f3 ]
+[ f1, f2, f4 ]
 gap> G1:=Subgroup(V1,g);
-Group([ f2, f1, f3 ])
+Group([ f1, f2, f4 ])
 gap> IdGroup(G1);
 [ 8, 3 ]
 
