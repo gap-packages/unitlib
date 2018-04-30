@@ -17,8 +17,8 @@ local datapath, testresult, size, missing, n, libfile, s;
 
   datapath := Concatenation(
                 GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath, 
-	        "/data/" );
-  testresult := true;		
+            "/data/" );
+  testresult := true;       
 
   for size in Filtered( [ 2 .. 243 ], IsPrimePowerInt) do
 
@@ -28,14 +28,14 @@ local datapath, testresult, size, missing, n, libfile, s;
 
     for n in [ 1 .. NrSmallGroups( size ) ] do
 
-      # Print( n, "\r");
+      Print( n, "\r");
       
       if IsPrimeInt( size ) then
         libfile := Concatenation( datapath, "primeord", 
-		   "/u", String(size), "_", String(n) );
+           "/u", String(size), "_", String(n) );
       else      
         libfile := Concatenation( datapath, String(size), 
-		   "/u", String(size), "_", String(n) );
+           "/u", String(size), "_", String(n) );
       fi;
 
       if size=128 then
@@ -48,7 +48,7 @@ local datapath, testresult, size, missing, n, libfile, s;
 
       if not IsExistingFile(libfile) then
         Add( missing, n );
-	testresult := false;
+    testresult := false;
       fi;
       
       if size=243 then
@@ -56,12 +56,12 @@ local datapath, testresult, size, missing, n, libfile, s;
               Concatenation( "/~alexk/unitlib/data/243/u243_",  String(n), ".txt"), 
               rec( ), false, false ).body;
        
-	# if we are not online, we will get the wrong string
-	if s <> "" then		
-	  # if the file is missing on the server, 
-	  # we can not perform the next command 
+    # if we are not online, we will get the wrong string
+    if s <> "" then     
+      # if the file is missing on the server, 
+      # we can not perform the next command 
           s:=IntHexString(s);
-	fi;
+    fi;
       fi;
 
     od;
