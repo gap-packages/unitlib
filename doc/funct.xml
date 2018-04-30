@@ -49,7 +49,8 @@ Examples below contain some functions from the &LAGUNA; package
 	 returns the normalized unit group <M>V(KG)</M> 
 	 of the modular group algebra <M>KG</M>, where
 	 <M>G</M> is <C>SmallGroup(<A>s</A>,<A>n</A>)</C>
-	 (see <Ref Func="SmallGroup" BookName="ref"/>)
+	 (see <Ref Func="SmallGroup" BookName="smallgrp"
+	 Label="for group order and index"/>)
 	 and <M>K</M> is a field of <M>p</M> elements.
    </Description>
 </ManSection>
@@ -153,7 +154,8 @@ on Intel Xeon 3.4 GHz with 2048 KB cache.
          Let <A>G</A> be a finite <M>p</M>-group of order <M>s</M>
 	 from the Small Groups Library of the &GAP; system, 
 	 constructed with the help of <C>SmallGroup(s,n)</C>
-	 (see <Ref Func="SmallGroup" BookName="ref"/>). Then
+	 (see <Ref Func="SmallGroup" BookName="smallgrp"
+	 Label="for group order and index"/>). Then
 	 <C>SavePcNormalizedUnitGroup(<A>G</A>)</C> 
          creates the file with the name of the form 
 	 <File>us&uscore;n.g</File> in the directory 

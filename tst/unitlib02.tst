@@ -1,12 +1,12 @@
 # unitlib, chapter 2
 gap> START_TEST( "unitlib02.tst");
 
-# unitlib/doc/funct.xml:59-64
+# unitlib/doc/funct.xml:60-65
 
 gap> PcNormalizedUnitGroupSmallGroup(128,161);
 <pc group of size 170141183460469231731687303715884105728 with 127 generators>
 
-# unitlib/doc/funct.xml:87-108
+# unitlib/doc/funct.xml:88-109
 
 gap> V:=PcNormalizedUnitGroup(GroupRing(GF(2),SmallGroup(8,3)));
 <pc group of size 128 with 7 generators>
@@ -27,7 +27,7 @@ GF(2)
 gap> G:=UnderlyingGroup(KG);     
 <pc group of size 8 with 3 generators>
 
-# unitlib/doc/funct.xml:115-126
+# unitlib/doc/funct.xml:116-127
 
 gap> f:=Embedding(G,V1); 
 [ f1, f2, f3 ] -> [ f1, f2, f4 ]
@@ -38,7 +38,7 @@ Group([ f1, f2, f4 ])
 gap> IdGroup(G1);
 [ 8, 3 ]
 
-# unitlib/doc/funct.xml:201-217
+# unitlib/doc/funct.xml:203-219
 
 gap> SavePcNormalizedUnitGroup( SmallGroup( 256, 56092 ) );
 true
