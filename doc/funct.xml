@@ -16,9 +16,9 @@ To use the &UnitLib; package first you need to load it as follows:
 gap> LoadPackage("unitlib");
 ----------------------------------------------------------------------------
 Loading  UnitLib 3.1.0 (The library of normalized unit groups of modular group algebras)
-by Alexander Konovalov (http://www.cs.st-andrews.ac.uk/~alexk/) and
+by Alexander Konovalov (https://alexk.host.cs.st-andrews.ac.uk) and
    Elena Yakimenko.
-Homepage: http://www.cs.st-andrews.ac.uk/~alexk/unitlib/
+Homepage: https://gap-packages.github.io/unitlib/
 ----------------------------------------------------------------------------
 true
 ]]>

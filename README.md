@@ -3,8 +3,8 @@
 Let KG be  a group algebra  of  a  finite  p-group  G  over  the  field  K of 
 characteristic  p,  and  let  V(KG)  be  the normalized  unit  group  of  KG. 
 The  pc-presentation  of  the  group  V(KG)  can be computed  using  the  GAP 
-package   LAGUNA   (http://www.cs.st-andrews.ac.uk/~alexk/laguna/),   but  for 
-groups of orders 64 and more this computation already takes a lot of time.
+package  LAGUNA  (https://gap-packages.github.io/laguna/),  but for groups of
+orders 64 and more this computation already takes a lot of time.
 
 The UnitLib package  is an extension  of the LAGUNA package  that is aimed on 
 this problem.  It contains the library  of normalized unit groups  of modular 

@@ -10,7 +10,7 @@ be the normalized unit group of <M>KG</M>.
 
 The pc-presentation of the group <M>V(KG)</M> 
 can be computed using the &GAP; package &LAGUNA;
-(<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/laguna/</URL>), 
+(<URL>https://gap-packages.github.io/laguna/</URL>), 
 but for groups of orders 64 and more such computation will already 
 take a lot of time. 
 <P/>
@@ -82,14 +82,14 @@ a version of &UnitLib; with locally stored non-compressed data.
 
 To work with the library for groups of order 243 you will also need the
 <Package>IO</Package> package by Max Neunhöffer 
-(<URL>http://www-groups.mcs.st-and.ac.uk/~neunhoef/Computer/Software/Gap/io.html</URL>)
+(<URL>https://gap-packages.github.io/io/</URL>)
 to retrieve the data from the &UnitLib; homepage.
 <P/>
  
 Because the &UnitLib; is an extension of the &LAGUNA; package, you must
 have the &LAGUNA; package installed. You can obtain it from the &GAP; 
 homepage or from its homepage 
-<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/laguna.htm</URL>.
+<URL>https://gap-packages.github.io/laguna/</URL>.
 <P/>
 
 To use the &UnitLib; online help it is necessary to install the &GAP;4 package 
@@ -101,7 +101,7 @@ To use the &UnitLib; online help it is necessary to install the &GAP;4 package
 &UnitLib; is distributed in standard formats
 (<File>tar.gz</File>, <File>tar.bz2</File>, <File>.zip</File>,
 <File>-win.zip</File>) and can be obtained from the &GAP; homepage or from 
-<URL>http://www.cs.st-andrews.ac.uk/&tilde;alexk/unitlib/</URL>.
+<URL>https://gap-packages.github.io/unitlib/</URL>.
 To install &UnitLib;, unpack its archive into the <File>pkg</File> 
 subdirectory of your &GAP;4.5 installation. When you don't have access 
 to the directory of your main &GAP; installation, you can also install 
