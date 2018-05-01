@@ -67,6 +67,7 @@ All further procedures are implemented inside the &LAGUNA; package,
 and their result is uniquely determined and predictable.
 <P/>
 
+<!--
 For most groups all information is stored in a single file. However,
 this is not the case for groups of order 243, where we have about 
 30 MB of data for 67 groups. For these groups we provide a solution
@@ -76,6 +77,7 @@ sequences are available from the &UnitLib; homepage, and the package
 will access them using the function <Ref Func="SingleHTTPRequest" BookName="IO"/>
 from the <Package>IO</Package> package.
 <P/>
+-->
 
 For the reader interested in more details, the package contains
 the file <File>unitlib/lib/genlib.g</File> with the 

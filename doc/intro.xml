@@ -36,7 +36,7 @@ In April 2012, &UnitLib; 3.1.0 was updated to comply with &GAP; 4.5.
 <P/>
 The current version of &UnitLib; provides the library of 
 normalized unit groups <M>V(KG)</M> for all <M>p</M>-groups 
-of order not greater than 243. 
+of order less than 243. 
 <P/>
 If you need to work with groups of bigger orders, please write to 
 the maintainers, because they may be already computed or we 
@@ -80,11 +80,13 @@ groups of order 128 in Windows, please write to the maintainer to request
 a version of &UnitLib; with locally stored non-compressed data. 
 <P/> 
 
+<!--
 To work with the library for groups of order 243 you will also need the
 <Package>IO</Package> package by Max Neunhöffer 
 (<URL>https://gap-packages.github.io/io/</URL>)
 to retrieve the data from the &UnitLib; homepage.
 <P/>
+-->
  
 Because the &UnitLib; is an extension of the &LAGUNA; package, you must
 have the &LAGUNA; package installed. You can obtain it from the &GAP; 
