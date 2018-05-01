@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/gap-packages/unitlib.svg?branch=master)](https://travis-ci.org/gap-packages/unitlib)
+[![Code Coverage](https://codecov.io/github/gap-packages/unitlib/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/unitlib)
+
 # GAP package UnitLib
 
 Let KG be  a group algebra  of  a  finite  p-group  G  over  the  field  K of 
