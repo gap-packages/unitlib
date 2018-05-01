@@ -16,7 +16,7 @@ local G, p, K, KG, filename, libfile, gzfile, code, V, i, fam;
 if not IsPrimePowerInt( n ) then
   Error( "Underlying group is not a p-group !!! \n" );
 fi;
-if n > 243 then
+if n >= 243 then
   Print( "WARNING : the library of V(KG) for groups of order ", n, 
          " is not available yet !!! \n", 
 	 "You can use only groups from the unitlib/userdata directory \n",
@@ -124,7 +124,7 @@ local p, K, KG, V, codestring, libfile, output, d, x;
 if not IsPGroup( G ) then
   Error( "<G> is not a p-group !!! \n" );
 fi;
-if Size(G) <= 243 then
+if Size(G) < 243 then
   Print( "WARNING : the normalized unit group V(KG) of the modular group algebra \n",
          " of the given group <G> is already included in the library and \n", 
 	 "You can access it using the function PcNormalizedUnitGroupSmallGroup.\n",
