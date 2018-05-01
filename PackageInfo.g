@@ -9,12 +9,12 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "3.3.0",
-Date := "24/09/2017",
+Version := "4.0.0",
+Date := "01/05/2018",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "3.3.0">
-##  <!ENTITY RELEASEDATE "24 September 2017">
-##  <!ENTITY RELEASEYEAR "2017">
+##  <!ENTITY VERSION "4.0.0">
+##  <!ENTITY RELEASEDATE "1 May 2018">
+##  <!ENTITY RELEASEYEAR "2018">
 ##  <#/GAPDoc>
 
 SourceRepository := rec(
@@ -74,11 +74,11 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.8",
-  NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"], 
-                           ["IO", "3.0"],
-                           ["LAGUNA", ">= 3.6"] ],
-  SuggestedOtherPackages := [ ["SCSCP", ">=2.0"] ],
+  GAP := ">=4.9",
+  NeededOtherPackages := [ ["GAPDoc", ">= 1.6"], 
+                           ["IO", "4.5"],
+                           ["LAGUNA", ">= 3.9"] ],
+  SuggestedOtherPackages := [ ["SCSCP", ">=2.2"] ],
   ExternalConditions := [ "gzip (only for p=128)" ]
 ),
 
