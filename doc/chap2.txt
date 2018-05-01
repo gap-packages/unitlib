@@ -14,9 +14,9 @@
     [4X[25Xgap>[125X [27XLoadPackage("unitlib");[127X[104X
     [4X[28X----------------------------------------------------------------------------[128X[104X
     [4X[28XLoading  UnitLib 3.1.0 (The library of normalized unit groups of modular group algebras)[128X[104X
-    [4X[28Xby Alexander Konovalov (http://www.cs.st-andrews.ac.uk/~alexk/) and[128X[104X
+    [4X[28Xby Alexander Konovalov (https://alexk.host.cs.st-andrews.ac.uk) and[128X[104X
     [4X[28X   Elena Yakimenko.[128X[104X
-    [4X[28XHomepage: http://www.cs.st-andrews.ac.uk/~alexk/unitlib/[128X[104X
+    [4X[28XHomepage: https://gap-packages.github.io/unitlib/[128X[104X
     [4X[28X----------------------------------------------------------------------------[128X[104X
     [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
@@ -33,13 +33,13 @@
   
   [1X2.1-1 PcNormalizedUnitGroupSmallGroup[101X
   
-  [29X[2XPcNormalizedUnitGroupSmallGroup[102X( [3Xs[103X, [3Xn[103X ) [32X function
+  [33X[1;0Y[29X[2XPcNormalizedUnitGroupSmallGroup[102X( [3Xs[103X, [3Xn[103X ) [32X function[133X
   [6XReturns:[106X  [33X[0;10YPcGroup[133X
   
   [33X[0;0YLet [3Xs[103X be a power of prime [22Xp[122X and [3Xn[103X is an integer from [10X[ 1 .. NrSmallGroups(s)
   ][110X.  Then  [10XPcNormalizedUnitGroupSmallGroup([3Xs[103X[10X,[3Xn[103X[10X)[110X  returns  the normalized unit
   group [22XV(KG)[122X of the modular group algebra [22XKG[122X, where [22XG[122X is [10XSmallGroup([3Xs[103X[10X,[3Xn[103X[10X)[110X (see
-  [2XSmallGroup[102X  ([14XReference:  SmallGroup  for  group order and index[114X)) and [22XK[122X is a
+  [2XSmallGroup[102X  ([14Xsmallgrp:  SmallGroup  for  group  order and index[114X)) and [22XK[122X is a
   field of [22Xp[122X elements.[133X
   
   [4X[32X  Example  [32X[104X
@@ -98,21 +98,21 @@
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
     [4X[25Xgap>[125X [27Xf:=Embedding(G,V1); [127X[104X
-    [4X[28X[ f1, f2, f3 ] -> [ f2, f1, f3 ][128X[104X
+    [4X[28X[ f1, f2, f3 ] -> [ f1, f2, f4 ][128X[104X
     [4X[25Xgap>[125X [27Xg:=List(GeneratorsOfGroup(G), x -> x^f ); [127X[104X
-    [4X[28X[ f2, f1, f3 ][128X[104X
+    [4X[28X[ f1, f2, f4 ][128X[104X
     [4X[25Xgap>[125X [27XG1:=Subgroup(V1,g);[127X[104X
-    [4X[28XGroup([ f2, f1, f3 ])[128X[104X
+    [4X[28XGroup([ f1, f2, f4 ])[128X[104X
     [4X[25Xgap>[125X [27XIdGroup(G1);[127X[104X
     [4X[28X[ 8, 3 ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
   [33X[0;0YIf  the  first argument [3Xs[103X (the order of a group) is not a power of prime, an
-  error  message  will appear. If [3Xs[103X is bigger than 243, you will get a warning
-  telling that the library does not contain [22XV(KG)[122X for [22XG[122X of such order, and you
-  can use only data that you already stored in your [11Xunitlib/userdata[111X directory
-  with the help of the function [2XSavePcNormalizedUnitGroup[102X ([14X2.1-2[114X).[133X
+  error  message  will  appear. If [3Xs[103X is >= 243, you will get a warning telling
+  that the library does not contain [22XV(KG)[122X for [22XG[122X of such order, and you can use
+  only  data  that  you already stored in your [11Xunitlib/userdata[111X directory with
+  the help of the function [2XSavePcNormalizedUnitGroup[102X ([14X2.1-2[114X).[133X
   
   [33X[0;0YIt  is  worth to mention that for some groups of order 243, the construction
   of  the  normalized  unit  group  using  [10XPcNormalizedUnitGroupSmallGroup[110X may
@@ -122,30 +122,29 @@
   
   [1X2.1-2 SavePcNormalizedUnitGroup[101X
   
-  [29X[2XSavePcNormalizedUnitGroup[102X( [3XG[103X ) [32X function
-  [29X[2XParSavePcNormalizedUnitGroup[102X( [3XG[103X ) [32X function
+  [33X[1;0Y[29X[2XSavePcNormalizedUnitGroup[102X( [3XG[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XParSavePcNormalizedUnitGroup[102X( [3XG[103X ) [32X function[133X
   [6XReturns:[106X  [33X[0;10Ytrue[133X
   
   [33X[0;0YLet  [3XG[103X  be  a finite [22Xp[122X-group of order [22Xs[122X from the Small Groups Library of the
   [5XGAP[105X  system,  constructed  with  the help of [10XSmallGroup(s,n)[110X (see [2XSmallGroup[102X
-  ([14XReference:    SmallGroup    for    group    order    and    index[114X)).   Then
+  ([14Xsmallgrp:    SmallGroup    for    group    order    and    index[114X)).    Then
   [10XSavePcNormalizedUnitGroup([3XG[103X[10X)[110X  creates  the  file  with  the name of the form
   [11Xus_n.g[111X  in the directory [11Xunitlib/userdata[111X, and returns [9Xtrue[109X if this file was
   successfully generated. This file contains the description of the normalized
   unit  group  [22XV(KG)[122X  of  the group algebra of the group [3XG[103X over the field of [22Xp[122X
   elements.[133X
   
-  [33X[0;0YIf  the  order  of  [3XG[103X  is greater than 243, after this you can construct the
-  group  [22XV(KG)[122X  using [2XPcNormalizedUnitGroupSmallGroup[102X ([14X2.1-1[114X) similarly to the
-  previous  section.  The  preliminary warning will be displayed, telling that
-  for  such orders you can use only those groups that were already computed by
-  the  user  and  saved to the [11Xunitlib/userdata[111X directory. If there will be no
-  such  file  there,  you will get an error message, otherwise the computation
-  will begin.[133X
+  [33X[0;0YIf  the  order  of [3XG[103X is >= 243, after this you can construct the group [22XV(KG)[122X
+  using  [2XPcNormalizedUnitGroupSmallGroup[102X  ([14X2.1-1[114X)  similarly  to  the previous
+  section.  The  preliminary  warning will be displayed, telling that for such
+  orders  you can use only those groups that were already computed by the user
+  and  saved  to the [11Xunitlib/userdata[111X directory. If there will be no such file
+  there, you will get an error message, otherwise the computation will begin.[133X
   
-  [33X[0;0YIf  the order of [3XG[103X is less or equal to 243, then the file will be created in
-  the  [11Xunitlib/userdata[111X  directory,  but [5XUnitLib[105X will continue to use the file
-  with  the  same name from the appropriate directory in [11Xunitlib/data[111X. You can
+  [33X[0;0YIf  the  order  of  [3XG[103X is less than 243, then the file will be created in the
+  [11Xunitlib/userdata[111X  directory,  but [5XUnitLib[105X will continue to use the file with
+  the  same  name  from  the  appropriate  directory  in [11Xunitlib/data[111X. You can
   compare these two files to make it sure that they are the same.[133X
   
   [33X[0;0Y[12XNOTE THAT:[112X[133X

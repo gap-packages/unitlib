@@ -53,14 +53,6 @@
   [33X[0;0YAll  further procedures are implemented inside the [5XLAGUNA[105X package, and their
   result is uniquely determined and predictable.[133X
   
-  [33X[0;0YFor most groups all information is stored in a single file. However, this is
-  not  the case for groups of order 243, where we have about 30 MB of data for
-  67  groups.  For  these  groups  we  provide  a  solution  on  the  base  of
-  Web-services.  The  information about the dimension basis is stored locally,
-  while  the  codes for polycyclic generating sequences are available from the
-  [5XUnitLib[105X  homepage,  and  the  package  will  access  them using the function
-  [2XSingleHTTPRequest[102X ([14XIO: SingleHTTPRequest[114X) from the [5XIO[105X package.[133X
-  
   [33X[0;0YFor  the  reader  interested  in more details, the package contains the file
   [11Xunitlib/lib/genlib.g[111X  with the function [10XCreatePcNormalizedUnitGroupsLibrary[110X,
   that  creates library files for groups of a given prime power order, and the

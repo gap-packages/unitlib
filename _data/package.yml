@@ -1,6 +1,6 @@
 name: UnitLib
-version: 3.3.0
-date: 2017-09-24
+version: 4.0.0
+date: 2018-05-01
 description: |
     Library of normalized unit groups of modular group algebras
 
@@ -13,22 +13,22 @@ maintainers:
     - name: Alexander Konovalov
       url: https://alexk.host.cs.st-andrews.ac.uk
 
-GAP: ">=4.8"
+GAP: ">=4.9"
 
 needed-pkgs:
     - name: "GAPDoc"
-      version: ">= 1.5.1"
+      version: ">= 1.6"
       url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
     - name: "IO"
-      version: "3.0"
+      version: "4.5"
       url: "https://gap-packages.github.io/io"
     - name: "LAGUNA"
-      version: ">= 3.6"
+      version: ">= 3.9"
       url: "https://gap-packages.github.io/laguna"
 
 suggested-pkgs:
     - name: "SCSCP"
-      version: ">=2.0"
+      version: ">=2.2"
       url: "https://gap-packages.github.io/scscp"
 
 www: https://gap-packages.github.io/unitlib
@@ -37,10 +37,10 @@ packageinfo: https://gap-packages.github.io/unitlib/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/unitlib/releases/download/v3.3.0/unitlib-3.3.0.tar.gz
+      url: https://github.com/gap-packages/unitlib/releases/download/v4.0.0/unitlib-4.0.0.tar.gz
 
 abstract: |
-    The <span class="pkgname">UnitLib</span> package extends the <span class="pkgname">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order not greater than 243 over the field of p elements.
+    The <span class="pkgname">UnitLib</span> package extends the <span class="pkgname">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order less than 243 over the field of p elements.
 
 status: accepted
 doc-html: doc/chap0.html

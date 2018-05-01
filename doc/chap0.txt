@@ -6,10 +6,10 @@
         [1XThe library of normalized unit groups of modular group algebras[101X
   
   
-                                 Version 3.3.0
+                                 Version 4.0.0
   
   
-                               24 September 2017
+                                   1 May 2018
   
   
                               Alexander Konovalov
@@ -32,7 +32,7 @@
   [1XAbstract[101X
   [33X[0;0YThe  [5XUnitLib[105X  package extends the [5XLAGUNA[105X package and provides the library of
   normalized  unit  groups of modular group algebras of all finite [22Xp[122X-groups of
-  order not greater than 243 over the field of [22Xp[122X elements.[133X
+  order less than 243 over the field of [22Xp[122X elements.[133X
   
   [33X[0;0YIt  also  contains  a  parallel  implementation  of  the  computation of the
   normalized  unit group of a modular group algebra of a finite [22Xp[122X-group (which
@@ -42,13 +42,13 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2006-2017 by Alexander Konovalov and Elena Yakimenko[133X
+  [33X[0;0Y© 2006-2018 by Alexander Konovalov and Elena Yakimenko[133X
   
   [33X[0;0Y[5XUnitLib[105X is free software; you can redistribute it and/or modify it under the
   terms  of  the  GNU General Public License as published by the Free Software
   Foundation;  either  version 2 of the License, or (at your option) any later
   version.      For      details,      see      the     FSF's     own     site
-  [7Xhttp://www.gnu.org/licenses/gpl.html[107X.[133X
+  [7Xhttps://www.gnu.org/licenses/gpl.html[107X.[133X
   
   [33X[0;0YIf  you obtained [5XUnitLib[105X, we would be grateful for a short notification sent
   to one of the authors.[133X
@@ -57,8 +57,8 @@
   [5XUnitLib[105X, please cite it in the following form:[133X
   
   [33X[0;0YA.  Konovalov  and  E. Yakimenko. [13XUnitLib --- The library of normalized unit
-  groups     of     modular    group    algebras,    Version    3.3.0[113X,    2017
-  ([7Xhttp://gap-packages.github.io/unitlib/[107X).[133X
+  groups     of     modular    group    algebras,    Version    4.0.0[113X,    2018
+  ([7Xhttps://gap-packages.github.io/unitlib/[107X).[133X
   
   
   -------------------------------------------------------

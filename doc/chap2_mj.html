@@ -45,9 +45,9 @@
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("unitlib");</span>
 ----------------------------------------------------------------------------
 Loading  UnitLib 3.1.0 (The library of normalized unit groups of modular group algebras)
-by Alexander Konovalov (http://www.cs.st-andrews.ac.uk/~alexk/) and
+by Alexander Konovalov (https://alexk.host.cs.st-andrews.ac.uk) and
    Elena Yakimenko.
-Homepage: http://www.cs.st-andrews.ac.uk/~alexk/unitlib/
+Homepage: https://gap-packages.github.io/unitlib/
 ----------------------------------------------------------------------------
 true
 
@@ -55,7 +55,7 @@ true
 
 <p>Under Windows, a warning will be displayed about non-availability of the library of normalized unit groups for groups of orders 128.</p>
 
-<p>Examples below contain some functions from the <strong class="pkg">LAGUNA</strong> package <a href="chapBib_mj.html#biBLaguna">[BKRS]</a>, see their description in the <strong class="pkg">LAGUNA</strong> manual (<a href="../../../pkg/laguna/doc/chap0_mj.html#X7AA6C5737B711C89"><span class="RefLink">LAGUNA: LAGUNA package</span></a>).</p>
+<p>Examples below contain some functions from the <strong class="pkg">LAGUNA</strong> package <a href="chapBib_mj.html#biBLaguna">[BKRS]</a>, see their description in the <strong class="pkg">LAGUNA</strong> manual (<a href="../../../pkg/laguna-3.9.0/doc/chap0_mj.html#X7AA6C5737B711C89"><span class="RefLink">LAGUNA: LAGUNA package</span></a>).</p>
 
 <p><a id="X8336306D816FFF06" name="X8336306D816FFF06"></a></p>
 
@@ -65,10 +65,10 @@ true
 
 <h5>2.1-1 PcNormalizedUnitGroupSmallGroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PcNormalizedUnitGroupSmallGroup</code>( <var class="Arg">s</var>, <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PcNormalizedUnitGroupSmallGroup</code>( <var class="Arg">s</var>, <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns: PcGroup</p>
 
-<p>Let <var class="Arg">s</var> be a power of prime <span class="SimpleMath">\(p\)</span> and <var class="Arg">n</var> is an integer from <code class="code">[ 1 .. NrSmallGroups(s) ]</code>. Then <code class="code">PcNormalizedUnitGroupSmallGroup(<var class="Arg">s</var>,<var class="Arg">n</var>)</code> returns the normalized unit group <span class="SimpleMath">\(V(KG)\)</span> of the modular group algebra <span class="SimpleMath">\(KG\)</span>, where <span class="SimpleMath">\(G\)</span> is <code class="code">SmallGroup(<var class="Arg">s</var>,<var class="Arg">n</var>)</code> (see <code class="func">SmallGroup</code> (<a href="https://www.gap-system.org/Manuals/doc/ref/chap50_mj.html#X8398F2577B719D99"><span class="RefLink">Reference: SmallGroup for group order and index</span></a>)) and <span class="SimpleMath">\(K\)</span> is a field of <span class="SimpleMath">\(p\)</span> elements.</p>
+<p>Let <var class="Arg">s</var> be a power of prime <span class="SimpleMath">\(p\)</span> and <var class="Arg">n</var> is an integer from <code class="code">[ 1 .. NrSmallGroups(s) ]</code>. Then <code class="code">PcNormalizedUnitGroupSmallGroup(<var class="Arg">s</var>,<var class="Arg">n</var>)</code> returns the normalized unit group <span class="SimpleMath">\(V(KG)\)</span> of the modular group algebra <span class="SimpleMath">\(KG\)</span>, where <span class="SimpleMath">\(G\)</span> is <code class="code">SmallGroup(<var class="Arg">s</var>,<var class="Arg">n</var>)</code> (see <code class="func">SmallGroup</code> (<a href="../../../pkg/SmallGrp-1.3/doc/chap1_mj.html#X8398F2577B719D99"><span class="RefLink">smallgrp: SmallGroup for group order and index</span></a>)) and <span class="SimpleMath">\(K\)</span> is a field of <span class="SimpleMath">\(p\)</span> elements.</p>
 
 
 <div class="example"><pre>
@@ -123,17 +123,17 @@ GF(2)
 <div class="example"><pre>
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=Embedding(G,V1); </span>
-[ f1, f2, f3 ] -&gt; [ f2, f1, f3 ]
+[ f1, f2, f3 ] -&gt; [ f1, f2, f4 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=List(GeneratorsOfGroup(G), x -&gt; x^f ); </span>
-[ f2, f1, f3 ]
+[ f1, f2, f4 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G1:=Subgroup(V1,g);</span>
-Group([ f2, f1, f3 ])
+Group([ f1, f2, f4 ])
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdGroup(G1);</span>
 [ 8, 3 ]
 
 </pre></div>
 
-<p>If the first argument <var class="Arg">s</var> (the order of a group) is not a power of prime, an error message will appear. If <var class="Arg">s</var> is bigger than 243, you will get a warning telling that the library does not contain <span class="SimpleMath">\(V(KG)\)</span> for <span class="SimpleMath">\(G\)</span> of such order, and you can use only data that you already stored in your <code class="file">unitlib/userdata</code> directory with the help of the function <code class="func">SavePcNormalizedUnitGroup</code> (<a href="chap2_mj.html#X7B0154C97CD03CF9"><span class="RefLink">2.1-2</span></a>).</p>
+<p>If the first argument <var class="Arg">s</var> (the order of a group) is not a power of prime, an error message will appear. If <var class="Arg">s</var> is &gt;= 243, you will get a warning telling that the library does not contain <span class="SimpleMath">\(V(KG)\)</span> for <span class="SimpleMath">\(G\)</span> of such order, and you can use only data that you already stored in your <code class="file">unitlib/userdata</code> directory with the help of the function <code class="func">SavePcNormalizedUnitGroup</code> (<a href="chap2_mj.html#X7B0154C97CD03CF9"><span class="RefLink">2.1-2</span></a>).</p>
 
 <p>It is worth to mention that for some groups of order 243, the construction of the normalized unit group using <code class="code">PcNormalizedUnitGroupSmallGroup</code> may already require some noticeable amount of time. For example, it took about 166 seconds of CPU time to compute <code class="code">PcNormalizedUnitGroupSmallGroup(243,30)</code> on Intel Xeon 3.4 GHz with 2048 KB cache.</p>
 
@@ -141,15 +141,15 @@ Group([ f2, f1, f3 ])
 
 <h5>2.1-2 SavePcNormalizedUnitGroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SavePcNormalizedUnitGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ParSavePcNormalizedUnitGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SavePcNormalizedUnitGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ParSavePcNormalizedUnitGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns: true</p>
 
-<p>Let <var class="Arg">G</var> be a finite <span class="SimpleMath">\(p\)</span>-group of order <span class="SimpleMath">\(s\)</span> from the Small Groups Library of the <strong class="pkg">GAP</strong> system, constructed with the help of <code class="code">SmallGroup(s,n)</code> (see <code class="func">SmallGroup</code> (<a href="https://www.gap-system.org/Manuals/doc/ref/chap50_mj.html#X8398F2577B719D99"><span class="RefLink">Reference: SmallGroup for group order and index</span></a>)). Then <code class="code">SavePcNormalizedUnitGroup(<var class="Arg">G</var>)</code> creates the file with the name of the form <code class="file">us_n.g</code> in the directory <code class="file">unitlib/userdata</code>, and returns <code class="keyw">true</code> if this file was successfully generated. This file contains the description of the normalized unit group <span class="SimpleMath">\(V(KG)\)</span> of the group algebra of the group <var class="Arg">G</var> over the field of <span class="SimpleMath">\(p\)</span> elements.</p>
+<p>Let <var class="Arg">G</var> be a finite <span class="SimpleMath">\(p\)</span>-group of order <span class="SimpleMath">\(s\)</span> from the Small Groups Library of the <strong class="pkg">GAP</strong> system, constructed with the help of <code class="code">SmallGroup(s,n)</code> (see <code class="func">SmallGroup</code> (<a href="../../../pkg/SmallGrp-1.3/doc/chap1_mj.html#X8398F2577B719D99"><span class="RefLink">smallgrp: SmallGroup for group order and index</span></a>)). Then <code class="code">SavePcNormalizedUnitGroup(<var class="Arg">G</var>)</code> creates the file with the name of the form <code class="file">us_n.g</code> in the directory <code class="file">unitlib/userdata</code>, and returns <code class="keyw">true</code> if this file was successfully generated. This file contains the description of the normalized unit group <span class="SimpleMath">\(V(KG)\)</span> of the group algebra of the group <var class="Arg">G</var> over the field of <span class="SimpleMath">\(p\)</span> elements.</p>
 
-<p>If the order of <var class="Arg">G</var> is greater than 243, after this you can construct the group <span class="SimpleMath">\(V(KG)\)</span> using <code class="func">PcNormalizedUnitGroupSmallGroup</code> (<a href="chap2_mj.html#X8392286A85CF8D85"><span class="RefLink">2.1-1</span></a>) similarly to the previous section. The preliminary warning will be displayed, telling that for such orders you can use only those groups that were already computed by the user and saved to the <code class="file">unitlib/userdata</code> directory. If there will be no such file there, you will get an error message, otherwise the computation will begin.</p>
+<p>If the order of <var class="Arg">G</var> is &gt;= 243, after this you can construct the group <span class="SimpleMath">\(V(KG)\)</span> using <code class="func">PcNormalizedUnitGroupSmallGroup</code> (<a href="chap2_mj.html#X8392286A85CF8D85"><span class="RefLink">2.1-1</span></a>) similarly to the previous section. The preliminary warning will be displayed, telling that for such orders you can use only those groups that were already computed by the user and saved to the <code class="file">unitlib/userdata</code> directory. If there will be no such file there, you will get an error message, otherwise the computation will begin.</p>
 
-<p>If the order of <var class="Arg">G</var> is less or equal to 243, then the file will be created in the <code class="file">unitlib/userdata</code> directory, but <strong class="pkg">UnitLib</strong> will continue to use the file with the same name from the appropriate directory in <code class="file">unitlib/data</code>. You can compare these two files to make it sure that they are the same.</p>
+<p>If the order of <var class="Arg">G</var> is less than 243, then the file will be created in the <code class="file">unitlib/userdata</code> directory, but <strong class="pkg">UnitLib</strong> will continue to use the file with the same name from the appropriate directory in <code class="file">unitlib/data</code>. You can compare these two files to make it sure that they are the same.</p>
 
 <p><strong class="button">NOTE THAT:</strong></p>
 
