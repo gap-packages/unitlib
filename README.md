@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gap-packages/unitlib.svg?branch=master)](https://travis-ci.org/gap-packages/unitlib)
+[![Build Status](https://travis-ci.com/gap-packages/unitlib.svg?branch=master)](https://travis-ci.com/gap-packages/unitlib)
 [![Code Coverage](https://codecov.io/github/gap-packages/unitlib/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/unitlib)
 
 # GAP package UnitLib
