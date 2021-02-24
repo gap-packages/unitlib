@@ -16,15 +16,9 @@ the user  to retrieve the  pre-computed group from the library instead of the
 long-time computation.  The group  created  with  UnitLib will  have the same 
 properties and attributes as the one computed with LAGUNA.
 
-The current version  of UnitLib  contains normalized  unit groups  V(KG)  for 
-all p-groups of order less than 243.
-
-Libraries  of  normalized  unit groups  of groups  of all  orders  not  larger 
-than 243, except for the order 128, are available in any operating system.  
-
-The library for  groups  of order 128  was compressed using gzip program and, 
-therefore,  will be available  only  in  UNIX-type systems  (including  UNIX-
-installation in Mac OS X and Cygwin installation in Windows).  
+The current distribution of UnitLib contains normalized unit groups V(KG) for 
+all p-groups of order less than 243. The data for groups of order 243 is
+available as an optional download.
 
 The UnitLib package is redistributed with GAP,  but is not loaded by default. 
 Therefore, to use UnitLib, first you need to load it as follows:
