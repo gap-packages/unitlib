@@ -36,7 +36,8 @@ In April 2012, &UnitLib; 3.1.0 was updated to comply with &GAP; 4.5.
 <P/>
 The current version of &UnitLib; provides the library of 
 normalized unit groups <M>V(KG)</M> for all <M>p</M>-groups 
-of order less than 243. 
+of order less than 243 in the package distribution. 
+The data for order 243 is available as an optional download.
 <P/>
 If you need to work with groups of bigger orders, please write to 
 the maintainers, because they may be already computed or we 
@@ -64,30 +65,12 @@ group of a modular group algebra of a finite <M>p</M>-group.
 <Section Label="Install">
 <Heading>Installation and system requirements</Heading>
 
-&UnitLib; &VERSION; is designed for &GAP; 4.5 and no compatibility with 
-previous releases of &GAP; 4 is guaranteed. 
+&UnitLib; &VERSION; requires at least &GAP; 4.10. 
+The libraries of normalized unit groups of groups of orders less than 243
+are included in the distribution. The data for order 243 is available as
+an optional download.
 <P/>
 
-Libraries of normalized unit groups of groups of orders less than 243, 
-except for the order 128, will be available in any operating system.      
-<P/>
-
-The library for groups of order
-128 was compressed using the <File>gzip</File> program and, therefore, 
-will be available only in UNIX-type systems (including UNIX-installation 
-in Mac OS X and Cygwin installation in Windows). If you need to work with 
-groups of order 128 in Windows, please write to the maintainer to request 
-a version of &UnitLib; with locally stored non-compressed data. 
-<P/> 
-
-<!--
-To work with the library for groups of order 243 you will also need the
-<Package>IO</Package> package by Max Neunhöffer 
-(<URL>https://gap-packages.github.io/io/</URL>)
-to retrieve the data from the &UnitLib; homepage.
-<P/>
--->
- 
 Because the &UnitLib; is an extension of the &LAGUNA; package, you must
 have the &LAGUNA; package installed. You can obtain it from the &GAP; 
 homepage or from its homepage 
@@ -105,7 +88,7 @@ To use the &UnitLib; online help it is necessary to install the &GAP;4 package
 <File>-win.zip</File>) and can be obtained from the &GAP; homepage or from 
 <URL>https://gap-packages.github.io/unitlib/</URL>.
 To install &UnitLib;, unpack its archive into the <File>pkg</File> 
-subdirectory of your &GAP;4.5 installation. When you don't have access 
+subdirectory of your &GAP; installation. When you don't have access 
 to the directory of your main &GAP; installation, you can also install 
 the package <E>outside the &GAP; main directory</E>
 by unpacking it inside a directory <File>MYGAPDIR/pkg</File>. 

@@ -27,10 +27,6 @@ true
 ]]>
 </Log>
 
-Under Windows, a warning will be displayed about non-availability
-of the library of normalized unit groups for groups of orders 128.
-<P/>
-
 Examples below contain some functions from the &LAGUNA; package
 <Cite Key="Laguna"/>, see their description in the &LAGUNA; manual
 (<Ref Label="LAGUNA package" BookName="LAGUNA"/>).
