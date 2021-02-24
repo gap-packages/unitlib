@@ -37,20 +37,6 @@ if IsPrimeInt(n) then
                GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,
                "/data/primeord/", filename, ".g" );
 
-elif n=128 then
-
-  if not ARCH_IS_UNIX() then
-    Error("UnitLib package : the library of normalized unit groups \n", 
-          "of modular group algebras of groups of order 128 is compressed\n",
-  	      "with gzip. To read it under Windows you need to unpack it manually\n",
-  	      "and adjust the package code to read .g file instead of .gz\n");
-  fi;
-  gzfile := Concatenation( 
-               GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,
-               "/data/128/", filename, ".g.gz" );
-  libfile := Filename( DirectoryTemporary(), "filename");
-  Exec( Concatenation( "gunzip -c ", gzfile, " > ", libfile ) );
-
 elif n=243 then
 
   libfile := Concatenation(                                                         
@@ -78,11 +64,7 @@ fi;
 code := ReadAsFunction(libfile)();
 
 
-if n=128 then
-
-  Exec( Concatenation("rm ", libfile ) );
-
-elif n=243 then
+if n=243 then
   
   code[1] := SingleHTTPRequest( "alexk.host.cs.st-andrews.ac.uk", 80, "GET", 
        Concatenation( "/unitlib/data/243/u243_",  String(nLibNumber), ".txt"), 
