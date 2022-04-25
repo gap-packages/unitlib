@@ -86,8 +86,8 @@ SetDimensionBasis(G, rec( dimensionBasis := List( code[2][1],
                                               i -> ObjByExtRep( fam, i ) ), 
                           weights := code[2][2] ) );
 V := PcGroupCode( IntHexString(code[1]), p^(n-1) );
-SetIsGroupOfUnitsOfMagmaRing( V, false );
-SetIsNormalizedUnitGroupOfGroupRing( V, true );
+ResetFilterObj( V, IsGroupOfUnitsOfMagmaRing );
+SetFilterObj( V, IsNormalizedUnitGroupOfGroupRing );
 SetIsPGroup( V, true );
 SetPrimePGroup( V, p );
 SetPcNormalizedUnitGroup( KG, V );

@@ -145,8 +145,8 @@ function( KG )
       Info(LAGInfo, 2, "LAGInfo: finished, converting to PcGroup" );
 
       U:=GroupByRwsNC(coll); # before we used U:=PcGroupFpGroup( f/rels );
-      SetIsGroupOfUnitsOfMagmaRing(U,false);
-      SetIsNormalizedUnitGroupOfGroupRing(U,true);
+      ResetFilterObj(U, IsGroupOfUnitsOfMagmaRing);
+      SetFilterObj(U, IsNormalizedUnitGroupOfGroupRing);
       SetIsPGroup(U, true);
       SetPrimePGroup(U, p);
       SetUnderlyingGroupRing(U,KG);     
