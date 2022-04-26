@@ -15,11 +15,11 @@ To use the &UnitLib; package first you need to load it as follows:
 <![CDATA[
 gap> LoadPackage("unitlib");
 ----------------------------------------------------------------------------
-Loading  UnitLib 4.0.0 (The library of normalized unit groups of modular group algebras)
-by Alexander Konovalov (https://alexk.host.cs.st-andrews.ac.uk) and
-   Elena Yakimenko.
+Loading  UnitLib 4.1.0 (The library of normalized unit groups of modular group algebras)
+by Olexandr Konovalov (https://alex-konovalov.github.io/) and
+   Olena Yakimenko.
 maintained by:
-   Alexander Konovalov (https://alexk.host.cs.st-andrews.ac.uk).
+   Olexandr Konovalov (https://alex-konovalov.github.io/).
 Homepage: https://gap-packages.github.io/unitlib
 Report issues at https://github.com/gap-packages/unitlib/issues
 ----------------------------------------------------------------------------

@@ -26,4 +26,4 @@ Therefore, to use UnitLib, first you need to load it as follows:
     gap> LoadPackage("unitlib");
 
 
-Alexander Konovalov and Elena Yakimenko
+Olexandr Konovalov and Olena Yakimenko

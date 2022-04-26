@@ -1,6 +1,6 @@
 ###########################################################################
 ##
-#W makedoc.g              The UnitLib package           Alexander Konovalov
+#W makedoc.g              The UnitLib package            Olexandr Konovalov
 ##
 ###########################################################################
 

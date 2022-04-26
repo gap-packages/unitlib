@@ -1,7 +1,7 @@
 #############################################################################
 ##  
-#W  init.g                 The UnitLib package            Alexander Konovalov
-#W                                                            Elena Yakimenko
+#W  init.g                 The UnitLib package             Olexandr Konovalov
+#W                                                            Olena Yakimenko
 ##
 #############################################################################
 

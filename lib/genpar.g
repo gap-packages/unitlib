@@ -1,7 +1,7 @@
 #############################################################################
 ##  
-#W  genpar.g               The UnitLib package            Alexander Konovalov
-#W                                                            Elena Yakimenko
+#W  genpar.g               The UnitLib package             Olexandr Konovalov
+#W                                                            Olena Yakimenko
 ##
 #############################################################################
 
