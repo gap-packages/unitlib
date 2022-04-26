@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (UnitLib) - Chapter 1: Introduction</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -50,7 +50,7 @@
 
 <p>In April 2012, <strong class="pkg">UnitLib</strong> 3.1.0 was updated to comply with <strong class="pkg">GAP</strong> 4.5.</p>
 
-<p>The current version of <strong class="pkg">UnitLib</strong> provides the library of normalized unit groups <span class="SimpleMath">\(V(KG)\)</span> for all <span class="SimpleMath">\(p\)</span>-groups of order less than 243.</p>
+<p>The current version of <strong class="pkg">UnitLib</strong> provides the library of normalized unit groups <span class="SimpleMath">\(V(KG)\)</span> for all <span class="SimpleMath">\(p\)</span>-groups of order less than 243 in the package distribution. The data for order 243 is available as an optional download.</p>
 
 <p>If you need to work with groups of bigger orders, please write to the maintainers, because they may be already computed or we can compute them for you.</p>
 
@@ -58,23 +58,19 @@
 
 <h4>1.2 <span class="Heading">Theoretical background</span></h4>
 
-<p>Since the <strong class="pkg">UnitLib</strong> package is an extension of the <strong class="pkg">LAGUNA</strong> package <a href="chapBib_mj.html#biBLaguna">[BKRS]</a>, we refer to the <a href="../../../pkg/laguna-3.9.0/doc/chap0_mj.html#X7AA6C5737B711C89"><span class="RefLink">LAGUNA: LAGUNA package</span></a> manual for the theoretical backround. In particular, Chapter 3 (The basic theory behind <strong class="pkg">LAGUNA</strong>) of that manual contains definitions of the modular group algebra and its normalized unit group, the power-commutator presentation of the group, and also more details about the algorithm for the computation of the pc-presentation of the normalized unit group of a modular group algebra of a finite <span class="SimpleMath">\(p\)</span>-group.</p>
+<p>Since the <strong class="pkg">UnitLib</strong> package is an extension of the <strong class="pkg">LAGUNA</strong> package <a href="chapBib_mj.html#biBLaguna">[BKRS]</a>, we refer to the <a href="../../../pkg/laguna-3.9.3/doc/chap0_mj.html#X7AA6C5737B711C89"><span class="RefLink">LAGUNA: LAGUNA package</span></a> manual for the theoretical backround. In particular, Chapter 3 (The basic theory behind <strong class="pkg">LAGUNA</strong>) of that manual contains definitions of the modular group algebra and its normalized unit group, the power-commutator presentation of the group, and also more details about the algorithm for the computation of the pc-presentation of the normalized unit group of a modular group algebra of a finite <span class="SimpleMath">\(p\)</span>-group.</p>
 
 <p><a id="X7DB566D5785B7DBC" name="X7DB566D5785B7DBC"></a></p>
 
 <h4>1.3 <span class="Heading">Installation and system requirements</span></h4>
 
-<p><strong class="pkg">UnitLib</strong> 4.0.0 is designed for <strong class="pkg">GAP</strong> 4.5 and no compatibility with previous releases of <strong class="pkg">GAP</strong> 4 is guaranteed.</p>
-
-<p>Libraries of normalized unit groups of groups of orders less than 243, except for the order 128, will be available in any operating system.</p>
-
-<p>The library for groups of order 128 was compressed using the <code class="file">gzip</code> program and, therefore, will be available only in UNIX-type systems (including UNIX-installation in Mac OS X and Cygwin installation in Windows). If you need to work with groups of order 128 in Windows, please write to the maintainer to request a version of <strong class="pkg">UnitLib</strong> with locally stored non-compressed data.</p>
+<p><strong class="pkg">UnitLib</strong> 4.1.0 requires at least <strong class="pkg">GAP</strong> 4.10. The libraries of normalized unit groups of groups of orders less than 243 are included in the distribution. The data for order 243 is available as an optional download.</p>
 
 <p>Because the <strong class="pkg">UnitLib</strong> is an extension of the <strong class="pkg">LAGUNA</strong> package, you must have the <strong class="pkg">LAGUNA</strong> package installed. You can obtain it from the <strong class="pkg">GAP</strong> homepage or from its homepage <span class="URL"><a href="https://gap-packages.github.io/laguna/">https://gap-packages.github.io/laguna/</a></span>.</p>
 
 <p>To use the <strong class="pkg">UnitLib</strong> online help it is necessary to install the <strong class="pkg">GAP</strong>4 package <strong class="pkg">GAPDoc</strong> by Frank Lübeck and Max Neunhöffer, which is available from the <strong class="pkg">GAP</strong> homepage or from <span class="URL"><a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc/">http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc/</a></span>.</p>
 
-<p><strong class="pkg">UnitLib</strong> is distributed in standard formats (<code class="file">tar.gz</code>, <code class="file">tar.bz2</code>, <code class="file">.zip</code>, <code class="file">-win.zip</code>) and can be obtained from the <strong class="pkg">GAP</strong> homepage or from <span class="URL"><a href="https://gap-packages.github.io/unitlib/">https://gap-packages.github.io/unitlib/</a></span>. To install <strong class="pkg">UnitLib</strong>, unpack its archive into the <code class="file">pkg</code> subdirectory of your <strong class="pkg">GAP</strong>4.5 installation. When you don't have access to the directory of your main <strong class="pkg">GAP</strong> installation, you can also install the package <em>outside the <strong class="pkg">GAP</strong> main directory</em> by unpacking it inside a directory <code class="file">MYGAPDIR/pkg</code>. Then to be able to load <strong class="pkg">UnitLib</strong> you need to call <strong class="pkg">GAP</strong> with the <code class="code">-l ";MYGAPDIR"</code> option.</p>
+<p><strong class="pkg">UnitLib</strong> is distributed in standard formats (<code class="file">tar.gz</code>, <code class="file">tar.bz2</code>, <code class="file">.zip</code>, <code class="file">-win.zip</code>) and can be obtained from the <strong class="pkg">GAP</strong> homepage or from <span class="URL"><a href="https://gap-packages.github.io/unitlib/">https://gap-packages.github.io/unitlib/</a></span>. To install <strong class="pkg">UnitLib</strong>, unpack its archive into the <code class="file">pkg</code> subdirectory of your <strong class="pkg">GAP</strong> installation. When you don't have access to the directory of your main <strong class="pkg">GAP</strong> installation, you can also install the package <em>outside the <strong class="pkg">GAP</strong> main directory</em> by unpacking it inside a directory <code class="file">MYGAPDIR/pkg</code>. Then to be able to load <strong class="pkg">UnitLib</strong> you need to call <strong class="pkg">GAP</strong> with the <code class="code">-l ";MYGAPDIR"</code> option.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Next Chapter]</a>&nbsp;  </div>

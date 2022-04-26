@@ -1,7 +1,7 @@
 #############################################################################
 ##
-#W  PackageInfo.g              The UnitLib package        Alexander Konovalov
-#W                                                            Elena Yakimenko
+#W  PackageInfo.g              The UnitLib package         Olexandr Konovalov
+#W                                                            Olena Yakimenko
 ##
 #############################################################################
 
@@ -9,12 +9,13 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "4.0.0",
-Date := "01/05/2018",
+Version := "4.1.0",
+Date := "26/04/2022", # dd/mm/yyyy format
+License := "GPL-2.0-or-later",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "4.0.0">
-##  <!ENTITY RELEASEDATE "1 May 2018">
-##  <!ENTITY RELEASEYEAR "2018">
+##  <!ENTITY VERSION "4.1.0">
+##  <!ENTITY RELEASEDATE "26 April 2022">
+##  <!ENTITY RELEASEYEAR "2022">
 ##  <#/GAPDoc>
 
 SourceRepository := rec(
@@ -34,11 +35,11 @@ ArchiveFormats := ".tar.gz",
 Persons := [
   rec(
     LastName      := "Konovalov",
-    FirstNames    := "Alexander",
+    FirstNames    := "Olexandr",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "alexander.konovalov@st-andrews.ac.uk",
-    WWWHome       := "https://alexk.host.cs.st-andrews.ac.uk",
+    Email         := "obk1@st-andrews.ac.uk",
+    WWWHome       := "https://alex-konovalov.github.io/",
     PostalAddress := Concatenation( [
                      "School of Computer Science\n",
                      "University of St Andrews\n",
@@ -49,11 +50,11 @@ Persons := [
      ),
   rec(
     LastName      := "Yakimenko",
-    FirstNames    := "Elena",
+    FirstNames    := "Olena",
     IsAuthor      := true,
     IsMaintainer  := false,
-    Place         := "Zaporozhye",
-    Institution   := "Zaporozhye National University"
+    Place         := "Zaporizhzhia",
+    Institution   := "Zaporizhzhia National University"
      )
 ],
 
@@ -74,12 +75,12 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.9",
+  GAP := ">=4.11",
   NeededOtherPackages := [ ["GAPDoc", ">= 1.6"], 
                            ["IO", "4.5"],
-                           ["LAGUNA", ">= 3.9"] ],
+                           ["LAGUNA", ">= 3.9.4"] ],
   SuggestedOtherPackages := [ ["SCSCP", ">=2.2"] ],
-  ExternalConditions := [ "gzip (only for p=128)" ]
+  ExternalConditions := [],
 ),
 
 AvailabilityTest := ReturnTrue,

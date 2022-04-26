@@ -13,17 +13,17 @@
     [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XLoadPackage("unitlib");[127X[104X
     [4X[28X----------------------------------------------------------------------------[128X[104X
-    [4X[28XLoading  UnitLib 3.1.0 (The library of normalized unit groups of modular group algebras)[128X[104X
-    [4X[28Xby Alexander Konovalov (https://alexk.host.cs.st-andrews.ac.uk) and[128X[104X
-    [4X[28X   Elena Yakimenko.[128X[104X
-    [4X[28XHomepage: https://gap-packages.github.io/unitlib/[128X[104X
+    [4X[28XLoading  UnitLib 4.1.0 (The library of normalized unit groups of modular group algebras)[128X[104X
+    [4X[28Xby Olexandr Konovalov (https://alex-konovalov.github.io/) and[128X[104X
+    [4X[28X   Olena Yakimenko.[128X[104X
+    [4X[28Xmaintained by:[128X[104X
+    [4X[28X   Olexandr Konovalov (https://alex-konovalov.github.io/).[128X[104X
+    [4X[28XHomepage: https://gap-packages.github.io/unitlib[128X[104X
+    [4X[28XReport issues at https://github.com/gap-packages/unitlib/issues[128X[104X
     [4X[28X----------------------------------------------------------------------------[128X[104X
     [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
-  
-  [33X[0;0YUnder  Windows,  a  warning  will be displayed about non-availability of the
-  library of normalized unit groups for groups of orders 128.[133X
   
   [33X[0;0YExamples  below  contain  some functions from the [5XLAGUNA[105X package [BKRS], see
   their description in the [5XLAGUNA[105X manual ([14XLAGUNA: LAGUNA package[114X).[133X
