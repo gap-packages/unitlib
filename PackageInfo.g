@@ -67,7 +67,7 @@ AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the 
 PackageDoc := rec(
   BookName := "UnitLib",
   ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
+  HTMLStart := "doc/chap0_mj.html",
   PDFFile := "doc/manual.pdf",
   SixFile := "doc/manual.six",
   LongTitle := "The library of normalized unit groups of modular group algebras",
