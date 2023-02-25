@@ -50,7 +50,7 @@
   
   [1X1.3 [33X[0;0YInstallation and system requirements[133X[101X
   
-  [33X[0;0Y[5XUnitLib[105X  4.1.0  requires at least [5XGAP[105X 4.10. The libraries of normalized unit
+  [33X[0;0Y[5XUnitLib[105X  4.2.0  requires at least [5XGAP[105X 4.10. The libraries of normalized unit
   groups  of  groups of orders less than 243 are included in the distribution.
   The data for order 243 is available as an optional download.[133X
   

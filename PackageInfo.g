@@ -9,13 +9,13 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "4.1.0",
-Date := "26/04/2022", # dd/mm/yyyy format
+Version := "4.2.0",
+Date := "25/02/2023", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "4.1.0">
-##  <!ENTITY RELEASEDATE "26 April 2022">
-##  <!ENTITY RELEASEYEAR "2022">
+##  <!ENTITY VERSION "4.2.0">
+##  <!ENTITY RELEASEDATE "25 February 2023">
+##  <!ENTITY RELEASEYEAR "2023">
 ##  <#/GAPDoc>
 
 SourceRepository := rec(
@@ -39,7 +39,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "obk1@st-andrews.ac.uk",
-    WWWHome       := "https://alex-konovalov.github.io/",
+    WWWHome       := "https://olexandr-konovalov.github.io/",
     PostalAddress := Concatenation( [
                      "School of Computer Science\n",
                      "University of St Andrews\n",
@@ -67,7 +67,7 @@ AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the 
 PackageDoc := rec(
   BookName := "UnitLib",
   ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
+  HTMLStart := "doc/chap0_mj.html",
   PDFFile := "doc/manual.pdf",
   SixFile := "doc/manual.six",
   LongTitle := "The library of normalized unit groups of modular group algebras",

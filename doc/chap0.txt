@@ -6,10 +6,10 @@
         [1XThe library of normalized unit groups of modular group algebras[101X
   
   
-                                 Version 4.1.0
+                                 Version 4.2.0
   
   
-                                 26 April 2022
+                                25 February 2023
   
   
                                Olexandr Konovalov
@@ -42,7 +42,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2006-2022 by Olexandr Konovalov and Olena Yakimenko[133X
+  [33X[0;0Y© 2006-2023 by Olexandr Konovalov and Olena Yakimenko[133X
   
   [33X[0;0Y[5XUnitLib[105X is free software; you can redistribute it and/or modify it under the
   terms  of  the  GNU General Public License as published by the Free Software
@@ -57,7 +57,7 @@
   [5XUnitLib[105X, please cite it in the following form:[133X
   
   [33X[0;0YA.  Konovalov  and  E. Yakimenko. [13XUnitLib --- The library of normalized unit
-  groups     of     modular    group    algebras,    Version    4.1.0[113X,    2022
+  groups     of     modular    group    algebras,    Version    4.2.0[113X,    2023
   ([7Xhttps://gap-packages.github.io/unitlib/[107X).[133X
   
   
