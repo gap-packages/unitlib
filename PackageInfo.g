@@ -71,7 +71,6 @@ PackageDoc := rec(
   PDFFile := "doc/manual.pdf",
   SixFile := "doc/manual.six",
   LongTitle := "The library of normalized unit groups of modular group algebras",
-  Autoload := true
 ),
 
 Dependencies := rec(
