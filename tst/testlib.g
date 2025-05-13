@@ -28,8 +28,6 @@ local datapath, testresult, size, missing, n, libfile, s;
 
     for n in [ 1 .. NrSmallGroups( size ) ] do
 
-      Print( n, "\r");
-      
       if IsPrimeInt( size ) then
         libfile := Concatenation( datapath, "primeord", 
            "/u", String(size), "_", String(n) );
