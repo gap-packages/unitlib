@@ -36,6 +36,8 @@ local datapath, testresult, size, missing, n, libfile, s;
            "/u", String(size), "_", String(n) );
       fi;
 
+      libfile := Concatenation( libfile, ".g.gz" );
+
       if not IsExistingFile(libfile) then
         Add( missing, n );
     	testresult := false;
