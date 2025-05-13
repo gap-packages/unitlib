@@ -628,5 +628,6 @@ gap> id1=id2;
 true
 gap> ReadPackage("unitlib", "tst/testlib.g");; UNITLIBTestLibrary();
 UnitLib library is complete - no missing files!!!
+true
 
 gap> STOP_TEST( "grpisom.tst" ); 
