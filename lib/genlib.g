@@ -49,10 +49,10 @@
 
 #############################################################################
 #
-# CreatePcNormalizedUnitGroupsLibrary( n, n1 )
+# CreatePcNormalizedUnitGroupsLibrary( n, n1, n2 )
 #
 # The function creates library files for groups of prime-power order n,
-# starting from SmallGroup( n, n1 ) 
+# starting from SmallGroup( n, n1 ) and finishing with SmallGroup( n, n2 )
 #
 CreatePcNormalizedUnitGroupsLibrary := function( n, n1, n2 )
 local i, G;
