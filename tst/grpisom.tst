@@ -626,4 +626,7 @@ gap> id1:=List([1..NrSmallGroups(n)],i->CodePcGroup(PcNormalizedUnitGroupSmallGr
 gap> id2:=List([1..NrSmallGroups(n)],i->CodePcGroup(PcNormalizedUnitGroup(GroupRing(GF(2),SmallGroup(n,i)))));;
 gap> id1=id2;
 true
-gap> STOP_TEST( "grpisom.tst" );
+gap> ReadPackage("unitlib", "tst/testlib.g"); UNITLIBTestLibrary();
+UnitLib library is complete - no missing files!!!
+
+gap> STOP_TEST( "grpisom.tst" ); 

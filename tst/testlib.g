@@ -40,28 +40,13 @@ local datapath, testresult, size, missing, n, libfile, s;
 
       if size=128 then
         libfile := Concatenation( libfile, ".g.gz" );
-      elif size=243 then
-        libfile := Concatenation( libfile, ".gg" );
       else
         libfile := Concatenation( libfile, ".g" );
       fi;      
 
       if not IsExistingFile(libfile) then
         Add( missing, n );
-    testresult := false;
-      fi;
-      
-      if size=243 then
-        s:= SingleHTTPRequest( "www.cs.st-andrews.ac.uk", 80, "GET", 
-              Concatenation( "/~alexk/unitlib/data/243/u243_",  String(n), ".txt"), 
-              rec( ), false, false ).body;
-       
-    # if we are not online, we will get the wrong string
-    if s <> "" then     
-      # if the file is missing on the server, 
-      # we can not perform the next command 
-          s:=IntHexString(s);
-    fi;
+    	testresult := false;
       fi;
 
     od;
