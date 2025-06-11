@@ -62,7 +62,7 @@ Status := "accepted",
 CommunicatedBy := "Bettina Eick (Braunschweig)",
 AcceptDate := "03/2007",
 
-AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order less than 243 over the field of p elements.",
+AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order up to 243 over the field of p elements.",
                   
 PackageDoc := rec(
   BookName := "UnitLib",

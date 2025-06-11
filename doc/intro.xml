@@ -36,8 +36,7 @@ In April 2012, &UnitLib; 3.1.0 was updated to comply with &GAP; 4.5.
 <P/>
 The current version of &UnitLib; provides the library of 
 normalized unit groups <M>V(KG)</M> for all <M>p</M>-groups 
-of order less than 243 in the package distribution. 
-The data for order 243 is available as an optional download.
+of order up to 243.
 <P/>
 If you need to work with groups of bigger orders, please write to 
 the maintainers, because they may be already computed or we 

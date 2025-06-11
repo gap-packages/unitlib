@@ -127,7 +127,7 @@ gap> IdGroup(G1);
 
 If the first argument <A>s</A> (the order of a group) is not a power of 
 prime, an error message will appear.
-If <A>s</A> is >= 243, you will get a warning telling that
+If <A>s</A> is greater than 243, you will get a warning telling that
 the library does not contain <M>V(KG)</M> for <M>G</M> of such order, 
 and you can use only data that you already stored in your 
 <File>unitlib/userdata</File> directory with the help of the function
@@ -136,7 +136,7 @@ and you can use only data that you already stored in your
 
 It is worth to mention that for some groups of order 243, the construction 
 of the normalized unit group using <C>PcNormalizedUnitGroupSmallGroup</C> 
-may already require some noticeable amount of time. For example, it took 
+already requires some noticeable amount of time. For example, it took 
 about 166 seconds of CPU time to compute 
 <C>PcNormalizedUnitGroupSmallGroup(243,30)</C> 
 on Intel Xeon 3.4 GHz with 2048 KB cache.
@@ -164,7 +164,7 @@ on Intel Xeon 3.4 GHz with 2048 KB cache.
 	 group <M>V(KG)</M> of the group algebra of the group 
 	 <A>G</A> over the field of <M>p</M> elements. 
 	 <P/>
-	 If the order of <A>G</A> is >= 243, after this 
+	 If the order of <A>G</A> is greater than 243, after this 
 	 you can construct the group <M>V(KG)</M> using  
          <Ref Func="PcNormalizedUnitGroupSmallGroup" /> similarly
 	 to the previous section.
@@ -175,7 +175,7 @@ on Intel Xeon 3.4 GHz with 2048 KB cache.
 	 If there will be no such file there, you will get an error
 	 message, otherwise the computation will begin.
 	 <P/>
-	 If the order of <A>G</A> is less than 243, then
+	 If the order of <A>G</A> is less or equal than 243, then
 	 the file will be created in the <File>unitlib/userdata</File>
 	 directory, but &UnitLib; will continue to use the file
 	 with the same name from the appropriate directory in 
