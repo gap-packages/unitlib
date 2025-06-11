@@ -8,7 +8,7 @@
 #
 gap> START_TEST( "unitlib04.tst");
 
-# doc/example.xml:16-37
+# /doc/example.xml:16-37
 
 gap> IdGroup(DihedralGroup(128));
 [ 128, 161 ]
@@ -29,7 +29,7 @@ gap> f := NaturalBijectionToNormalizedUnitGroup( KG );;
 gap> IsAbelian( Group( List( gens, x -> x^f ) ));
 true
 
-# doc/example.xml:63-77
+# /doc/example.xml:63-77
 
 gap> for n in [ 1 .. NrSmallGroups( 64 ) ] do
 > if not IsAbelian( SmallGroup( 64, n ) ) then
@@ -43,7 +43,7 @@ gap> for n in [ 1 .. NrSmallGroups( 64 ) ] do
 > fi;
 > od;
 
-# doc/example.xml:86-98
+# /doc/example.xml:86-98
 
 gap> cl := [];;
 gap> for n in [ 1 .. NrSmallGroups( 64 ) ] do
