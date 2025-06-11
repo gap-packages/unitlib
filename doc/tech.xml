@@ -82,11 +82,7 @@ from the <Package>IO</Package> package.
 For the reader interested in more details, the package contains
 the file <File>unitlib/lib/genlib.g</File> with the 
 function <C>CreatePcNormalizedUnitGroupsLibrary</C>, that creates
-library files for groups of a given prime power order, and the file
-<File>unitlib/lib/genpar.g</File> with the function
-<C>ParCreatePcNormalizedUnitGroupsLibrary</C>, which is the
-parallel version of the previous function and must be used with
-the &ParGAP; package <Cite Key="ParGAP" />.
+library files for groups of a given prime power order.
 
 </Section>
 
