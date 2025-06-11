@@ -17,7 +17,7 @@
 
   <Author>Olexandr Konovalov
           <Email>obk1@st-andrews.ac.uk</Email>
-	      <Homepage>https://alex-konovalov.github.io/</Homepage>
+	      <Homepage>https://olexandr-konovalov.github.io/</Homepage>
           <Address>
             School of Computer Science<Br/>
             University of St Andrews<Br/>
@@ -66,7 +66,7 @@ Library) over the field of <M>p</M> elements.
   If you publish a result which was partially obtained with the usage of
   &UnitLib;, please cite it in the following form:<P/>
 
-  A. Konovalov and E. Yakimenko. 
+  O. Konovalov and O. Yakimenko. 
   <E>UnitLib --- The library of normalized unit groups of modular group 
      algebras, Version &VERSION;</E>, &RELEASEYEAR; 
      (<URL>https://gap-packages.github.io/unitlib/</URL>).
