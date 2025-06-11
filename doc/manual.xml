@@ -4,7 +4,6 @@
     [<!ENTITY LAGUNA "<Package>LAGUNA</Package>">]
     [<!ENTITY UnitLib "<Package>UnitLib</Package>">]
     [<!ENTITY SCSCP "<Package>SCSCP</Package>">]
-    [<!ENTITY ParGAP "<Package>ParGAP</Package>">]
     <#Include Label="PKGVERSIONDATA">      
     ] >
 
