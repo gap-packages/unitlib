@@ -194,6 +194,9 @@ on Intel Xeon 3.4 GHz with 2048 KB cache.
 	 <Ref Func="ParSavePcNormalizedUnitGroup" /> works in the same
 	 way, but uses the function <C>ParPcNormalizedUnitGroup</C> to
 	 parallelise the computation using the &GAP; package &SCSCP;.
+	 Both of the two latter functions are implemented in the file
+	 <File>unitlib/lib/parunits.g</File>. See <Cite Key="ParMGA"/>
+	 for the implementation details.
    </Description>
 </ManSection>
 
