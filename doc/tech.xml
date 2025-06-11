@@ -26,15 +26,14 @@ we used the &GAP; function <C>HexStringInt</C> than
 returns a string that represents the code with hexa-decimal 
 digits (using A-F as digits 10-15). The inverse translation 
 then can be performed with the &GAP; function <C>IntHexString</C>.
-This allowed to save almost 20 MB of space on groups of order 128
-and reduce the total size of their database to 90 MB. 
+For example, for groups of order 128, this allows to save almost
+20 MB of space and reduce the total size of their database to 90 MB.
 <P/>
 
-For groups of order 128 we decided to compress the library 
-with the <File>gzip</File> program, and then uncompress each file 
-"on fly" when it is requested. This allowed us to reduce the size
-of their part in the library from 90 to 12 MB, which is already
-quite reasonable. Of course, there is some little overhead arising 
+Furthermore, the library was compressed using
+the <File>gzip</File> program. This allowed us, for example,
+to reduce the size of the library for groups of order 128
+from 90 to 12 MB. Of course, there is some little overhead arising
 from the uncompression and subsequent translation from hexa-decimal 
 notation, but it is neglectible comparatively with the total time 
 of the computation of <M>V(KG)</M> from scratch.
