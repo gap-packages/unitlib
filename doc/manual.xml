@@ -34,6 +34,16 @@
           </Address> 
   </Author>
 
+  <Author>Kamil Zabielski
+          <Email>kamil@zabielscy.com</Email>
+	      <Homepage>https://limakzi.me/</Homepage>
+          <Address>
+            Faculty of Computer Science<Br/>
+            Białystok University of Technology<Br/>
+            Białystok, Poland
+          </Address> 
+  </Author>
+
   <Date>&RELEASEDATE;</Date>
 
 <Abstract>
