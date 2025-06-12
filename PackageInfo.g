@@ -9,13 +9,13 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "4.2.0",
-Date := "25/02/2023", # dd/mm/yyyy format
+Version := "5.0.0",
+Date := "12/06/2025", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "4.2.0">
-##  <!ENTITY RELEASEDATE "25 February 2023">
-##  <!ENTITY RELEASEYEAR "2023">
+##  <!ENTITY VERSION "5.0.0">
+##  <!ENTITY RELEASEDATE "12 June 2025">
+##  <!ENTITY RELEASEYEAR "2025">
 ##  <#/GAPDoc>
 
 SourceRepository := rec(
@@ -55,6 +55,16 @@ Persons := [
     IsMaintainer  := false,
     Place         := "Zaporizhzhia",
     Institution   := "Zaporizhzhia National University"
+     ),
+  rec(
+    LastName      := "Zabielski",
+    FirstNames    := "Kamil",
+    IsAuthor      := true,
+    IsMaintainer  := true,
+    Email         := "kamil@zabielscy.com",
+    WWWHome       := "https://limakzi.me",
+    Place         := "Białystok",
+    Institution   := "Białystok University of Technology"
      )
 ],
 
@@ -62,7 +72,7 @@ Status := "accepted",
 CommunicatedBy := "Bettina Eick (Braunschweig)",
 AcceptDate := "03/2007",
 
-AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order less than 243 over the field of p elements.",
+AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order up to 243 over the field of p elements.",
                   
 PackageDoc := rec(
   BookName := "UnitLib",
@@ -71,7 +81,6 @@ PackageDoc := rec(
   PDFFile := "doc/manual.pdf",
   SixFile := "doc/manual.six",
   LongTitle := "The library of normalized unit groups of modular group algebras",
-  Autoload := true
 ),
 
 Dependencies := rec(

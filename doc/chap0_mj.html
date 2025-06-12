@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (UnitLib) - Contents</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -31,9 +31,9 @@
 
 <h2>The library of normalized unit groups of modular group algebras</h2>
 
-<p>Version 4.2.0</p>
+<p>Version 5.0.0</p>
 
-<p>25 February 2023</p>
+<p>12 June 2025</p>
 
 </div>
 <p><b>Olexandr Konovalov
@@ -42,23 +42,31 @@
            
   </b>
 <br />Email: <span class="URL"><a href="mailto:obk1@st-andrews.ac.uk">obk1@st-andrews.ac.uk</a></span>
-<br />Homepage: <span class="URL"><a href="https://alex-konovalov.github.io/">https://alex-konovalov.github.io/</a></span>
+<br />Homepage: <span class="URL"><a href="https://olexandr-konovalov.github.io/">https://olexandr-konovalov.github.io/</a></span>
 <br />Address: <br />School of Computer Science<br /> University of St Andrews<br /> Jack Cole Building, North Haugh,<br /> St Andrews, Fife, KY16 9SX, Scotland
 </p><p><b>Olena Yakimenko
            
   </b>
 <br />Address: <br />Department of Mathematics<br /> Zaporizhzhia National University<br /> Zaporizhzhia, Ukraine
+</p><p><b>Kamil Zabielski
+          
+	      
+           
+  </b>
+<br />Email: <span class="URL"><a href="mailto:kamil@zabielscy.com">kamil@zabielscy.com</a></span>
+<br />Homepage: <span class="URL"><a href="https://limakzi.me/">https://limakzi.me/</a></span>
+<br />Address: <br />Faculty of Computer Science<br /> Białystok University of Technology<br /> Białystok, Poland
 </p>
 
 <p><a id="X7AA6C5737B711C89" name="X7AA6C5737B711C89"></a></p>
 <h3>Abstract</h3>
-<p>The <strong class="pkg">UnitLib</strong> package extends the <strong class="pkg">LAGUNA</strong> package and provides the library of normalized unit groups of modular group algebras of all finite <span class="SimpleMath">\(p\)</span>-groups of order less than 243 over the field of <span class="SimpleMath">\(p\)</span> elements.</p>
+<p>The <strong class="pkg">UnitLib</strong> package extends the <strong class="pkg">LAGUNA</strong> package and provides the library of normalized unit groups of modular group algebras of all finite <span class="SimpleMath">\(p\)</span>-groups of order up to 243 over the field of <span class="SimpleMath">\(p\)</span> elements.</p>
 
 <p>It also contains a parallel implementation of the computation of the normalized unit group of a modular group algebra of a finite <span class="SimpleMath">\(p\)</span>-group (which should be retrieved from the <strong class="pkg">GAP</strong> Small Groups Library) over the field of <span class="SimpleMath">\(p\)</span> elements.</p>
 
 <p><a id="X81488B807F2A1CF1" name="X81488B807F2A1CF1"></a></p>
 <h3>Copyright</h3>
-<p>© 2006-2023 by Olexandr Konovalov and Olena Yakimenko</p>
+<p>© 2006-2025 by Olexandr Konovalov and Olena Yakimenko</p>
 
 <p><strong class="pkg">UnitLib</strong> is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. For details, see the FSF's own site <span class="URL"><a href="https://www.gnu.org/licenses/gpl.html">https://www.gnu.org/licenses/gpl.html</a></span>.</p>
 
@@ -66,13 +74,13 @@
 
 <p>If you publish a result which was partially obtained with the usage of <strong class="pkg">UnitLib</strong>, please cite it in the following form:</p>
 
-<p>A. Konovalov and E. Yakimenko. <em>UnitLib --- The library of normalized unit groups of modular group algebras, Version 4.2.0</em>, 2023 (<span class="URL"><a href="https://gap-packages.github.io/unitlib/">https://gap-packages.github.io/unitlib/</a></span>).</p>
+<p>O. Konovalov and O. Yakimenko. <em>UnitLib --- The library of normalized unit groups of modular group algebras, Version 5.0.0</em>, 2025 (<span class="URL"><a href="https://gap-packages.github.io/unitlib/">https://gap-packages.github.io/unitlib/</a></span>).</p>
 
 <p><a id="X82A988D47DFAFCFA" name="X82A988D47DFAFCFA"></a></p>
 <h3>Acknowledgements</h3>
 <p>The first version of the package (as well as the subsequent version 2.1) was released in 2006, when the first author was a postdoctoral research collaborator at the Vrije Universiteit Brussels, Belgium. It is a pleasure of the first author to express his gratitude to Prof. Dr. Eric Jespers for his warm hospitality and to acknowledge the support provided by the Francqui Stichting grant ADSI107.</p>
 
-<p>Both authors are very grateful to the members of the <strong class="pkg">GAP</strong> team: Thomas Breuer, Stefan Kohl and Frank Lübeck for helpful suggestions. We would like to acknowledge Bettina Eick for communicating the package, and the referee for testing <strong class="pkg">UnitLib</strong> and useful comments. Finally, we wish to thank the Centre for Interdisciplinary Research in Computational Algebra of the University of St Andrews and the Computational Cluster of the Kiev National Taras Shevchenko University for offering their computer facilities for computations.</p>
+<p>Both authors are very grateful to the members of the <strong class="pkg">GAP</strong> team: Thomas Breuer, Stefan Kohl and Frank Lübeck for helpful suggestions. We would like to acknowledge Bettina Eick for communicating the package, and the referee for testing <strong class="pkg">UnitLib</strong> and useful comments. Finally, we wish to thank the Centre for Interdisciplinary Research in Computational Algebra of the University of St Andrews and the Computational Cluster of the Kyiv National Taras Shevchenko University for offering their computer facilities for computations leading to the first version of this package, and to the Białystok University of Technology cluster used to produce the data for groups of order 243.</p>
 
 <p><a id="X8537FEB07AF2BEC8" name="X8537FEB07AF2BEC8"></a></p>
 
@@ -119,6 +127,6 @@
 <div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <hr />
-<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
 </body>
 </html>

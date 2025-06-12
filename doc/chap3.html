@@ -42,9 +42,9 @@
 
 <p>When this group is computed, the main idea is to use <strong class="pkg">GAP</strong> function <code class="code">CodePcGroup</code> that returns the code for the polycyclic generating sequence of the group, and then to create the group from this code using the <strong class="pkg">GAP</strong> function <code class="code">PcGroupCode</code>.</p>
 
-<p>The resulting code could be very long, and to compress it we used the <strong class="pkg">GAP</strong> function <code class="code">HexStringInt</code> than returns a string that represents the code with hexa-decimal digits (using A-F as digits 10-15). The inverse translation then can be performed with the <strong class="pkg">GAP</strong> function <code class="code">IntHexString</code>. This allowed to save almost 20 MB of space on groups of order 128 and reduce the total size of their database to 90 MB.</p>
+<p>The resulting code could be very long, and to compress it we used the <strong class="pkg">GAP</strong> function <code class="code">HexStringInt</code> than returns a string that represents the code with hexa-decimal digits (using A-F as digits 10-15). The inverse translation then can be performed with the <strong class="pkg">GAP</strong> function <code class="code">IntHexString</code>. For example, for groups of order 128, this allows to save almost 20 MB of space and reduce the total size of their database to 90 MB.</p>
 
-<p>For groups of order 128 we decided to compress the library with the <code class="file">gzip</code> program, and then uncompress each file "on fly" when it is requested. This allowed us to reduce the size of their part in the library from 90 to 12 MB, which is already quite reasonable. Of course, there is some little overhead arising from the uncompression and subsequent translation from hexa-decimal notation, but it is neglectible comparatively with the total time of the computation of <span class="SimpleMath">V(KG)</span> from scratch.</p>
+<p>Furthermore, the library was compressed using the <code class="file">gzip</code> program. This allowed us, for example, to reduce the size of the library for groups of order 128 from 90 to 12 MB. Of course, there is some little overhead arising from the uncompression and subsequent translation from hexa-decimal notation, but it is neglectible comparatively with the total time of the computation of <span class="SimpleMath">V(KG)</span> from scratch.</p>
 
 <p>There is one more thing that needs to be stored together with this code to make it sure that we will correctly identify the underlying group <span class="SimpleMath">G</span> of the group algebra <span class="SimpleMath">KG</span> with its image in the pc-presentation of the normalized unit group <span class="SimpleMath">V(KG)</span>.</p>
 
@@ -54,7 +54,7 @@
 
 <p>All further procedures are implemented inside the <strong class="pkg">LAGUNA</strong> package, and their result is uniquely determined and predictable.</p>
 
-<p>For the reader interested in more details, the package contains the file <code class="file">unitlib/lib/genlib.g</code> with the function <code class="code">CreatePcNormalizedUnitGroupsLibrary</code>, that creates library files for groups of a given prime power order, and the file <code class="file">unitlib/lib/genpar.g</code> with the function <code class="code">ParCreatePcNormalizedUnitGroupsLibrary</code>, which is the parallel version of the previous function and must be used with the <strong class="pkg">ParGAP</strong> package <a href="chapBib.html#biBParGAP">[Coo]</a>.</p>
+<p>For the reader interested in more details, the package contains the file <code class="file">unitlib/lib/genlib.g</code> with the function <code class="code">CreatePcNormalizedUnitGroupsLibrary</code>, that creates library files for groups of a given prime power order.</p>
 
 <p><a id="X8134F0157BE00ABA" name="X8134F0157BE00ABA"></a></p>
 
@@ -66,7 +66,7 @@
 
 <p>Then <span class="SimpleMath">V(KG)</span> is created from the code using the <strong class="pkg">GAP</strong> function <code class="func">PcGroupCode</code> (<a href="https://www.gap-system.org/Manuals/doc/ref/chap46.html#X826BFDA07A707C54"><span class="RefLink">Reference: PcGroupCode</span></a>). We also create <span class="SimpleMath">G</span> using the <strong class="pkg">GAP</strong> Small Groups Library.</p>
 
-<p>Now to "glue" the group <span class="SimpleMath">V(KG)</span> with the underlying group <span class="SimpleMath">G</span> properly, the value of the attribute <code class="func">DimensionBasis</code> (<a href="../../../pkg/laguna/doc/chap4.html#X7D7CD02F803FFC08"><span class="RefLink">LAGUNA: DimensionBasis</span></a>) of <span class="SimpleMath">G</span> is set in accordance with the data retrieved from the library. This will guarantee the correct construction of <code class="func">NaturalBijectionToPcNormalizedUnitGroup</code> (<a href="../../../pkg/laguna/doc/chap4.html#X7E08F6E87C586A36"><span class="RefLink">LAGUNA: NaturalBijectionToPcNormalizedUnitGroup</span></a>) and <code class="func">NaturalBijectionToNormalizedUnitGroup</code> (<a href="../../../pkg/laguna/doc/chap4.html#X83715EF37B9FA94A"><span class="RefLink">LAGUNA: NaturalBijectionToNormalizedUnitGroup</span></a>) by the <strong class="pkg">LAGUNA</strong> package.</p>
+<p>Now to <q>glue</q> the group <span class="SimpleMath">V(KG)</span> with the underlying group <span class="SimpleMath">G</span> properly, the value of the attribute <code class="func">DimensionBasis</code> (<a href="../../../pkg/laguna/doc/chap4.html#X7D7CD02F803FFC08"><span class="RefLink">LAGUNA: DimensionBasis</span></a>) of <span class="SimpleMath">G</span> is set in accordance with the data retrieved from the library. This will guarantee the correct construction of <code class="func">NaturalBijectionToPcNormalizedUnitGroup</code> (<a href="../../../pkg/laguna/doc/chap4.html#X7E08F6E87C586A36"><span class="RefLink">LAGUNA: NaturalBijectionToPcNormalizedUnitGroup</span></a>) and <code class="func">NaturalBijectionToNormalizedUnitGroup</code> (<a href="../../../pkg/laguna/doc/chap4.html#X83715EF37B9FA94A"><span class="RefLink">LAGUNA: NaturalBijectionToNormalizedUnitGroup</span></a>) by the <strong class="pkg">LAGUNA</strong> package.</p>
 
 <p>It remains now to make only several technical steps, such as constructing the group algebra <span class="SimpleMath">KG</span> over the appropriate field <span class="SimpleMath">K</span>, and storing <span class="SimpleMath">KG</span> in the attribute <code class="func">UnderlyingGroupRing</code> (<a href="../../../pkg/laguna/doc/chap4.html#X82DCA8A57D0D1114"><span class="RefLink">LAGUNA: UnderlyingGroupRing</span></a>) of <span class="SimpleMath">V(KG)</span> and <span class="SimpleMath">V(KG)</span> in the attribute <code class="func">PcNormalizedUnitGroup</code> (<a href="../../../pkg/laguna/doc/chap4.html#X7D40E42A7B678598"><span class="RefLink">LAGUNA: PcNormalizedUnitGroup</span></a>) of <span class="SimpleMath">KG</span>.</p>
 
@@ -77,6 +77,6 @@
 <div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
-<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
 </body>
 </html>

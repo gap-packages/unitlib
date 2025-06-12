@@ -6,25 +6,35 @@
         [1XThe library of normalized unit groups of modular group algebras[101X
   
   
-                                 Version 4.2.0
+                                 Version 5.0.0
   
   
-                                25 February 2023
+                                  12 June 2025
   
   
                                Olexandr Konovalov
   
                                 Olena Yakimenko
   
+                                Kamil Zabielski
+  
   
   
   Olexandr Konovalov
       Email:    [7Xmailto:obk1@st-andrews.ac.uk[107X
-      Homepage: [7Xhttps://alex-konovalov.github.io/[107X
+      Homepage: [7Xhttps://olexandr-konovalov.github.io/[107X
       Address:  [33X[0;14YSchool of Computer Science[133X
                 [33X[0;14YUniversity of St Andrews[133X
                 [33X[0;14YJack Cole Building, North Haugh,[133X
                 [33X[0;14YSt Andrews, Fife, KY16 9SX, Scotland[133X
+  
+  
+  Kamil Zabielski
+      Email:    [7Xmailto:kamil@zabielscy.com[107X
+      Homepage: [7Xhttps://limakzi.me/[107X
+      Address:  [33X[0;14YFaculty of Computer Science[133X
+                [33X[0;14YBiałystok University of Technology[133X
+                [33X[0;14YBiałystok, Poland[133X
   
   
   
@@ -32,7 +42,7 @@
   [1XAbstract[101X
   [33X[0;0YThe  [5XUnitLib[105X  package extends the [5XLAGUNA[105X package and provides the library of
   normalized  unit  groups of modular group algebras of all finite [22Xp[122X-groups of
-  order less than 243 over the field of [22Xp[122X elements.[133X
+  order up to 243 over the field of [22Xp[122X elements.[133X
   
   [33X[0;0YIt  also  contains  a  parallel  implementation  of  the  computation of the
   normalized  unit group of a modular group algebra of a finite [22Xp[122X-group (which
@@ -42,7 +52,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2006-2023 by Olexandr Konovalov and Olena Yakimenko[133X
+  [33X[0;0Y© 2006-2025 by Olexandr Konovalov and Olena Yakimenko[133X
   
   [33X[0;0Y[5XUnitLib[105X is free software; you can redistribute it and/or modify it under the
   terms  of  the  GNU General Public License as published by the Free Software
@@ -56,8 +66,8 @@
   [33X[0;0YIf  you  publish  a  result  which  was partially obtained with the usage of
   [5XUnitLib[105X, please cite it in the following form:[133X
   
-  [33X[0;0YA.  Konovalov  and  E. Yakimenko. [13XUnitLib --- The library of normalized unit
-  groups     of     modular    group    algebras,    Version    4.2.0[113X,    2023
+  [33X[0;0YO.  Konovalov  and  O. Yakimenko. [13XUnitLib --- The library of normalized unit
+  groups     of     modular    group    algebras,    Version    5.0.0[113X,    2025
   ([7Xhttps://gap-packages.github.io/unitlib/[107X).[133X
   
   
@@ -75,9 +85,11 @@
   to  acknowledge  Bettina Eick for communicating the package, and the referee
   for  testing  [5XUnitLib[105X  and  useful  comments.  Finally, we wish to thank the
   Centre  for  Interdisciplinary  Research  in  Computational  Algebra  of the
-  University  of St Andrews and the Computational Cluster of the Kiev National
+  University  of St Andrews and the Computational Cluster of the Kyiv National
   Taras  Shevchenko  University  for  offering  their  computer facilities for
-  computations.[133X
+  computations  leading  to  the  first  version  of  this package, and to the
+  Białystok  University  of  Technology  cluster  used to produce the data for
+  groups of order 243.[133X
   
   
   -------------------------------------------------------

@@ -13,11 +13,13 @@
   [[20XBP92[120X]  [16XBhandari, A. K. and Passi, I. B. S.[116X, [17XLie-nilpotency indices of group
   algebras[117X, [18XBull. London Math. Soc.[118X, [19X24[119X, 1 (1992), 68--70.
   
-  [[20XCoo[120X]   [16XCooperman,   G.[116X,   [17XParGAP   ---   Parallel   GAP[117X,   {GAP4}   package
-  (\url{https://www.gap-system.org/Packages/pargap.html}).
-  
   [[20XDu92[120X]  [16XDu,  X. K.[116X, [17XThe centers of a radical ring[117X, [18XCanad. Math. Bull.[118X, [19X35[119X, 2
   (1992), 174-179.
+  
+  [[20XKL10[120X]  [16XKonovalov, O. and Linton, S.[116X, [17XParallel computations in modular group
+  algebras[117X,  in  Proceedings of the 4th International Workshop on Parallel and
+  Symbolic Computation, Association for Computing Machinery, PASCO '10 (2010),
+  141-149.
   
   
   

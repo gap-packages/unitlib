@@ -21,17 +21,16 @@
   [33X[0;0YThe  resulting  code  could be very long, and to compress it we used the [5XGAP[105X
   function  [10XHexStringInt[110X  than  returns a string that represents the code with
   hexa-decimal  digits  (using  A-F  as digits 10-15). The inverse translation
-  then  can  be  performed with the [5XGAP[105X function [10XIntHexString[110X. This allowed to
-  save  almost 20 MB of space on groups of order 128 and reduce the total size
-  of their database to 90 MB.[133X
+  then  can  be performed with the [5XGAP[105X function [10XIntHexString[110X. For example, for
+  groups  of  order  128, this allows to save almost 20 MB of space and reduce
+  the total size of their database to 90 MB.[133X
   
-  [33X[0;0YFor  groups  of  order  128 we decided to compress the library with the [11Xgzip[111X
-  program,  and  then uncompress each file "on fly" when it is requested. This
-  allowed us to reduce the size of their part in the library from 90 to 12 MB,
-  which  is already quite reasonable. Of course, there is some little overhead
-  arising  from the uncompression and subsequent translation from hexa-decimal
-  notation,  but  it  is  neglectible comparatively with the total time of the
-  computation of [22XV(KG)[122X from scratch.[133X
+  [33X[0;0YFurthermore, the library was compressed using the [11Xgzip[111X program. This allowed
+  us,  for  example, to reduce the size of the library for groups of order 128
+  from  90 to 12 MB. Of course, there is some little overhead arising from the
+  uncompression  and subsequent translation from hexa-decimal notation, but it
+  is neglectible comparatively with the total time of the computation of [22XV(KG)[122X
+  from scratch.[133X
   
   [33X[0;0YThere  is  one more thing that needs to be stored together with this code to
   make  it  sure that we will correctly identify the underlying group [22XG[122X of the
@@ -55,10 +54,7 @@
   
   [33X[0;0YFor  the  reader  interested  in more details, the package contains the file
   [11Xunitlib/lib/genlib.g[111X  with the function [10XCreatePcNormalizedUnitGroupsLibrary[110X,
-  that  creates library files for groups of a given prime power order, and the
-  file          [11Xunitlib/lib/genpar.g[111X         with         the         function
-  [10XParCreatePcNormalizedUnitGroupsLibrary[110X, which is the parallel version of the
-  previous function and must be used with the [5XParGAP[105X package [Coo].[133X
+  that creates library files for groups of a given prime power order.[133X
   
   
   [1X3.2 [33X[0;0YReading the data[133X[101X

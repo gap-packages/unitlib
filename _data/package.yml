@@ -1,7 +1,7 @@
 name: UnitLib
-version: "4.2.0"
+version: "5.0.0"
 license: "GPL-2.0-or-later"
-date: 2023-02-25
+date: 2025-06-12
 description: |
     Library of normalized unit groups of modular group algebras
 
@@ -9,17 +9,21 @@ authors:
     - name: Olexandr Konovalov
       url: https://olexandr-konovalov.github.io/
     - name: Olena Yakimenko
+    - name: Kamil Zabielski
+      url: https://limakzi.me
 
 maintainers:
     - name: Olexandr Konovalov
       url: https://olexandr-konovalov.github.io/
+    - name: Kamil Zabielski
+      url: https://limakzi.me
 
 GAP: ">=4.11"
 
 needed-pkgs:
     - name: "GAPDoc"
       version: ">= 1.6"
-      url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
+      url: "https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
     - name: "IO"
       version: "4.5"
       url: "https://gap-packages.github.io/io"
@@ -38,10 +42,10 @@ packageinfo: https://gap-packages.github.io/unitlib/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/unitlib/releases/download/v4.2.0/unitlib-4.2.0.tar.gz
+      url: https://github.com/gap-packages/unitlib/releases/download/v5.0.0/unitlib-5.0.0.tar.gz
 
 abstract: |
-    The <span class="pkgname">UnitLib</span> package extends the <span class="pkgname">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order less than 243 over the field of p elements.
+    The <span class="pkgname">UnitLib</span> package extends the <span class="pkgname">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order up to 243 over the field of p elements.
 
 status: accepted
 doc-html: doc/chap0_mj.html
@@ -50,28 +54,28 @@ keywords: |
     group ring, modular group algebra, normalized unit group.
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>KY23</span>]   <b class='BibAuthor'>Konovalov, O. and Yakimenko, O.</b>,
+    [<span class='BibKey'>KYZ25</span>]   <b class='BibAuthor'>Konovalov, O., Yakimenko, O. and Zabielski, K.</b>,
      <i class='BibTitle'>UnitLib, Library of normalized unit groups of modular group algebras,
-             Version 4.2.0</i>
-     (<span class='BibYear'>2023</span>)<br />
-    (<span class='BibNote'>Refereed GAP package</span>),
+             Version 5.0.0</i>
+     (<span class='BibYear'>2025</span>)<br />
+    (<span class='BibNote'>GAP package</span>),
     <span class='BibHowpublished'><a href="https://gap-packages.github.io/unitlib">https://gap-packages.github.io/unitlib</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ UnitLib4.2.0,
-      author =           {Konovalov, O. and Yakimenko, O.},
-      title =            {{UnitLib},   Library  of  normalized  unit  groups  of
-                          modular group algebras, {V}ersion 4.2.0},
-      month =            {Feb},
-      year =             {2023},
-      note =             {Refereed GAP package},
+    @misc{ UnitLib,
+      author =           {Konovalov, O. and Yakimenko, O. and Zabielski, K.},
+      title =            {{UnitLib},  {Library  of  normalized  unit  groups  of
+                          modular group algebras}, {V}ersion 5.0.0},
+      month =            {Jun},
+      year =             {2025},
+      note =             {GAP package},
       howpublished =     {\href         {https://gap-packages.github.io/unitlib}
-                          {\texttt{https://gap-packages.github.io/}\discretionary
+                          {\texttt{https://gap\texttt{\symbol{45}}packages.github.io/}\discretionary
                           {}{}{}\texttt{unitlib}}},
       keywords =         {group  ring;  modular  group  algebra; normalized unit
                           group},
-      printedkey =       {KY23}
+      printedkey =       {KYZ25}
     }
 

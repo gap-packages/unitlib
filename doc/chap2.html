@@ -41,11 +41,13 @@
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("unitlib");</span>
 ----------------------------------------------------------------------------
-Loading  UnitLib 4.1.0 (The library of normalized unit groups of modular group algebras)
-by Olexandr Konovalov (https://alex-konovalov.github.io/) and
-   Olena Yakimenko.
+Loading UnitLib 5.0.0 (The library of normalized unit groups of modular group algebras)
+by Olexandr Konovalov (https://olexandr-konovalov.github.io/) and
+   Olena Yakimenko, and
+   Kamil Zabielski (https://limakzi.me).
 maintained by:
-   Olexandr Konovalov (https://alex-konovalov.github.io/).
+   Olexandr Konovalov (https://olexandr-konovalov.github.io/) and
+   Kamil Zabielski (https://limakzi.me).
 Homepage: https://gap-packages.github.io/unitlib
 Report issues at https://github.com/gap-packages/unitlib/issues
 ----------------------------------------------------------------------------
@@ -131,9 +133,9 @@ Group([ f1, f2, f4 ])
 
 </pre></div>
 
-<p>If the first argument <var class="Arg">s</var> (the order of a group) is not a power of prime, an error message will appear. If <var class="Arg">s</var> is &gt;= 243, you will get a warning telling that the library does not contain <span class="SimpleMath">V(KG)</span> for <span class="SimpleMath">G</span> of such order, and you can use only data that you already stored in your <code class="file">unitlib/userdata</code> directory with the help of the function <code class="func">SavePcNormalizedUnitGroup</code> (<a href="chap2.html#X7B0154C97CD03CF9"><span class="RefLink">2.1-2</span></a>).</p>
+<p>If the first argument <var class="Arg">s</var> (the order of a group) is not a power of prime, an error message will appear. If <var class="Arg">s</var> is greater than 243, you will get a warning telling that the library does not contain <span class="SimpleMath">V(KG)</span> for <span class="SimpleMath">G</span> of such order, and you can use only data that you already stored in your <code class="file">unitlib/userdata</code> directory with the help of the function <code class="func">SavePcNormalizedUnitGroup</code> (<a href="chap2.html#X7B0154C97CD03CF9"><span class="RefLink">2.1-2</span></a>).</p>
 
-<p>It is worth to mention that for some groups of order 243, the construction of the normalized unit group using <code class="code">PcNormalizedUnitGroupSmallGroup</code> may already require some noticeable amount of time. For example, it took about 166 seconds of CPU time to compute <code class="code">PcNormalizedUnitGroupSmallGroup(243,30)</code> on Intel Xeon 3.4 GHz with 2048 KB cache.</p>
+<p>It is worth to mention that for some groups of order 243, the construction of the normalized unit group using <code class="code">PcNormalizedUnitGroupSmallGroup</code> already requires some noticeable amount of time. For example, it took about 166 seconds of CPU time to compute <code class="code">PcNormalizedUnitGroupSmallGroup(243,30)</code> on Intel Xeon 3.4 GHz with 2048 KB cache.</p>
 
 <p><a id="X7B0154C97CD03CF9" name="X7B0154C97CD03CF9"></a></p>
 
@@ -145,9 +147,9 @@ Group([ f1, f2, f4 ])
 
 <p>Let <var class="Arg">G</var> be a finite <span class="SimpleMath">p</span>-group of order <span class="SimpleMath">s</span> from the Small Groups Library of the <strong class="pkg">GAP</strong> system, constructed with the help of <code class="code">SmallGroup(s,n)</code> (see <code class="func">SmallGroup</code> (<a href="../../../pkg/smallgrp/doc/chap1.html#X8398F2577B719D99"><span class="RefLink">smallgrp: SmallGroup for group order and index</span></a>)). Then <code class="code">SavePcNormalizedUnitGroup(<var class="Arg">G</var>)</code> creates the file with the name of the form <code class="file">us_n.g</code> in the directory <code class="file">unitlib/userdata</code>, and returns <code class="keyw">true</code> if this file was successfully generated. This file contains the description of the normalized unit group <span class="SimpleMath">V(KG)</span> of the group algebra of the group <var class="Arg">G</var> over the field of <span class="SimpleMath">p</span> elements.</p>
 
-<p>If the order of <var class="Arg">G</var> is &gt;= 243, after this you can construct the group <span class="SimpleMath">V(KG)</span> using <code class="func">PcNormalizedUnitGroupSmallGroup</code> (<a href="chap2.html#X8392286A85CF8D85"><span class="RefLink">2.1-1</span></a>) similarly to the previous section. The preliminary warning will be displayed, telling that for such orders you can use only those groups that were already computed by the user and saved to the <code class="file">unitlib/userdata</code> directory. If there will be no such file there, you will get an error message, otherwise the computation will begin.</p>
+<p>If the order of <var class="Arg">G</var> is greater than 243, after this you can construct the group <span class="SimpleMath">V(KG)</span> using <code class="func">PcNormalizedUnitGroupSmallGroup</code> (<a href="chap2.html#X8392286A85CF8D85"><span class="RefLink">2.1-1</span></a>) similarly to the previous section. The preliminary warning will be displayed, telling that for such orders you can use only those groups that were already computed by the user and saved to the <code class="file">unitlib/userdata</code> directory. If there will be no such file there, you will get an error message, otherwise the computation will begin.</p>
 
-<p>If the order of <var class="Arg">G</var> is less than 243, then the file will be created in the <code class="file">unitlib/userdata</code> directory, but <strong class="pkg">UnitLib</strong> will continue to use the file with the same name from the appropriate directory in <code class="file">unitlib/data</code>. You can compare these two files to make it sure that they are the same.</p>
+<p>If the order of <var class="Arg">G</var> is less or equal than 243, then the file will be created in the <code class="file">unitlib/userdata</code> directory, but <strong class="pkg">UnitLib</strong> will continue to use the file with the same name from the appropriate directory in <code class="file">unitlib/data</code>. You can compare these two files to make it sure that they are the same.</p>
 
 <p><strong class="button">NOTE THAT:</strong></p>
 
@@ -155,7 +157,7 @@ Group([ f1, f2, f4 ])
 
 <p>2. The argument should be a group from the <strong class="pkg">GAP</strong> Small Groups Library constructed with the help of <code class="code">SmallGroup(s,n)</code>, otherwise the date consistency may be lost.</p>
 
-<p><code class="func">ParSavePcNormalizedUnitGroup</code> works in the same way, but uses the function <code class="code">ParPcNormalizedUnitGroup</code> to parallelise the computation using the <strong class="pkg">GAP</strong> package <strong class="pkg">SCSCP</strong>.</p>
+<p><code class="func">ParSavePcNormalizedUnitGroup</code> works in the same way, but uses the function <code class="code">ParPcNormalizedUnitGroup</code> to parallelise the computation using the <strong class="pkg">GAP</strong> package <strong class="pkg">SCSCP</strong>. Both of the two latter functions are implemented in the file <code class="file">unitlib/lib/parunits.g</code>. See <a href="chapBib.html#biBParMGA">[KL10]</a> for the implementation details.</p>
 
 
 <div class="example"><pre>
@@ -183,6 +185,6 @@ in case if you already computed their descriptions
 <div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
-<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
 </body>
 </html>

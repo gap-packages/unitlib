@@ -17,8 +17,7 @@ long-time computation.  The group  created  with  UnitLib will  have the same
 properties and attributes as the one computed with LAGUNA.
 
 The current distribution of UnitLib contains normalized unit groups V(KG) for 
-all p-groups of order less than 243. The data for groups of order 243 is
-available as an optional download.
+all p-groups of order up to 243.
 
 The UnitLib package is redistributed with GAP,  but is not loaded by default. 
 Therefore, to use UnitLib, first you need to load it as follows:

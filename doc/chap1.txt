@@ -29,8 +29,7 @@
   [33X[0;0YIn April 2012, [5XUnitLib[105X 3.1.0 was updated to comply with [5XGAP[105X 4.5.[133X
   
   [33X[0;0YThe  current  version  of  [5XUnitLib[105X  provides  the library of normalized unit
-  groups  [22XV(KG)[122X  for  all  [22Xp[122X-groups  of  order  less  than  243 in the package
-  distribution. The data for order 243 is available as an optional download.[133X
+  groups [22XV(KG)[122X for all [22Xp[122X-groups of order up to 243.[133X
   
   [33X[0;0YIf  you  need  to  work  with  groups  of bigger orders, please write to the
   maintainers, because they may be already computed or we can compute them for
@@ -50,7 +49,7 @@
   
   [1X1.3 [33X[0;0YInstallation and system requirements[133X[101X
   
-  [33X[0;0Y[5XUnitLib[105X  4.2.0  requires at least [5XGAP[105X 4.10. The libraries of normalized unit
+  [33X[0;0Y[5XUnitLib[105X  5.0.0  requires at least [5XGAP[105X 4.10. The libraries of normalized unit
   groups  of  groups of orders less than 243 are included in the distribution.
   The data for order 243 is available as an optional download.[133X
   
