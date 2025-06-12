@@ -55,6 +55,16 @@ Persons := [
     IsMaintainer  := false,
     Place         := "Zaporizhzhia",
     Institution   := "Zaporizhzhia National University"
+     ),
+  rec(
+    LastName      := "Zabielski",
+    FirstNames    := "Kamil",
+    IsAuthor      := true,
+    IsMaintainer  := true,
+    Email         := "kamil@zabielscy.com",
+    WWWHome       := "https://limakzi.me",
+    Place         := "Białystok",
+    Institution   := "Białystok Univeristy of Technology"
      )
 ],
 
