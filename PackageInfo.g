@@ -9,13 +9,13 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "4.2.0",
-Date := "25/02/2023", # dd/mm/yyyy format
+Version := "5.0.0",
+Date := "12/06/2025", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "4.2.0">
-##  <!ENTITY RELEASEDATE "25 February 2023">
-##  <!ENTITY RELEASEYEAR "2023">
+##  <!ENTITY VERSION "5.0.0">
+##  <!ENTITY RELEASEDATE "12 June 2025">
+##  <!ENTITY RELEASEYEAR "2025">
 ##  <#/GAPDoc>
 
 SourceRepository := rec(
