@@ -64,7 +64,7 @@ Persons := [
     Email         := "kamil@zabielscy.com",
     WWWHome       := "https://limakzi.me",
     Place         := "Białystok",
-    Institution   := "Białystok Univeristy of Technology"
+    Institution   := "Białystok University of Technology"
      )
 ],
 
