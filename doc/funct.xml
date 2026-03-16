@@ -11,8 +11,7 @@ the further usage for the group which is not contained in the library.
 
 To use the &UnitLib; package first you need to load it as follows:
 
-<Log>
-<![CDATA[
+<Log><![CDATA[
 gap> LoadPackage("unitlib");
 ----------------------------------------------------------------------------
 Loading UnitLib 5.0.0 (The library of normalized unit groups of modular group algebras)
@@ -26,8 +25,7 @@ Homepage: https://gap-packages.github.io/unitlib
 Report issues at https://github.com/gap-packages/unitlib/issues
 ----------------------------------------------------------------------------
 true
-]]>
-</Log>
+]]></Log>
 
 Examples below contain some functions from the &LAGUNA; package
 <Cite Key="Laguna"/>, see their description in the &LAGUNA; manual
@@ -58,25 +56,21 @@ Examples below contain some functions from the &LAGUNA; package
 
 <Alt Only="LaTeX">\newpage</Alt>
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> PcNormalizedUnitGroupSmallGroup(128,161);
 <pc group of size 170141183460469231731687303715884105728 with 127 generators>
-]]>
-</Example>
+]]></Example>
 
 The result returned by <C>PcNormalizedUnitGroupSmallGroup</C>
 is equivalent to the following:
  
-<Log>                                                                         
-<![CDATA[                                                                         
+<Log><![CDATA[
 gap> G := SmallGroup( s, n );
 gap> p := PrimePGroup( G );
 gap> K := GF( p );
 gap> KG := GroupRing( K, G );
 gap> PcNormalizedUnitGroup( KG );
-]]>                                                                               
-</Log> 
+]]></Log>
 
 Nevertheless, <C>PcNormalizedUnitGroupSmallGroup</C>
 is not just a shortcut for such computation. It reads the description
@@ -86,8 +80,7 @@ Thus, if you would like to obtain the group algebra <M>KG</M> or the
 field <M>K</M> and the group <M>G</M>, you should extract them from
 <M>V(KG)</M>, which should be constructed first.
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> V:=PcNormalizedUnitGroup(GroupRing(GF(2),SmallGroup(8,3)));
 <pc group of size 128 with 7 generators>
 gap> V1:=PcNormalizedUnitGroupSmallGroup(8,3);                   
@@ -106,16 +99,14 @@ gap> K:=UnderlyingField(KG);
 GF(2)
 gap> G:=UnderlyingGroup(KG);     
 <pc group of size 8 with 3 generators>
-]]>
-</Example>
+]]></Example>
 
 Moreover, the original group <M>G</M> can be embedded into the output of the
 <C>PcNormalizedUnitGroupSmallGroup</C>, as it is shown in the next example:
 
 <Alt Only="LaTeX">\newpage</Alt>
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> f:=Embedding(G,V1); 
 [ f1, f2, f3 ] -> [ f1, f2, f4 ]
 gap> g:=List(GeneratorsOfGroup(G), x -> x^f ); 
@@ -124,8 +115,7 @@ gap> G1:=Subgroup(V1,g);
 Group([ f1, f2, f4 ])
 gap> IdGroup(G1);
 [ 8, 3 ]
-]]>
-</Example>
+]]></Example>
 
 If the first argument <A>s</A> (the order of a group) is not a power of 
 prime, an error message will appear.
@@ -204,8 +194,7 @@ on Intel Xeon 3.4 GHz with 2048 KB cache.
 
 <Alt Only="LaTeX">\newpage</Alt>
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> SavePcNormalizedUnitGroup( SmallGroup( 256, 56092 ) );
 true
 gap> PcNormalizedUnitGroupSmallGroup( 256, 56092 );
@@ -219,8 +208,7 @@ in case if you already computed their descriptions
 <pc group of size 
 57896044618658097711785492504343953926634992332820282019728792003956564819968
   with 255 generators>
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
