@@ -12,11 +12,11 @@
 #
 InstallGlobalFunction( PcNormalizedUnitGroupSmallGroup,
 function( n, nLibNumber )
-local G, p, K, KG, filename, libfile, gzfile, code, V, i, fam;
+local G, p, K, KG, filename, libfile, code, V, i, fam;
 if not IsPrimePowerInt( n ) then
   Error( "Underlying group is not a p-group !!! \n" );
 fi;
-if n >= 243 then
+if n > 243 then
   Print( "WARNING : the library of V(KG) for groups of order ", n, 
          " is not available yet !!! \n", 
 	 "You can use only groups from the unitlib/userdata directory \n",
@@ -36,12 +36,6 @@ if IsPrimeInt(n) then
   libfile := Concatenation( 
                GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,
                "/data/primeord/", filename, ".g" );
-
-elif n=243 then
-
-  libfile := Concatenation(                                                         
-               GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,                
-	       "/data/243/", filename, ".gg" );
 
 elif not n in [2..243] then
 
@@ -64,17 +58,7 @@ fi;
 code := ReadAsFunction(libfile)();
 
 
-if n=243 then
-  
-  code[1] := SingleHTTPRequest( "alexk.host.cs.st-andrews.ac.uk", 80, "GET", 
-       Concatenation( "/unitlib/data/243/u243_",  String(nLibNumber), ".txt"), 
-       rec( ), false, false ).body;
-  if Length(code[1]) = 0 then
-    Error("Can not retrieve remote data");
-  fi;
-  Info( LAGInfo, 1, "Data retrieved successfully, starting generation of V(KG) ..." );
-
-elif n>243 then
+if n>243 then
 
   Info( LAGInfo, 1, "Description of V(KG) for G=SmallGroup(",n,",",nLibNumber,
                     ") accepted, started its generation...");
