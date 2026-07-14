@@ -84,10 +84,10 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.11",
+  GAP := ">=4.15",
   NeededOtherPackages := [ ["GAPDoc", ">= 1.6"], 
                            ["IO", "4.5"],
-                           ["LAGUNA", ">= 3.9.4"] ],
+                           ["LAGUNA", ">= 3.9.7"] ],
   SuggestedOtherPackages := [ ["SCSCP", ">=2.2"] ],
   ExternalConditions := [],
 ),
