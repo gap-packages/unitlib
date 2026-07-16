@@ -64,7 +64,6 @@ group of a modular group algebra of a finite <M>p</M>-group.
 <Section Label="Install">
 <Heading>Installation and system requirements</Heading>
 
-&UnitLib; &VERSION; requires at least &GAP; 4.10. 
 The libraries of normalized unit groups of groups of orders less than 243
 are included in the distribution. The data for order 243 is available as
 an optional download.
