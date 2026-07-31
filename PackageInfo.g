@@ -86,7 +86,8 @@ PackageDoc := rec(
 Dependencies := rec(
   GAP := ">=4.12",
   NeededOtherPackages := [ ["IO", "4.5"],
-                           ["LAGUNA", ">= 3.9.4"] ],
+                           ["LAGUNA", ">= 3.9.4"],
+                           ["SmallGrp", ">= 1.0"] ],
   SuggestedOtherPackages := [ ["SCSCP", ">=2.2"] ],
   ExternalConditions := [],
 ),
