@@ -12,11 +12,6 @@ Subtitle := "Library of normalized unit groups of modular group algebras",
 Version := "5.0.0",
 Date := "12/06/2025", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
-##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "5.0.0">
-##  <!ENTITY RELEASEDATE "12 June 2025">
-##  <!ENTITY RELEASEYEAR "2025">
-##  <#/GAPDoc>
 
 SourceRepository := rec(
     Type := "git",
@@ -94,6 +89,24 @@ Dependencies := rec(
 AvailabilityTest := ReturnTrue,
 TestFile := "tst/testall.g",
 
-Keywords := ["group ring", "modular group algebra", "normalized unit group"]
+Keywords := ["group ring", "modular group algebra", "normalized unit group"],
+
+AutoDoc := rec(
+    entities := rec(
+        LAGUNA := "<Package>LAGUNA</Package>",
+        SCSCP := "<Package>SCSCP</Package>",
+        VERSION := ~.Version,
+        RELEASEYEAR := ~.Date{[7..10]},
+        RELEASEDATE := function(date)
+          local day, month, year, allMonths;
+          day := Int(date{[1,2]});
+          month := Int(date{[4,5]});
+          year := Int(date{[7..10]});
+          allMonths := [ "January", "February", "March", "April", "May", "June", "July",
+                         "August", "September", "October", "November", "December"];
+          return Concatenation(String(day)," ", allMonths[month], " ", String(year));
+        end(~.Date),
+    ),
+),
 
 ));
