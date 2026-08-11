@@ -1,100 +1,103 @@
 #############################################################################
+##  
+##  Demo PackageInfo.g for the GitHubPagesForGAP
 ##
-#W  PackageInfo.g              The UnitLib package         Olexandr Konovalov
-#W                                                            Olena Yakimenko
-##
-#############################################################################
 
 SetPackageInfo( rec(
 
-PackageName := "UnitLib",
-Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "5.0.0",
-Date := "12/06/2025", # dd/mm/yyyy format
-License := "GPL-2.0-or-later",
-##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "5.0.0">
-##  <!ENTITY RELEASEDATE "12 June 2025">
-##  <!ENTITY RELEASEYEAR "2025">
-##  <#/GAPDoc>
+PackageName := "GitHubPagesForGAP",
 
-SourceRepository := rec(
-    Type := "git",
-    URL := Concatenation( "https://github.com/gap-packages/", LowercaseString(~.PackageName) ),
-),
-IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
-PackageWWWHome  := Concatenation( "https://gap-packages.github.io/", LowercaseString(~.PackageName) ),
-README_URL      := Concatenation( ~.PackageWWWHome, "/README.md" ),
-PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
-ArchiveURL      := Concatenation( ~.SourceRepository.URL,
-                                 "/releases/download/v", ~.Version,
-                                 "/", LowercaseString(~.PackageName), "-", ~.Version ),
-
-ArchiveFormats := ".tar.gz",
+Subtitle := "A GitHub Pages generator for GAP packages",
+Version := "0.4",
+Date := "10/04/2025", # dd/mm/yyyy format
+License := "0BSD",
 
 Persons := [
   rec(
-    LastName      := "Konovalov",
-    FirstNames    := "Olexandr",
+    LastName      := "Horn",
+    FirstNames    := "Max",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "obk1@st-andrews.ac.uk",
-    WWWHome       := "https://olexandr-konovalov.github.io/",
-    PostalAddress := Concatenation( [
-                     "School of Computer Science\n",
-                     "University of St Andrews\n",
-                     "Jack Cole Building, North Haugh,\n",
-                     "St Andrews, Fife, KY16 9SX, Scotland" ] ),
-    Place         := "St Andrews",
-    Institution   := "University of St Andrews"
-     ),
+    Email         := "mhorn@rptu.de",
+    WWWHome       := "https://www.quendi.de/math",
+    GitHubUsername:= "fingolfin",
+    PostalAddress := Concatenation(
+                       "Fachbereich Mathematik\n",
+                       "RPTU Kaiserslautern-Landau\n",
+                       "Gottlieb-Daimler-Straße 48\n",
+                       "67663 Kaiserslautern\n",
+                       "Germany" ),
+    Place         := "Kaiserslautern, Germany",
+    Institution   := "RPTU Kaiserslautern-Landau"
+  ),
+
   rec(
-    LastName      := "Yakimenko",
-    FirstNames    := "Olena",
+    LastName      := "Thor",
+    FirstNames    := "A. U.",
     IsAuthor      := true,
     IsMaintainer  := false,
-    Place         := "Zaporizhzhia",
-    Institution   := "Zaporizhzhia National University"
-     ),
+    #Email         := "author@example.com",
+  ),
+
   rec(
-    LastName      := "Zabielski",
-    FirstNames    := "Kamil",
-    IsAuthor      := true,
+    LastName      := "Itor",
+    FirstNames    := "Jan",
+    IsAuthor      := false,
     IsMaintainer  := true,
-    Email         := "kamil@zabielscy.com",
-    WWWHome       := "https://limakzi.me",
-    Place         := "Białystok",
-    Institution   := "Białystok University of Technology"
-     )
+    #Email         := "janitor@example.com",
+  ),
 ],
 
-Status := "accepted",
-CommunicatedBy := "Bettina Eick (Braunschweig)",
-AcceptDate := "03/2007",
+Status := "other",
 
-AbstractHTML := "The <span class=\"pkgname\">UnitLib</span> package extends the <span class=\"pkgname\">LAGUNA</span> package and provides the library of normalized unit groups of modular group algebras of all finite p-groups of order up to 243 over the field of p elements.",
-                  
+# The following are not strictly necessary in your own PackageInfo.g
+# (in the sense that update.g only looks at the usual fields
+# like PackageWWWHome, ArchiveURL etc.). But they are convenient
+# if you use exactly the scheme for your package website that we propose.
+GithubUser := "gap-system",
+GithubRepository := ~.PackageName,
+GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
+
+PackageWWWHome := Concatenation("https://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
+README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
+PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+# The following assumes you are using the Github releases system. If not, adjust
+# it accordingly.
+ArchiveURL     := Concatenation(~.GithubWWW,
+                    "/releases/download/v", ~.Version, "/",
+                    ~.GithubRepository, "-", ~.Version),
+
+ArchiveFormats := ".tar.gz .tar.bz2",
+
+AbstractHTML := 
+  "This is a pseudo package that contains no actual\
+  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
+  GAP packages that allows to quickly setup GitHub Pages.",
+
 PackageDoc := rec(
-  BookName := "UnitLib",
+  BookName  := "GitHubPagesForGAP",
   ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0_mj.html",
-  PDFFile := "doc/manual.pdf",
-  SixFile := "doc/manual.six",
-  LongTitle := "The library of normalized unit groups of modular group algebras",
+  HTMLStart := "doc/chap0.html",
+  PDFFile   := "doc/manual.pdf",
+  SixFile   := "doc/manual.six",
+  LongTitle := "A GitHub Pages generator for GAP packages",
 ),
 
+# The following dependencies are fake and for testing / demo purposes
 Dependencies := rec(
-  GAP := ">=4.11",
-  NeededOtherPackages := [ ["GAPDoc", ">= 1.6"], 
-                           ["IO", "4.5"],
-                           ["LAGUNA", ">= 3.9.4"] ],
-  SuggestedOtherPackages := [ ["SCSCP", ">=2.2"] ],
-  ExternalConditions := [],
+  GAP := ">=4.8.1",
+  NeededOtherPackages := [
+    ["GAPDoc", ">= 1.2"],
+    ["IO", ">= 4.1"],
+  ],
+  SuggestedOtherPackages := [["orb", ">= 4.2"]],
+  ExternalConditions := []
 ),
 
 AvailabilityTest := ReturnTrue,
-TestFile := "tst/testall.g",
 
-Keywords := ["group ring", "modular group algebra", "normalized unit group"]
+Keywords := ["GitHub Pages", "GAP"]
 
 ));
+
+
