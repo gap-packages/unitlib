@@ -9,8 +9,8 @@ SetPackageInfo( rec(
 
 PackageName := "UnitLib",
 Subtitle := "Library of normalized unit groups of modular group algebras",
-Version := "5.0.0",
-Date := "12/06/2025", # dd/mm/yyyy format
+Version := "5.1.0",
+Date := "11/08/2026", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 SourceRepository := rec(
