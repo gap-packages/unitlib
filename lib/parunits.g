@@ -161,7 +161,7 @@ end);
 #
 InstallGlobalFunction( ParSavePcNormalizedUnitGroup,
 function( G )
-local p, K, KG, V, codestring, libfile, output, d, x;
+local p, K, KG, V;
 if not IsPGroup( G ) then
   Error( "<G> is not a p-group !!! \n" );
 fi;
@@ -176,20 +176,5 @@ p := PrimePGroup( G );
 K := GF( p );
 KG:= GroupRing( K, G );
 V := ParPcNormalizedUnitGroup( KG );
-codestring := HexStringInt( CodePcGroup( V ) );
-libfile := Concatenation( 
-             GAPInfo.PackagesInfo.( "unitlib" )[1].InstallationPath,
-             "/userdata/u",
-             String( IdGroup( G )[1] ), "_",
-             String( IdGroup( G )[2] ), ".g");
-output := OutputTextFile( libfile, false );
-SetPrintFormattingStatus( output, false );
-PrintTo(  output, "return [ " );
-AppendTo( output, "\042", codestring, "\042" );
-AppendTo( output, ", ");
-AppendTo( output, [ List( DimensionBasis( G ).dimensionBasis, ExtRepOfObj), 
-                    DimensionBasis( G ).weights ] );
-AppendTo( output, " ];" );
-CloseStream( output );
-return true; 
+return UNITLIB_WriteUserData( G, V );
 end );
