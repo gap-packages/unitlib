@@ -1,0 +1,13 @@
+#!/bin/sh
+# This file is executed by the `release.yml` workflow
+echo "Current data file disk space:"
+du -h data
+echo "Compressing data files..."
+for file in data/*.g
+do
+    gzip -n -9 "$file"
+    printf .
+done
+echo
+echo "Done compressing data file, disk space:"
+du -h data

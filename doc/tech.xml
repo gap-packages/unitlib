@@ -15,34 +15,43 @@ It uses the algorithm descibed in <Cite Key="Bovdi" />. See the
 &LAGUNA; manual <Cite Key="Laguna" /> for more details.
 <P/>
 
-When this group is computed, the main idea is to use &GAP; 
-function <C>CodePcGroup</C> that returns the code for the
-polycyclic generating sequence of the group, and then to create
-the group from this code using the &GAP; function <C>PcGroupCode</C>. 
+When this group is computed, we store its pc presentation. For the
+polycyclic generating sequence <M>g_1, \ldots, g_l</M> of <M>V(KG)</M>
+these are the power relations <M>g_i^p</M>, <M>1 \leq i \leq l</M>,
+and the commutator relations <M>[g_j, g_i]</M>, <M>1 \leq i &lt; j \leq l</M>,
+in this order. Each right-hand side is a word
+<M>g_{k_1}^{e_1} \cdots g_{k_m}^{e_m}</M>, and most of them are short.
 <P/>
 
-The resulting code could be very long, and to compress it
-we used the &GAP; function <C>HexStringInt</C> than
-returns a string that represents the code with hexa-decimal 
-digits (using A-F as digits 10-15). The inverse translation 
-then can be performed with the &GAP; function <C>IntHexString</C>.
-For example, for groups of order 128, this allows to save almost
-20 MB of space and reduce the total size of their database to 90 MB.
-<P/>
-
-Furthermore, the library was compressed using
-the <File>gzip</File> program. This allowed us, for example,
-to reduce the size of the library for groups of order 128
-from 90 to 12 MB. Of course, there is some little overhead arising
-from the uncompression and subsequent translation from hexa-decimal 
-notation, but it is neglectible comparatively with the total time 
-of the computation of <M>V(KG)</M> from scratch.
+The file <File>unitlib/data/u&lt;n&gt;.g</File> holds the groups of
+order <M>n</M>, one line per group:
+<C>[ id, ref, relations, exponents, dimensionBasis, weights ]</C>.
+If <C>ref</C> is <C>0</C>, the string <C>relations</C> lists the
+nontrivial relations. Groups with consecutive catalogue numbers tend to
+have similar presentations, so otherwise it lists only the relations
+that differ from those of the group <C>ref</C>, which precedes
+<C>id</C> in the same block of 32 groups. The entries are separated by
+spaces. Each consists of the number of the relation, the character
+<C>!</C> if the entry replaces the relation (otherwise its exponents are
+added to those of the relation modulo <M>p</M>), and the generators
+<M>k_1, \ldots, k_m</M>. Relation numbers and generators are written as
+differences to their predecessor, and the exponents
+<M>e_1, \ldots, e_m</M> of all entries follow in the string
+<C>exponents</C>, which is empty for <M>p = 2</M>. Every number is
+written in base 26, most significant digit first, with the digits
+<C>a</C> to <C>z</C>, except for the last digit, which is <C>A</C> to
+<C>Z</C>.
 <P/>
 
 For a group <M>G</M> of prime order <M>p</M> no data is stored:
 <M>V(KG)</M> is elementary abelian of order <M>p^{(p-1)}</M>, since
 <M>KG \cong K[y]/(y^p)</M> with <M>y = g - 1</M> and
 <M>(1 + y^i)^p = 1 + y^{ip} = 1</M>.
+<P/>
+
+The data files are plain text in the source repository and are
+compressed with <File>gzip</File> when the package is released;
+&GAP; reads either form.
 <P/>
 
 There is one more thing that needs to be stored together with
@@ -73,9 +82,11 @@ and their result is uniquely determined and predictable.
 <P/>
 
 For the reader interested in more details, the package contains
-the file <File>unitlib/lib/genlib.g</File> with the 
-function <C>CreatePcNormalizedUnitGroupsLibrary</C>, that creates
-library files for groups of a given prime power order.
+the file <File>unitlib/lib/genlib.g</File> with the
+function <C>CreatePcNormalizedUnitGroupsLibrary</C>, that saves the
+descriptions for groups of a given prime power order, and the function
+<C>CreatePcNormalizedUnitGroupsLibraryFile</C>, that combines them into
+a library file.
 
 </Section>
 
@@ -89,15 +100,17 @@ underlying group <M>G</M> in the &GAP; Small Groups Library.
 <P/>
 
 We use the same numbering as in the &GAP; Small Group Library, 
-so &UnitLib; finds the appropriate library file(s) and reads from 
-it the code for the polycyclic generating sequence of <M>V(KG)</M> 
-and the information about the dimension basis of <M>G</M> used 
-for the computation of this code.
+so &UnitLib; finds the appropriate library file and reads from 
+it the relations of the pc presentation of <M>V(KG)</M>
+and the information about the dimension basis of <M>G</M> used
+for their computation.
 <P/>
 
-Then <M>V(KG)</M> is created from the code 
-using the &GAP; function <Ref Func="PcGroupCode" BookName="ref"/>. 
-We also create <M>G</M> using the &GAP; Small Groups Library.
+Then &UnitLib; decodes the relations, applying the differences along the
+chain of references, and creates <M>V(KG)</M> as a pc group with a
+single collector (see <Ref Func="SingleCollector" BookName="ref"/>).
+It skips the consistency check, since the stored presentation is
+consistent. We also create <M>G</M> using the &GAP; Small Groups Library.
 <P/>
 
 Now to <Q>glue</Q> the group <M>V(KG)</M> with the underlying group <M>G</M>

@@ -13,7 +13,7 @@
 ##  (requires a UNIX environment)
 ##
 UNITLIBTestLibrary := function()
-local datapath, testresult, size, missing, n, libfile, s;
+local datapath, testresult, size, libfile, missing;
 
   datapath := Concatenation(
                 GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath, 
@@ -23,26 +23,21 @@ local datapath, testresult, size, missing, n, libfile, s;
   # groups of prime order need no data
   for size in Filtered( [ 2 .. 243 ], n -> IsPrimePowerInt(n) and not IsPrimeInt(n) ) do
 
-    missing := [];
-    
-    # Print( NrSmallGroups(size), " group(s) of order ", size, "\n" );
+    libfile := Concatenation( datapath, "u", String(size), ".g" );
 
-    for n in [ 1 .. NrSmallGroups( size ) ] do
+    if not IsExistingFile( libfile ) and
+       not IsExistingFile( Concatenation( libfile, ".gz" ) ) then
+      Print( "missing file for order ", size, "\n" );
+      testresult := false;
+      continue;
+    fi;
 
-      libfile := Concatenation( datapath, String(size), 
-         "/u", String(size), "_", String(n) );
-
-      libfile := Concatenation( libfile, ".g.gz" );
-
-      if not IsExistingFile(libfile) then
-        Add( missing, n );
-    	testresult := false;
-      fi;
-
-    od;
+    missing := Difference( [ 1 .. NrSmallGroups( size ) ],
+                           List( ReadAsFunction( libfile )(), line -> line[1] ) );
 
     if Length(missing) > 0 then
       Print( Length(missing), " missing groups for order ", size, " : ", missing, "\n");
+      testresult := false;
     fi;
   od;
   if testresult then
