@@ -79,12 +79,16 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.12",
+  GAP := ">=4.13",
   NeededOtherPackages := [ ["LAGUNA", ">= 3.9.4"],
                            ["SmallGrp", ">= 1.0"] ],
   SuggestedOtherPackages := [ ["SCSCP", ">=2.2"] ],
   ExternalConditions := [],
 ),
+
+Extensions := [
+  rec( needed := [ [ "SCSCP", ">=2.0" ] ], filename := "lib/parunits.g" ),
+],
 
 AvailabilityTest := ReturnTrue,
 TestFile := "tst/testall.g",
