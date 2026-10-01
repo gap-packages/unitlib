@@ -39,6 +39,12 @@ notation, but it is neglectible comparatively with the total time
 of the computation of <M>V(KG)</M> from scratch.
 <P/>
 
+For a group <M>G</M> of prime order <M>p</M> no data is stored:
+<M>V(KG)</M> is elementary abelian of order <M>p^{(p-1)}</M>, since
+<M>KG \cong K[y]/(y^p)</M> with <M>y = g - 1</M> and
+<M>(1 + y^i)^p = 1 + y^{ip} = 1</M>.
+<P/>
+
 There is one more thing that needs to be stored together with
 this code to make it sure that we will correctly identify the
 underlying group <M>G</M> of the group algebra <M>KG</M> with 

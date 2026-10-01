@@ -20,7 +20,8 @@ local datapath, testresult, size, missing, n, libfile, s;
             "/data/" );
   testresult := true;       
 
-  for size in Filtered( [ 2 .. 243 ], IsPrimePowerInt) do
+  # groups of prime order need no data
+  for size in Filtered( [ 2 .. 243 ], n -> IsPrimePowerInt(n) and not IsPrimeInt(n) ) do
 
     missing := [];
     
@@ -28,13 +29,8 @@ local datapath, testresult, size, missing, n, libfile, s;
 
     for n in [ 1 .. NrSmallGroups( size ) ] do
 
-      if IsPrimeInt( size ) then
-        libfile := Concatenation( datapath, "primeord", 
-           "/u", String(size), "_", String(n) );
-      else      
-        libfile := Concatenation( datapath, String(size), 
-           "/u", String(size), "_", String(n) );
-      fi;
+      libfile := Concatenation( datapath, String(size), 
+         "/u", String(size), "_", String(n) );
 
       libfile := Concatenation( libfile, ".g.gz" );
 

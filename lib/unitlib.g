@@ -12,11 +12,11 @@
 #
 InstallGlobalFunction( PcNormalizedUnitGroupSmallGroup,
 function( n, nLibNumber )
-local G, p, K, KG, filename, libfile, code, V, i, fam;
+local G, p, K, KG, libfile, code, basis, V, i, fam;
 if not IsPrimePowerInt( n ) then
   Error( "Underlying group is not a p-group !!! \n" );
 fi;
-if n > 243 then
+if n > 243 and not IsPrimeInt( n ) then
   Print( "WARNING : the library of V(KG) for groups of order ", n, 
          " is not available yet !!! \n", 
 	 "You can use only groups from the unitlib/userdata directory \n",
@@ -28,48 +28,45 @@ p := PrimePGroup( G );
 fam := FamilyObj( One( G ) );
 K := GF( p );
 KG:= GroupRing( K, G );
-# Attention - file name without extension 
-filename:=Concatenation( "u", String(n), "_", String(nLibNumber) );
+if IsPrimeInt( n ) then
 
-if IsPrimeInt(n) then
-
-  libfile := Concatenation( 
-               GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,
-               "/data/primeord/", filename, ".g" );
-
-elif not n in [2..243] then
-
-  # Probably the group was computed and saved by the user. 
-  # If not, the error will occur later
-
-  libfile := Concatenation(                                                         
-               GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,                
-	       "/userdata/", filename, ".g" );
+  # V(KG) is elementary abelian: KG = K[y]/(y^p) with y = g-1, and the pc
+  # generators 1+y^i satisfy (1+y^i)^p = 1+y^(ip) = 1
+  basis := [ [ [ 1, 1 ] ], [ 1 ] ];
+  V := GroupByRwsNC( SingleCollector( FreeGroup( IsSyllableWordsFamily, n-1 ),
+                                      ListWithIdenticalEntries( n-1, p ) ) );
 
 else
 
-  libfile := Concatenation(                                                         
-               GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,                
-	       "/data/", String(n), "/", filename, ".g" );
+  if n <= 243 then
+    libfile := Concatenation(
+                 GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,
+                 "/data/", String(n), "/u", String(n), "_", String(nLibNumber), ".g" );
+  else
+    # Probably the group was computed and saved by the user.
+    # If not, the error will occur later
+    libfile := Concatenation(
+                 GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,
+                 "/userdata/u", String(n), "_", String(nLibNumber), ".g" );
+  fi;
+
+  code := ReadAsFunction(libfile)();
+
+  if n>243 then
+
+    Info( LAGInfo, 1, "Description of V(KG) for G=SmallGroup(",n,",",nLibNumber,
+                      ") accepted, started its generation...");
+
+  fi;
+
+  basis := code[2];
+  V := PcGroupCode( IntHexString(code[1]), p^(n-1) );
 
 fi;
 
-
-code := ReadAsFunction(libfile)();
-
-
-if n>243 then
-
-  Info( LAGInfo, 1, "Description of V(KG) for G=SmallGroup(",n,",",nLibNumber,
-                    ") accepted, started its generation...");
-
-fi;
-
-
-SetDimensionBasis(G, rec( dimensionBasis := List( code[2][1], 
-                                              i -> ObjByExtRep( fam, i ) ), 
-                          weights := code[2][2] ) );
-V := PcGroupCode( IntHexString(code[1]), p^(n-1) );
+SetDimensionBasis(G, rec( dimensionBasis := List( basis[1],
+                                              i -> ObjByExtRep( fam, i ) ),
+                          weights := basis[2] ) );
 ResetFilterObj( V, IsGroupOfUnitsOfMagmaRing );
 SetFilterObj( V, IsNormalizedUnitGroupOfGroupRing );
 SetIsPGroup( V, true );
